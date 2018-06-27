@@ -39,6 +39,6 @@ Life Budget is a *single-page, full-stack* web application built using **ReactJS
 </pre>
 
 
-##Dependencies | Installation Requirements
+## Dependencies | Installation Requirements
 * npm install && npm start
 * yarn add react-router-dom
