@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 //import PropTypes from 'prop-types'
 import {Form, Input, Button} from 'semantic-ui-react';
-import adapter from './../adapter.js';
+import Fetches from './../Fetches.js';
 let url = "http://localhost:3001/sessions/"
 class Login extends Component{
      constructor(){
@@ -18,7 +18,7 @@ class Login extends Component{
     console.log("THIS.STATE",this.state);
 
     const body = this.state
-    adapter.post(url,body)
+    Fetches.post(url,body)
     .then(response=>response.json())
     .then(json => {
       console.log("json", json)

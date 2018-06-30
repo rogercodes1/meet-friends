@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 //import PropTypes from 'prop-types'
 // import verify from '../Helpers/date.js';
 import {Form, Input, Button, Select} from 'semantic-ui-react';
-import adapter from './../adapter.js';
+import Fetches from './../Fetches.js';
 let url = "http://localhost:3001/api/v1/users"
 const options = [
   {
@@ -47,7 +47,7 @@ class Register extends Component {
 
     event.preventDefault()
     const body = this.state
-    adapter.post(url, body).then(response => response.json()).then(json => {
+    Fetches.post(url, body).then(response => response.json()).then(json => {
     console.log("json", json);
     localStorage.setItem('token', json.token);
     localStorage.setItem('id', json.id);

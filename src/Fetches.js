@@ -1,4 +1,7 @@
-const adapter = {
+const yelpApiKey=`${process.env.REACT_APP_API_KEY_YELP}`
+
+
+const Fetches = {
   get: function(URI) {
     return fetch(URI);
   },
@@ -9,6 +12,18 @@ const adapter = {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(body)
+    };
+
+    return fetch(URI, config);
+  },
+  yelpGet: function(URI) {
+    const config = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": yelpApiKey,
+      },
+      // body: JSON.stringify(body)
     };
 
     return fetch(URI, config);
@@ -33,4 +48,4 @@ const adapter = {
   }
 }
 
-export default adapter;
+export default Fetches;
