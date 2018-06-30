@@ -1,15 +1,20 @@
 import React from 'react'
+import UserEvents from './UserEvents';
+import NearbyEvents from './NearbyEvents';
+
 // import PropTypes from 'prop-types'
 
-class HomeContainer extends React.Component {
+class HomeCont extends React.Component {
   render () {
     return (
       <div>
-        HomeContainer
+        HomeCont
+        <UserEvents />
+        <NearbyEvents />
       </div>
     )
 
   }
 }
 
-export default HomeContainer;
+export default HomeCont;

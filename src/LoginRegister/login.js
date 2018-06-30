@@ -24,7 +24,6 @@ class Login extends Component{
       console.log("json", json)
       localStorage.setItem('token', json.token);
       localStorage.setItem('id', json.id);
-      this.props.setUserId(json.id)
 
       console.log("localStorage", localStorage);
       console.log("history", this.props.history);

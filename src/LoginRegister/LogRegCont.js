@@ -1,14 +1,14 @@
 import React, {Component} from 'react'
 // import PropTypes from 'prop-types'
-import Login from './login.js';
-import SignUp from './signUp.js';
+import Login from './Login.js';
+import Register from './Register.js';
 import {Menu, Segment} from 'semantic-ui-react';
 
 class LoginSignUpContainer extends Component{
     constructor(props){
         super(props);
         this.state = {
-          activeItem: 'signUp',
+          activeItem: 'register',
 
     }
 
@@ -18,12 +18,12 @@ handleItemClick = (e, { name }) => {
 }
         render(){
         return (
-            <div id="loginSignUp">
+            <div id="LogRegCont">
                 <div>
                 <Menu tabular>
                     <Menu.Item
-                        name='signUp'
-                        active={this.state.activeItem === 'signUp'}
+                        name='register'
+                        active={this.state.activeItem === 'register'}
                         onClick={this.handleItemClick} />
 
                     <Menu.Item
@@ -33,8 +33,8 @@ handleItemClick = (e, { name }) => {
                 </Menu>
                 </div>
                 <Segment>
-                    {(this.state.activeItem ==="signUp") ?
-                      <SignUp {...this.props} /> : <Login {...this.props} />}
+                    {(this.state.activeItem ==="register") ?
+                      <Register {...this.props} /> : <Login {...this.props} />}
 
 
                 </Segment>

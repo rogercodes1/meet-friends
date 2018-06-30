@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { withRouter } from 'react-router'
 import { Menu, Icon, Dropdown } from 'semantic-ui-react'
-import {Redirect, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 // import AuthO from './AuthO'
 
 class NavBar extends Component{
@@ -13,11 +13,11 @@ class NavBar extends Component{
     }
     handleClick = (e, { name }) => this.setState({ activeItem: name })
     handleLogout = (e) => {
-
-      // delete localStorage
-
-      this.props.history.push("/")
+      localStorage.clear()
+      this.props.history.push("/register")
     }
+    handleProfile = (e) => this.props.history.push("/profile")
+
 
     render() {
     const { activeItem } = this.state
@@ -35,14 +35,14 @@ class NavBar extends Component{
 
             <Menu.Item
                 as={NavLink}
-                to="/ExploreEvents"
+                to="/explore-events"
                 name='events' active={activeItem === 'events'} onClick={this.handleClick}>
             <Icon name="searchengin"/>Explore Events
             </Menu.Item>
 
         <Menu.Item
             as={NavLink}
-            to="/ExplorePlaces"
+            to="/explore-places"
         name='places'
           active={activeItem === 'places'}
           onClick={this.handleClick}>
@@ -51,7 +51,7 @@ class NavBar extends Component{
 
         <Menu.Item
             as={NavLink}
-            to="/Messages"
+            to="/messages"
             name='messages'
             active={activeItem === 'messages'}
             onClick={this.handleClick}>
@@ -67,7 +67,7 @@ class NavBar extends Component{
                           color="red"
                           value="logout"/>Logout
                     </Dropdown.Item>
-                    <Dropdown.Item>
+                    <Dropdown.Item onClick={this.handleProfile}>
                         <Icon name="user" color="blue" value="user"/>Profile
                     </Dropdown.Item>
 
