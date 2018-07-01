@@ -3,11 +3,11 @@ import './Assets/App.css';
 import NavBar from './NavBar.js';
 import RegisterCont from './LoginRegister/LogRegCont';
 import HomeCont from './Home/HomeCont';
-import EventsCont from './Events/ExploreEventsCont';
+import EventsCont from './ExploreEvents/ExploreEventsCont';
 import ProfileCont from './Settings/Profile';
-import PlacesCont from './Places/ExplorePlacesCont';
+import PlacesCont from './ExplorePlaces/ExplorePlacesCont';
 import MessagesCont from './Messages/MessagesCont';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import AuthO from './AuthO'
 

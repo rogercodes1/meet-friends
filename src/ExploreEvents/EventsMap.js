@@ -17,7 +17,7 @@ class EventMap extends Component {
     console.log(mapsKey);
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '400px', width: '100%' }}>
+      <div id="GoogleMaps" >
         <GoogleMapReact
           bootstrapURLKeys={{ key: mapsKey }}
           defaultCenter={this.props.center}

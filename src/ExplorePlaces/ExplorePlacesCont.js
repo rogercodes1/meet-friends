@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 // import Fetches from "../Fetches.js";
 // import PropTypes from 'prop-types'
 import PlaceCard from './PlaceCard';
+import Search from '../Helpers/Search';
+
+import Loading from '../Helpers/Loading';
 const yelpApiKey=`${process.env.REACT_APP_API_KEY_YELP}`
 const url = "https://api.yelp.com/v3/businesses/search?term=smoothie&location=brooklyn, NY"
 const corsUrl="https://cors-anywhere.herokuapp.com/"
@@ -42,21 +45,28 @@ yelpFetch = () => {
     //     key="place.id"
     //     id="place.id" place={place}/>
     // })
-
+    console.log(this.state.results);
+    // debugger;
     return(
-      <div className="ui four column grid">
-        <div className="row">
-          <React.Fragment>
-          {this.state.results.map(place=>{
-                  return <PlaceCard
-                      key={place.id}
-                      {...place}
+      <div>
+        <Search />
 
-                      />
-              })}
-            </React.Fragment>
+        {(this.state.results === [] || this.state.results.length === 0 ) ? <Loading/> :
+          <div className="ui four column grid">
+            <div className="row">
+              {this.state.results.map(place=>{
+                      return <PlaceCard
+                        className="PlaceCard"
+                          key={place.id}
+                          {...place}
 
-        </div>
+                          />
+                  })}
+
+            </div>
+          </div> }
+
+
       </div>
 
     )
