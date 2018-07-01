@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
+//import PropTypes from 'prop-types'
 import {Form, Input, Button} from 'semantic-ui-react';
 import Fetches from './../Fetches.js';
-import {connect} from 'react-redux';
-//import PropTypes from 'prop-types'
 let url = "http://localhost:3001/sessions/"
-
 class Login extends Component{
      constructor(){
         super();
@@ -17,27 +15,19 @@ class Login extends Component{
     handleSubmit = (event) => {
     event.preventDefault();
     console.log(event.target);
-    console.log("handleSubmit this.state",this.state);
+    console.log("THIS.STATE",this.state);
 
     const body = this.state
     Fetches.post(url,body)
     .then(response=>response.json())
     .then(json => {
       console.log("json", json)
+      localStorage.setItem('token', json.token);
+      localStorage.setItem('id', json.id);
 
-      if (json.status = "accepted") {
-        localStorage.setItem('token', json.token)
-        localStorage.setItem('id', json.id)
-
-      console.log("localStorage", localStorage)
-        console.log("history", this.props.history)
-
-        this.props.history.push("/home")
-      }
-      else{
-        console.log("alert", json.token);
-        alert("incorrect login creds! Try again")
-      }
+      console.log("localStorage", localStorage);
+      console.log("history", this.props.history);
+      this.props.history.push("/home")
     })
   }
   handleChange = (e) => {
@@ -46,7 +36,6 @@ class Login extends Component{
   }
 
     render() {
-      console.log("this.props",this.props);
         return (
             <div id="login">
                 <Form onSubmit={this.handleSubmit}>
@@ -71,18 +60,5 @@ class Login extends Component{
         );
     }
 }
-
-// function mapStateToProps(state) {
-//   return {
-//     email: state.email,
-//     password: state.email
-//   }
-// }
-// function mapDispatchToProps(dispatch) {
-//   return {
-//
-//     login: dispatch
-//   }
-// }
 
 export default Login;

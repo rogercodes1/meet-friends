@@ -7,7 +7,7 @@ import EventsCont from './Events/ExploreEventsCont';
 import ProfileCont from './Settings/Profile';
 import PlacesCont from './Places/ExplorePlacesCont';
 import MessagesCont from './Messages/MessagesCont';
-
+import {connect} from 'react-redux';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import AuthO from './AuthO'
 
