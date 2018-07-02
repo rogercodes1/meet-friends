@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 // import PropTypes from 'prop-types'
+import {connect} from 'react-redux';
 import { Card, Icon, Image, Button, Rating } from 'semantic-ui-react'
 let maps = "https://www.google.com/maps/place/"
 class PlaceCard extends Component {
@@ -10,8 +11,17 @@ class PlaceCard extends Component {
 
     }
   }
-  handleEvent = (e) => {
+  handleEventClick = (e) => {
     console.log(e.target);
+    this.props.dispatch( {
+      type: "ADD_EVENT",
+      payload: {
+        location_name: "name",
+        address: "address",
+        yelpLink: "",
+        
+      }
+    })
   }
   render(){
     const props = this.props;
@@ -39,7 +49,7 @@ class PlaceCard extends Component {
                <Icon name='yelp' /> Yelp
              </Button> </a>
 
-           <Button onClick={this.handleEvent} color='facebook'>
+           <Button onClick={this.handleEventClick} color='facebook'>
                  <Icon name='add circle' /> Event
                </Button>
 
@@ -52,7 +62,14 @@ class PlaceCard extends Component {
 
 }
 
-export default PlaceCard
+function mapStateToProps(state){
+  return{
+    eventDetails: state
+
+  }
+}
+
+export default connect(mapStateToProps)(PlaceCard)
 
 // <Card.Meta>
 //   <span>{props.location.display_address[1]}</span>

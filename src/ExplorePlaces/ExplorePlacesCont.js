@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 // import Fetches from "../Fetches.js";
 // import PropTypes from 'prop-types'
 import PlaceCard from './PlaceCard';
-import Search from '../Helpers/Search';
+import Search from './YelpSearch';
 
 import Loading from '../Helpers/Loading';
 const yelpApiKey=`${process.env.REACT_APP_API_KEY_YELP}`

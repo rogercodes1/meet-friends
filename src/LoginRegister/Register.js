@@ -47,7 +47,8 @@ class Register extends Component {
 
     event.preventDefault()
     const body = this.state
-    Fetches.post(url, body).then(response => response.json()).then(json => {
+    Fetches.post(url, body).then(response => response.json())
+    .then(json => {
     console.log("json", json);
     localStorage.setItem('token', json.token);
     localStorage.setItem('id', json.id);

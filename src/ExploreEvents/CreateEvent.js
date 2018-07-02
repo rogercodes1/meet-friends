@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux';
 //import PropTypes from 'prop-types'
 
 class CreateEvent extends Component{
@@ -12,10 +13,16 @@ class CreateEvent extends Component{
   render() {
     return (
       <div>
-        
+
       </div>
     );
   }
 }
 
-export default CreateEvent;
+function mapStateToProps(state){
+  return{
+
+  }
+}
+
+export default connect(mapStateToProps)(CreateEvent);
