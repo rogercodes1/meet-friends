@@ -7,19 +7,24 @@ class PlaceCard extends Component {
   constructor(props){
     super(props);
 
-    this.state = {
-
-    }
   }
   handleEventClick = (e) => {
     console.log(e.target);
+    debugger;
+    let yelp_image = "e.target.parentElement.parentElement.children.yelp_image.src"
+    let yelp_url = "e.target.parentElement.children.yelp_url.href"
+    let location_name = "e.target.parentElement.children.yelp_url.href"
+    let address = "e.target.parentElement.children.yelp_url.href"
+    let maps_link = "e.target.parentElement.children.yelp_url.href"
     this.props.dispatch( {
       type: "ADD_EVENT",
       payload: {
+        yelp_image: yelp_image,
         location_name: "name",
-        address: "address",
-        yelpLink: "",
-        
+        address: address,
+        maps_link: maps_link,
+        yelp_url: yelp_url,
+
       }
     })
   }
@@ -29,13 +34,13 @@ class PlaceCard extends Component {
     let fullAddress = (typeof(props.location)==="undefined") ? "loading" : props.location.display_address.join(' ')
     return (
     <div className="PlaceCard">
-        <Card  key={props.id} id={props.id}>
-          <Image className="PlaceCardImage" src={props.image_url} />
+        <Card id={props.id}>
+          <Image name="yelp_image" className="PlaceCardImage" src={props.image_url} />
           <Card.Content>
-            <Card.Header>{props.name} </Card.Header>
+            <Card.Header name="title">{props.name} </Card.Header>
 
           <Card.Description>
-            <a href={maps+fullAddress} target="_blank">{fullAddress}</a>
+            <a href={maps+fullAddress} name="map_link" target="_blank">{fullAddress}</a>
           </Card.Description>
           </Card.Content>
           <Card.Content extra>
@@ -44,7 +49,7 @@ class PlaceCard extends Component {
             <br />
             <span>  Price: {props.price}</span>
             <br />
-            <a href={props.url} target="_blank">
+            <a href={props.url} name="yelp_url" target="_blank">
               <Button color='red'>
                <Icon name='yelp' /> Yelp
              </Button> </a>

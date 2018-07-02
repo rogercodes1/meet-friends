@@ -1,31 +1,23 @@
+
 const defaultState={
-  event_name: "@gmail.com",
-  location_name: "p",
-  address: "",
-  description:"",
-  date:"",
-  host_id: "",
-  time:"",
-  duration: "",
-  friends: 3,
+  results : []
 }
 
 export default function reducer(state=defaultState,action) {
+
   switch(action.type)
     {
-      case "ADD_EVENT":
+      case "YELP_RESULTS":
         return {
-          ...state,
-          location_name: action.payload.location_name,
-          address: "",
-          yelpLink: "",
-        }
+          ...state, results: action.payload
+          }
 
     default:
       return state
   }
 
 }
+
 // const defaultState={
 //   first_name:"",
 //   last_name: "",

@@ -1,20 +1,21 @@
 import React, {Component} from 'react'
-// import Fetches from "../Fetches.js";
-// import PropTypes from 'prop-types'
+import Fetches from "../Fetches.js";
 import PlaceCard from './PlaceCard';
 import Search from './YelpSearch';
-
+import {connect} from 'react-redux';
+// import YelpResults from './reducer/yelp_reducer';
 import Loading from '../Helpers/Loading';
-const yelpApiKey=`${process.env.REACT_APP_API_KEY_YELP}`
-const url = "https://api.yelp.com/v3/businesses/search?term=smoothie&location=brooklyn, NY"
-const corsUrl="https://cors-anywhere.herokuapp.com/"
+const backendURL = "http://localhost:3001/api/v1/places/yelp"
+// const url = "https://api.yelp.com/v3/businesses/search?term=cookies&location=10004"
+// const corsUrl="https://cors-anywhere.herokuapp.com/"
+// const yelpApiKey=`${process.env.REACT_APP_API_KEY_YELP}`
 class ExplorePlacesCont extends Component {
             constructor(){
               super();
-              this.state = {
-                results:[]
-
-              }
+              // this.state = {
+              //   results:[]
+              //
+              // }
             }
 
 
@@ -24,20 +25,16 @@ componentDidMount(){
 
 }
 yelpFetch = () => {
-  const config = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": yelpApiKey}
-    }
-  fetch(corsUrl+url, config)
+
+  fetch(backendURL)
   .then(response=>response.json())
-  .then(results=>{ this.setState({results : results.businesses}
-,() => console.log("what is ",this.state.results) )
+  .then(yelp=>{
+    console.log(yelp.results.businesses);
+    this.props.setResults(yelp.results.businesses)
+
   })
+
 }
-
-
 
   render () {
     // let places = this.state.results.map(place=>{
@@ -45,16 +42,16 @@ yelpFetch = () => {
     //     key="place.id"
     //     id="place.id" place={place}/>
     // })
-    console.log(this.state.results);
-    // debugger;
+    console.log("what is", this.props.results);
+
     return(
       <div>
         <Search />
 
-        {(this.state.results === [] || this.state.results.length === 0 ) ? <Loading/> :
+        {(this.props.results.results === [] || this.props.results.results.length === 0 ) ? <Loading/> :
           <div className="ui four column grid">
             <div className="row">
-              {this.state.results.map(place=>{
+              {this.props.results.results.map(place=>{
                       return <PlaceCard
                         className="PlaceCard"
                           key={place.id}
@@ -73,9 +70,32 @@ yelpFetch = () => {
 
   }
 }
+function mapStateToProps(state){
+  return{
+    results: state
 
-export default ExplorePlacesCont;
+  }
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    setResults: (results) => dispatch({
+      type: "YELP_RESULTS",
+      payload: results
+    })
+  }
 
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(ExplorePlacesCont);
+
+
+
+// const config = {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//       "Authorization": yelpApiKey}
+//   }
 // const yelp = require('yelp-fusion');
 // const client = yelp.client(yelpApiKey);
 
