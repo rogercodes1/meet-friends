@@ -42,9 +42,11 @@
 }
 
 /* SearchBars */
-#SearchBarYelp{
-  margin-left: auto;
-  margin-right: auto;
+#SearchBarYelp, #CreateEvent{
+  margin: 10px auto;
+  border-radius: 20px;
+  border: 10px solid lightgrey;
+  padding: 20px;
   width:80%;
 }
 /* Google Maps */
@@ -52,4 +54,9 @@
   margin: 30px auto;
   height: 400px;
   width: 80%;
+}
+
+/* Create Event */
+#EventButtons{
+  margin-left: auto;
 }

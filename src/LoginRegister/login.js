@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Form, Input, Button} from 'semantic-ui-react';
 import Fetches from './../Fetches.js';
-import {connect} from 'react-redux';
+
 //import PropTypes from 'prop-types'
 let url = "http://localhost:3001/sessions/"
 
@@ -28,10 +28,8 @@ class Login extends Component{
       if (json.status = "accepted") {
         localStorage.setItem('token', json.token)
         localStorage.setItem('id', json.id)
-
-      console.log("localStorage", localStorage)
-        console.log("history", this.props.history)
-
+      // console.log("localStorage", localStorage)
+      //   console.log("history", this.props.history)
         this.props.history.push("/home")
       }
       else{

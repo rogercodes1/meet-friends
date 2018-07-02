@@ -1,40 +1,36 @@
 import React, {Component} from 'react'
-import Fetches from "../Fetches.js";
 import PlaceCard from './PlaceCard';
 import Search from './YelpSearch';
+import CreateEvent from '../ExploreEvents/CreateEvent';
+
 import {connect} from 'react-redux';
-// import YelpResults from './reducer/yelp_reducer';
 import Loading from '../Helpers/Loading';
+// import Fetches from "../Fetches.js";
+// import YelpResults from './reducer/yelp_reducer';
 const backendURL = "http://localhost:3001/api/v1/places/yelp"
-// const url = "https://api.yelp.com/v3/businesses/search?term=cookies&location=10004"
-// const corsUrl="https://cors-anywhere.herokuapp.com/"
-// const yelpApiKey=`${process.env.REACT_APP_API_KEY_YELP}`
+
 class ExplorePlacesCont extends Component {
-            constructor(){
-              super();
-              // this.state = {
-              //   results:[]
-              //
-              // }
-            }
-
-
 
 componentDidMount(){
   this.yelpFetch()
 
 }
 yelpFetch = () => {
-
   fetch(backendURL)
   .then(response=>response.json())
   .then(yelp=>{
     console.log(yelp.results.businesses);
     this.props.setResults(yelp.results.businesses)
-
   })
-
 }
+renderYelpResults = () => {
+  return this.props.results.map(place=>{
+      return <PlaceCard
+        className="PlaceCard"
+        key={place.id}
+        {...place}  />
+          })
+        }
 
   render () {
     // let places = this.state.results.map(place=>{
@@ -47,36 +43,27 @@ yelpFetch = () => {
     return(
       <div>
         <Search />
-
-        {(this.props.results.results === [] || this.props.results.results.length === 0 ) ? <Loading/> :
+        <CreateEvent />
+        {(this.props.results === [] || this.props.results.length === 0 ) ? <Loading/> :
           <div className="ui four column grid">
             <div className="row">
-              {this.props.results.results.map(place=>{
-                      return <PlaceCard
-                        className="PlaceCard"
-                          key={place.id}
-                          {...place}
-
-                          />
-                  })}
-
+              {this.renderYelpResults()}
             </div>
-          </div> }
-
-
+          </div>
+        }
       </div>
-
     )
-
   }
 }
+
 function mapStateToProps(state){
   return{
-    results: state
-
+    results: state.results
   }
 }
+
 function mapDispatchToProps(dispatch) {
+
   return {
     setResults: (results) => dispatch({
       type: "YELP_RESULTS",
@@ -88,7 +75,9 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(mapStateToProps,mapDispatchToProps)(ExplorePlacesCont);
 
-
+// const url = "https://api.yelp.com/v3/businesses/search?term=cookies&location=10004"
+// const corsUrl="https://cors-anywhere.herokuapp.com/"
+// const yelpApiKey=`${process.env.REACT_APP_API_KEY_YELP}`
 
 // const config = {
 //     method: "GET",

@@ -1,6 +1,7 @@
 
-const defaultState={
-  results : []
+const defaultState= {
+  results : [],
+  createEvent: false,
 }
 
 export default function reducer(state=defaultState,action) {
@@ -11,6 +12,10 @@ export default function reducer(state=defaultState,action) {
         return {
           ...state, results: action.payload
           }
+        case "YELP_EVENT":
+          return {
+            ...state, results: action.payload
+            }
 
     default:
       return state
