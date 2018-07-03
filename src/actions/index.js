@@ -17,3 +17,10 @@ export function createEventAction(event) {
     payload: event
   }
 }
+
+export function saveUserEventsAction(userEvents) {
+  return {
+    type: "USER_EVENTS",
+    payload: userEvents
+  }
+}

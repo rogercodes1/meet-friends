@@ -21,26 +21,13 @@ class EventForm extends Component{
     }
 }
 
-handleChange = (e, {name}) => {
-  console.log("e.target.value",e.target.value);
-  console.log("props",this.props);
-   // if (typeof(e.target.name) === "undefined"){
-   //   (this.setState({[name]: value}, () => { console.log(this.state) }))
-   //   } else {
-        this.setState({[e.target.name] : e.target.value}, () => {
-           console.log(this.state)}
-        )
-   //  }
+handleChange = (e) => {
+      this.setState({[e.target.name] : e.target.value})
 }
 handleSubmit = (event) => {
   event.preventDefault()
   const maps = "https://www.google.com/maps/place/"
-
-  console.log("state is ",this.state);
-  console.log("props is", this.props);
   let yelpData = this.props.selectEvent
-  console.log("yelpData", yelpData);
-  debugger;
   let address = yelpData.location.display_address.join(" ")
   const eventData = {
     ...this.state,
@@ -51,23 +38,16 @@ handleSubmit = (event) => {
     yelp_image: yelpData.image_url
 
   }
-  console.log("event data", eventData);
-  debugger;
   this.props.createEvent(eventData)
 
   Fetches.post(url, eventData)
   .then(response => response.json())
   .then(json => {
-  console.log("json", json);
-
-  console.log("history", this.props.history);
-  debugger;
-    this.props.history.push("/explore-events")
+  this.props.history.push("/home")
   })
 }
 
   render() {
-    console.log("what is selectEvent", this.props.selectEvent);
     let yelpBiz = this.props.selectEvent
     let address = (yelpBiz.length===0)? "Empire State Building, NY" : yelpBiz.location.display_address.join(" ")
     return (
@@ -147,7 +127,6 @@ handleSubmit = (event) => {
 }
 
 function mapStateToProps(state){
-  console.log("this is state", state);
   return{
     selectEvent:state.selectEvent
   }

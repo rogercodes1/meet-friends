@@ -33,6 +33,7 @@ renderYelpResults = () => {
         }
 
   render () {
+    debugger;
     return(
       <div id="ExplorePlacesCont">
         <Search />
