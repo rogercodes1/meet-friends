@@ -7,8 +7,11 @@ let maps = "https://www.google.com/maps/place/"
 class PlaceCard extends Component {
 
   handleEventClick = (e) => {
+    console.log("this.state",this.state);
+    console.log("display FOrm",this.props.displayForm);
+    console.log("props",this.props);
     console.log("this.props is ",this.props);
-    this.props.displayForm()
+    this.props.displayForm(true)
     this.props.selectEvent(this.props)
     window.scrollTo(0, 0)
   }
@@ -37,7 +40,7 @@ class PlaceCard extends Component {
                <Icon name='yelp' /> Yelp
              </Button> </a>
 
-           <Button onClick={this.handleEventClick} color='facebook'>
+           <Button onClick={this.handleEventClick.bind(this)} color='facebook'>
                  <Icon name='add circle' /> Event
                </Button>
 
@@ -53,7 +56,7 @@ class PlaceCard extends Component {
 function mapStateToProps(state){
   return{
     selectEvent: state.selectEvent,
-    displayForm: state.displayForm,
+    displayForm: state.boolean,
   }
 }
 function mapDispatchToProps(dispatch) {
@@ -61,8 +64,8 @@ function mapDispatchToProps(dispatch) {
     selectEvent: (selectedBusiness) => {
       dispatch(selectPlaceAction(selectedBusiness))
     },
-    displayForm: () => {
-      dispatch(displayFormAction())
+    displayForm: (toggleDisplay) => {
+      dispatch(displayFormAction(toggleDisplay))
     }
   }
 }

@@ -111,7 +111,7 @@ handleSubmit = (event) => {
 
           </Form.Group>
           <Form.Group >
-              <Form.Field control={Button}>Cancel</Form.Field>
+              <Button>Cancel</Button>
               <Form.Field control={Button}>Create Event</Form.Field>
           </Form.Group>
         </Form>

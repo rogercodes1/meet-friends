@@ -36,7 +36,7 @@ export default class SearchBar extends Component {
 
 
   render() {
-    const { isLoading, value } = this.state
+    // const { isLoading, value } = this.state
 
     return (
       <div id="SearchBarYelp">

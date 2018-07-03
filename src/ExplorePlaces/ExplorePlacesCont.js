@@ -10,7 +10,9 @@ import Loading from '../Helpers/Loading';
 const backendURL = "http://localhost:3001/api/v1/places/yelp"
 
 class ExplorePlacesCont extends Component {
-
+  state ={
+    boolean: this.props.boolean
+  }
 componentDidMount(){
   this.yelpFetch()
 
@@ -33,10 +35,16 @@ renderYelpResults = () => {
         }
 
   render () {
+    console.log("this.boolean Exp place cont", this.props.boolean);
+    console.log("this.displayForm Exp place cont", this.props.displayForm);
+
     return(
       <div id="ExplorePlacesCont">
         <Search />
-        <EventForm {...this.props}/>
+        {(this.props.boolean) ?
+            <EventForm {...this.props}/> : null
+        }
+
         {(this.props.results === [] || this.props.results.length === 0 ) ? <Loading/> :
           <div className="ui four column grid">
             <div className="row">
@@ -52,8 +60,8 @@ renderYelpResults = () => {
 function mapStateToProps(state){
   return{
     results: state.results,
-    displayForm: state.displayForm
-    // displayEventForm: state.displayForm
+    displayForm: state.boolean,
+    boolean: state.boolean
   }
 }
 
