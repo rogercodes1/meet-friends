@@ -10,9 +10,9 @@ import Loading from '../Helpers/Loading';
 const backendURL = "http://localhost:3001/api/v1/places/yelp"
 
 class ExplorePlacesCont extends Component {
-  state ={
-    boolean: this.props.boolean
-  }
+  // state ={
+  //   boolean: this.props.boolean
+  // }
 componentDidMount(){
   this.yelpFetch()
 
@@ -35,9 +35,6 @@ renderYelpResults = () => {
         }
 
   render () {
-    console.log("this.boolean Exp place cont", this.props.boolean);
-    console.log("this.displayForm Exp place cont", this.props.displayForm);
-
     return(
       <div id="ExplorePlacesCont">
         <Search />

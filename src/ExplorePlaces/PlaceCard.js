@@ -7,10 +7,7 @@ let maps = "https://www.google.com/maps/place/"
 class PlaceCard extends Component {
 
   handleEventClick = (e) => {
-    console.log("this.state",this.state);
-    console.log("display FOrm",this.props.displayForm);
-    console.log("props",this.props);
-    console.log("this.props is ",this.props);
+
     this.props.displayForm(true)
     this.props.selectEvent(this.props)
     window.scrollTo(0, 0)

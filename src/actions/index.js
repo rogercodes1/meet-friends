@@ -25,8 +25,6 @@ export function saveUserEventsAction(userEvents) {
   }
 }
 export function displayFormAction(boolean) {
-  console.log("displayForm Action",boolean);
-  debugger;
   return {
     type: "DISPLAY_FORM",
     payload: boolean
