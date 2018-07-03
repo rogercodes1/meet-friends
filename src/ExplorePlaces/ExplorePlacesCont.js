@@ -36,7 +36,7 @@ renderYelpResults = () => {
     return(
       <div id="ExplorePlacesCont">
         <Search />
-        <EventForm />
+        <EventForm {...this.props}/>
         {(this.props.results === [] || this.props.results.length === 0 ) ? <Loading/> :
           <div className="ui four column grid">
             <div className="row">

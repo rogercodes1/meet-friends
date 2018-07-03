@@ -8,19 +8,13 @@ class PlaceCard extends Component {
 
   handleEventClick = (e) => {
     console.log("this.props is ",this.props);
-    // console.log("this.props id is ",this.props.id);
-    // console.log("this.state is ",this.props.saveEvent);
 
-    // let yelp_image = "e.target.parentElement.parentElement.children.yelp_image.src"
-    // let yelp_url = "e.target.parentElement.children.yelp_url.href"
-    // let location_name = "e.target.parentElement.children.yelp_url.href"
-    // let address = "e.target.parentElement.children.yelp_url.href"
-    // let maps_link = "e.target.parentElement.children.yelp_url.href"
     this.props.selectEvent(this.props)
+    window.scrollTo(0, 0)
   }
   render(){
     const props = this.props;
-    let fullAddress = (typeof(props.location)==="undefined") ? "loading" : props.location.display_address.join(' ')
+  let fullAddress = (typeof(props.location)==="undefined") ? "loading" : props.location.display_address.join(' ')
     return (
     <div className="PlaceCard">
         <Card id={props.id}>

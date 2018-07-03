@@ -15,7 +15,7 @@ export default function reducer(state=defaultState,action) {
           ...state, results: action.payload
           }
       case "SELECT_EVENT":
-      console.log("made it");
+      console.log("made it SELECT_EVENT");
         return {
           ...state, selectEvent: action.payload
           }
@@ -23,6 +23,10 @@ export default function reducer(state=defaultState,action) {
         return {
           ...state, saveEvent: action.payload
           }
+      case "SHOW_EVENT":
+      return {
+        ...state
+      }
 
     default:
       return state

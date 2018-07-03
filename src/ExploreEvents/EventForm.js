@@ -1,42 +1,69 @@
 import React, {Component} from 'react'
 import {Form, Grid, Input, Button, Icon, TextArea} from 'semantic-ui-react';
+import Fetches from '../Fetches';
 import {connect} from 'react-redux';
 import {createEventAction, selectPlaceAction} from '../actions';
-let maps = "https://www.google.com/maps/place/"
-
-// import Fetches from "../Fetches.js";
-// let url ="http://localhost:3001/api/v1/places/yelp"
+const maps = "https://www.google.com/maps/place/"
+let url ="http://localhost:3001/api/v1/events/"
 
 class EventForm extends Component{
+  constructor(props){
+    super(props)
 
+    this.state ={
+      event_name: "",
+      description: "",
+      date: "2018-07-04",
+      duration: 0.5,
+      time: "21:00",
+      friends:3,
+      host_id: localStorage.id,
+    }
+}
 
-
-handleChange = (e, {value}) => {
-  console.log("this props is ",this.props);
+handleChange = (e, {name}) => {
+  console.log("e.target.value",e.target.value);
+  console.log("props",this.props);
    // if (typeof(e.target.name) === "undefined"){
    //   (this.setState({[name]: value}, () => { console.log(this.state) }))
    //   } else {
-   //      this.setState({[e.target.name] : e.target.value}, () => {
-   //         console.log(this.state)}
-   //      )
+        this.setState({[e.target.name] : e.target.value}, () => {
+           console.log(this.state)}
+        )
    //  }
 }
 handleSubmit = (event) => {
   event.preventDefault()
+  const maps = "https://www.google.com/maps/place/"
+
+  console.log("state is ",this.state);
+  console.log("props is", this.props);
+  let yelpData = this.props.selectEvent
+  console.log("yelpData", yelpData);
   debugger;
-  // host_id : localStorage.id
-  // const body = this.state
-  // Fetches.post(url, body).then(response => response.json())
-  // .then(json => {
-  // console.log("json", json);
-  // localStorage.setItem('token', json.token);
-  // localStorage.setItem('id', json.id);
-  // debugger;
-  //   // this.setState(user_id : json.id)
-  //
-  //   console.log("history", this.props.history);
-  //   this.props.history.push("/home")
-  // })
+  let address = yelpData.location.display_address.join(" ")
+  const eventData = {
+    ...this.state,
+    location_name: yelpData.name,
+    address: address,
+    yelp_url: yelpData.url,
+    maps_link: maps + address,
+    yelp_image: yelpData.image_url
+
+  }
+  console.log("event data", eventData);
+  debugger;
+  this.props.createEvent(eventData)
+
+  Fetches.post(url, eventData)
+  .then(response => response.json())
+  .then(json => {
+  console.log("json", json);
+
+  console.log("history", this.props.history);
+  debugger;
+    this.props.history.push("/explore-events")
+  })
 }
 
   render() {
@@ -64,7 +91,7 @@ handleSubmit = (event) => {
 
 
           <Grid.Column>
-            <Form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit.bind(this)}>
 
           <Form.Group>
             <Form.Field
@@ -127,8 +154,8 @@ function mapStateToProps(state){
 }
 function mapDispatchToProps(dispatch) {
   return {
-    createEvent: (saveEvent) => {
-      dispatch(createEventAction(saveEvent))
+    createEvent: (event) => {
+      dispatch(createEventAction(event))
     }
   }
 
@@ -138,8 +165,13 @@ const styles={
   height:"250px"
 }
 
-export default connect(mapStateToProps)(EventForm);
-//
+export default connect(mapStateToProps, mapDispatchToProps)(EventForm);
+//yelp fullAddress
+//yelp url
+//yelp image
+//yelp title
+// goog/e link
+
 // <Form.Field
 //   name="location_name"
 //    control={Input} onChange={this.handleChange} width={4} label="Location Name" type="text"  value={yelpBiz.name}/>

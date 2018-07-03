@@ -11,9 +11,9 @@ export function selectPlaceAction(selectedBusiness) {
   }
 }
 
-export function createEventAction(saveEvent) {
+export function createEventAction(event) {
   return {
     type: "CREATE_EVENT",
-    payload: saveEvent
+    payload: event
   }
 }
