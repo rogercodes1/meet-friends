@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import PlaceCard from './PlaceCard';
 import Search from './YelpSearch';
-import CreateEvent from '../ExploreEvents/CreateEvent';
-
+import EventForm from '../ExploreEvents/EventForm';
+import {setResultsAction} from '../actions';
 import {connect} from 'react-redux';
 import Loading from '../Helpers/Loading';
 // import Fetches from "../Fetches.js";
@@ -19,7 +19,7 @@ yelpFetch = () => {
   fetch(backendURL)
   .then(response=>response.json())
   .then(yelp=>{
-    console.log(yelp.results.businesses);
+    // console.log("yelp fetch",yelp.results.businesses);
     this.props.setResults(yelp.results.businesses)
   })
 }
@@ -33,17 +33,10 @@ renderYelpResults = () => {
         }
 
   render () {
-    // let places = this.state.results.map(place=>{
-    //   return <PlaceCard
-    //     key="place.id"
-    //     id="place.id" place={place}/>
-    // })
-    console.log("what is", this.props.results);
-
     return(
-      <div>
+      <div id="ExplorePlacesCont">
         <Search />
-        <CreateEvent />
+        <EventForm />
         {(this.props.results === [] || this.props.results.length === 0 ) ? <Loading/> :
           <div className="ui four column grid">
             <div className="row">
@@ -63,12 +56,10 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch) {
-
   return {
-    setResults: (results) => dispatch({
-      type: "YELP_RESULTS",
-      payload: results
-    })
+    setResults: (yelpArray) => {
+      dispatch(setResultsAction(yelpArray))
+    }
   }
 
 }

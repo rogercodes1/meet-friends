@@ -1,7 +1,9 @@
 
 const defaultState= {
   results : [],
-  createEvent: false,
+  createEvent: [],
+  selectEvent: [],
+  saveEvent: []
 }
 
 export default function reducer(state=defaultState,action) {
@@ -12,15 +14,19 @@ export default function reducer(state=defaultState,action) {
         return {
           ...state, results: action.payload
           }
-        case "YELP_EVENT":
-          return {
-            ...state, results: action.payload
-            }
+      case "SELECT_EVENT":
+      console.log("made it");
+        return {
+          ...state, selectEvent: action.payload
+          }
+      case "CREATE_EVENT":
+        return {
+          ...state, saveEvent: action.payload
+          }
 
     default:
       return state
   }
-
 }
 
 // const defaultState={

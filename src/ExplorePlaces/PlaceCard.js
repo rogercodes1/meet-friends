@@ -1,36 +1,25 @@
 import React,{Component} from 'react'
-// import PropTypes from 'prop-types'
-import {connect} from 'react-redux';
 import { Card, Icon, Image, Button, Rating } from 'semantic-ui-react'
+import {connect} from 'react-redux';
+import {selectPlaceAction} from '../actions';
+
 let maps = "https://www.google.com/maps/place/"
 class PlaceCard extends Component {
-  constructor(props){
-    super(props);
 
-  }
   handleEventClick = (e) => {
-    console.log(e.target);
-    debugger;
-    let yelp_image = "e.target.parentElement.parentElement.children.yelp_image.src"
-    let yelp_url = "e.target.parentElement.children.yelp_url.href"
-    let location_name = "e.target.parentElement.children.yelp_url.href"
-    let address = "e.target.parentElement.children.yelp_url.href"
-    let maps_link = "e.target.parentElement.children.yelp_url.href"
-    this.props.dispatch( {
-      type: "ADD_EVENT",
-      payload: {
-        yelp_image: yelp_image,
-        location_name: "name",
-        address: address,
-        maps_link: maps_link,
-        yelp_url: yelp_url,
+    console.log("this.props is ",this.props);
+    // console.log("this.props id is ",this.props.id);
+    // console.log("this.state is ",this.props.saveEvent);
 
-      }
-    })
+    // let yelp_image = "e.target.parentElement.parentElement.children.yelp_image.src"
+    // let yelp_url = "e.target.parentElement.children.yelp_url.href"
+    // let location_name = "e.target.parentElement.children.yelp_url.href"
+    // let address = "e.target.parentElement.children.yelp_url.href"
+    // let maps_link = "e.target.parentElement.children.yelp_url.href"
+    this.props.selectEvent(this.props)
   }
   render(){
     const props = this.props;
-    // console.log("display", props.location.display_address);
     let fullAddress = (typeof(props.location)==="undefined") ? "loading" : props.location.display_address.join(' ')
     return (
     <div className="PlaceCard">
@@ -69,12 +58,19 @@ class PlaceCard extends Component {
 
 function mapStateToProps(state){
   return{
-    eventDetails: state
+    selectEvent: state.selectEvent
 
   }
 }
+function mapDispatchToProps(dispatch) {
+  return {
+    selectEvent: (selectedBusiness) => {
+      dispatch(selectPlaceAction(selectedBusiness))
+    }
+  }
+}
 
-export default connect(mapStateToProps)(PlaceCard)
+export default connect(mapStateToProps,mapDispatchToProps)(PlaceCard)
 
 // <Card.Meta>
 //   <span>{props.location.display_address[1]}</span>
