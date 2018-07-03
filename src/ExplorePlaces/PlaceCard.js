@@ -1,14 +1,14 @@
 import React,{Component} from 'react'
 import { Card, Icon, Image, Button, Rating } from 'semantic-ui-react'
 import {connect} from 'react-redux';
-import {selectPlaceAction} from '../actions';
+import {selectPlaceAction, displayFormAction} from '../actions';
 
 let maps = "https://www.google.com/maps/place/"
 class PlaceCard extends Component {
 
   handleEventClick = (e) => {
     console.log("this.props is ",this.props);
-
+    this.props.displayForm()
     this.props.selectEvent(this.props)
     window.scrollTo(0, 0)
   }
@@ -52,59 +52,19 @@ class PlaceCard extends Component {
 
 function mapStateToProps(state){
   return{
-    selectEvent: state.selectEvent
-
+    selectEvent: state.selectEvent,
+    displayForm: state.displayForm,
   }
 }
 function mapDispatchToProps(dispatch) {
   return {
     selectEvent: (selectedBusiness) => {
       dispatch(selectPlaceAction(selectedBusiness))
+    },
+    displayForm: () => {
+      dispatch(displayFormAction())
     }
   }
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(PlaceCard)
-
-// <Card.Meta>
-//   <span>{props.location.display_address[1]}</span>
-// </Card.Meta>
-
-
-// <div className="ui column">
-//   <div
-//     className="ui card"
-//     key={place.id}
-//
-//   >
-//     <div className="image">
-//       <img alt="oh no!"
-//           name={place.id}
-//           src={place.image_url} />
-//     </div>
-//     <div className="content">
-//       <div className="header">
-//         {place.name}
-//       </div>
-//
-//       <div className="meta text-wrap">
-//         <small>{place.location.display_address[0]}</small>
-//       </div>
-//     </div>
-//     <div className="extra content">
-//       <span>
-//         <i className="icon heartbeat" />
-//         {place.price}
-//       </span>
-//
-//       <span>
-//         <i className="icon lightning" />
-//         {place.rating}
-//       </span>
-//       <span>
-//         <i className="icon shield" />
-//         {place.categories}
-//       </span>
-//     </div>
-//   </div>
-// </div>

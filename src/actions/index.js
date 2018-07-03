@@ -24,3 +24,9 @@ export function saveUserEventsAction(userEvents) {
     payload: userEvents
   }
 }
+export function displayFormAction(displayForm) {
+  return {
+    type: "DISPLAY_FORM",
+    payload: displayForm
+  }
+}

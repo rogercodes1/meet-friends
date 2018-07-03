@@ -4,7 +4,8 @@ const defaultState= {
   createEvent: [],
   selectEvent: [],
   saveEvent: [],
-  userEvents: []
+  userEvents: [],
+  displayForm: false
 }
 
 export default function reducer(state=defaultState,action) {
@@ -27,6 +28,10 @@ export default function reducer(state=defaultState,action) {
       case "USER_EVENTS":
       return {
         ...state, userEvents:action.payload
+      }
+      case "DISPLAY_FORM":
+      return {
+        ...state, displayForm:action.payload
       }
 
     default:

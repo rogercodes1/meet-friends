@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import PlaceCard from './PlaceCard';
 import Search from './YelpSearch';
 import EventForm from '../ExploreEvents/EventForm';
-import {setResultsAction, displayEventForm} from '../actions';
+import {setResultsAction, displayFormAction} from '../actions';
 import {connect} from 'react-redux';
 import Loading from '../Helpers/Loading';
 // import Fetches from "../Fetches.js";
@@ -33,7 +33,6 @@ renderYelpResults = () => {
         }
 
   render () {
-    debugger;
     return(
       <div id="ExplorePlacesCont">
         <Search />
@@ -52,7 +51,9 @@ renderYelpResults = () => {
 
 function mapStateToProps(state){
   return{
-    results: state.results
+    results: state.results,
+    displayForm: state.displayForm
+    // displayEventForm: state.displayForm
   }
 }
 
@@ -60,6 +61,9 @@ function mapDispatchToProps(dispatch) {
   return {
     setResults: (yelpArray) => {
       dispatch(setResultsAction(yelpArray))
+    },
+    displayForm: () => {
+      dispatch(displayFormAction())
     }
   }
 
