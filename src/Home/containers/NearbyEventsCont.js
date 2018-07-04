@@ -1,8 +1,8 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
-import {Menu, Segment} from 'semantic-ui-react';
+import {Menu, Segment, Card} from 'semantic-ui-react';
+import CurrentNearbyEvents from '../CurrentNearbyEvents';
 
-class NearbyEvents extends React.Component {
+class NearbyEventsCont extends React.Component {
   state = { activeItem: 'nearbyEvents' }
 
    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -11,7 +11,7 @@ class NearbyEvents extends React.Component {
     const { activeItem } = this.state
 
     return (
-      <div id="NearbyEvents">
+      <div className="HomeDisplayCont">
           <Menu pointing>
            <Menu.Item name='nearbyEvents' active={activeItem === 'nearbyEvents'} onClick={this.handleItemClick} />
            <Menu.Item
@@ -28,7 +28,9 @@ class NearbyEvents extends React.Component {
          </Menu>
 
          <Segment>
-           Segment
+           <Card.Group id="NearbyEventsCard">
+           <CurrentNearbyEvents/>
+           </Card.Group>
 
          </Segment>
       </div>
@@ -37,4 +39,4 @@ class NearbyEvents extends React.Component {
   }
 }
 
-export default NearbyEvents;
+export default NearbyEventsCont;

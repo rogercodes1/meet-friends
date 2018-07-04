@@ -25,7 +25,7 @@ class Login extends Component{
     .then(json => {
       console.log("json", json)
 
-      if (json.status = "accepted") {
+      if (json.status === "accepted") {
         localStorage.setItem('token', json.token)
         localStorage.setItem('id', json.id)
       // console.log("localStorage", localStorage)

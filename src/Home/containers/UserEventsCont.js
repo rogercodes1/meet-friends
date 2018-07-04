@@ -1,6 +1,5 @@
 import React from 'react'
-import {Menu, Segment, Button, Card, Image} from 'semantic-ui-react';
-import {connect} from 'react-redux';
+import {Menu, Segment, Card} from 'semantic-ui-react';
 import CurrentUserEvents from '../CurrentUserEvents';
 
 class UserEventsCont extends React.Component {
@@ -10,9 +9,8 @@ class UserEventsCont extends React.Component {
 
   render () {
     const { activeItem } = this.state
-    console.log("PROPS props", this.props);
     return (
-      <div id="UserEventsCont">
+      <div className="HomeDisplayCont">
           <Menu pointing>
            <Menu.Item name='currentEvents' active={activeItem === 'currentEvents'} onClick={this.handleItemClick} />
            <Menu.Item

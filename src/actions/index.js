@@ -30,3 +30,9 @@ export function displayFormAction(boolean) {
     payload: boolean
   }
 }
+export function displayNearbyEventsAction(allEvents) {
+  return {
+    type: "NEARBY_EVENTS",
+    payload: allEvents
+  }
+}

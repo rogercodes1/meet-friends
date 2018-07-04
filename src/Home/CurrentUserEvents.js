@@ -1,15 +1,10 @@
 import React from 'react'
-import {Menu, Segment, Button, Card, Image} from 'semantic-ui-react';
-// import Fetches from "../Fetches.js";
+import {Button, Card, Image} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {saveUserEventsAction} from '../actions';
-
 const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
 
 class CurrentUserEvents extends React.Component {
-  state = { activeItem: 'currentEvents' }
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
 componentDidMount(){
   this.fetchCurrentUserEvents()
@@ -19,7 +14,6 @@ fetchCurrentUserEvents = () => {
     fetch(url)
     .then(response=>response.json())
     .then(userData=>{
-      console.log("user fetch",userData)
     this.props.saveUserEvents(userData.events)
     })
 }
@@ -55,15 +49,12 @@ displayCurrentUserEvents = (events) => {
 }
 
   render () {
-    const { activeItem } = this.state
-
     return (
 
            <Card.Group id="UserEventCard">
            {this.displayCurrentUserEvents(this.props.userEvents)}
            </Card.Group>
     )
-
   }
 }
 
