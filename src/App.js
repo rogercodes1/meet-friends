@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './Assets/App.css';
 import NavBar from './NavBar.js';
 import RegisterCont from './LoginRegister/LogRegCont';
-import HomeCont from './Home/HomeCont';
+import HomeCont from './Home/containers/HomeCont';
 import EventsCont from './ExploreEvents/ExploreEventsCont';
 import ProfileCont from './Settings/Profile';
 import PlacesCont from './ExplorePlaces/ExplorePlacesCont';

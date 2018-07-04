@@ -1,3 +1,9 @@
+/*Color Templates:
+meetup: #e51937
+darker red: #aa0e25
+darker meetup: #d00c29
+  */
+
 .App {
   text-align: center;
 }
@@ -6,7 +12,7 @@
   height: 80px;
 }
 .App-header {
-  background-color: #222;
+  background-color: #aa0e25;
   height: 100px;
   padding: 20px;
   color: white;
@@ -38,7 +44,7 @@
 
 /* Loading CSS Component */
 #Loading{
-  background-color: black;
+  background-color: #222;
   margin: 100px;
   padding: 100px;
 }
@@ -47,7 +53,7 @@
 #SearchBarYelp, #EventForm{
   margin: 10px auto;
   border-radius: 20px;
-  border: 10px solid lightgrey;
+  border: 10px solid #aa0e25;
   padding: 20px;
   width:80%;
 }
