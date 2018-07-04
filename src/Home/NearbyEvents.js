@@ -3,7 +3,7 @@ import React from 'react'
 import {Menu, Segment} from 'semantic-ui-react';
 
 class NearbyEvents extends React.Component {
-  state = { activeItem: 'home' }
+  state = { activeItem: 'nearbyEvents' }
 
    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
@@ -13,15 +13,15 @@ class NearbyEvents extends React.Component {
     return (
       <div id="NearbyEvents">
           <Menu pointing>
-           <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+           <Menu.Item name='nearbyEvents' active={activeItem === 'nearbyEvents'} onClick={this.handleItemClick} />
            <Menu.Item
-             name='messages'
-             active={activeItem === 'messages'}
+             name='bars'
+             active={activeItem === 'bars'}
              onClick={this.handleItemClick}
            />
            <Menu.Item
-             name='friends'
-             active={activeItem === 'friends'}
+             name='Restaurants'
+             active={activeItem === 'Restaurants'}
              onClick={this.handleItemClick}
            />
 

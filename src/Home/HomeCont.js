@@ -1,5 +1,5 @@
 import React from 'react'
-import UserEvents from './UserEvents';
+import UserEventsCont from './UserEventsCont';
 import NearbyEvents from './NearbyEvents';
 
 // import PropTypes from 'prop-types'
@@ -9,7 +9,7 @@ class HomeCont extends React.Component {
     return (
       <div>
         HomeCont
-        <UserEvents />
+        <UserEventsCont />
         <NearbyEvents />
       </div>
     )

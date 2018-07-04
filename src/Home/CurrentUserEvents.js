@@ -6,18 +6,16 @@ import {saveUserEventsAction} from '../actions';
 
 const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
 
-class UserEvents extends React.Component {
+class CurrentUserEvents extends React.Component {
   state = { activeItem: 'currentEvents' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
 componentDidMount(){
-  this.fetchUserEvents()
+  this.fetchCurrentUserEvents()
 }
 
-
-fetchUserEvents = () => {
-  console.log("whati is ",localStorage);
+fetchCurrentUserEvents = () => {
     fetch(url)
     .then(response=>response.json())
     .then(userData=>{
@@ -25,7 +23,7 @@ fetchUserEvents = () => {
     this.props.saveUserEvents(userData.events)
     })
 }
-displayUserEvents = (events) => {
+displayCurrentUserEvents = (events) => {
   console.log(events);
   return events.map(event=>{
     return(
@@ -58,30 +56,12 @@ displayUserEvents = (events) => {
 
   render () {
     const { activeItem } = this.state
-    console.log("PROPS props", this.props);
+
     return (
-      <div id="UserEvents">
-          <Menu pointing>
-           <Menu.Item name='currentEvents' active={activeItem === 'currentEvents'} onClick={this.handleItemClick} />
-           <Menu.Item
-             name='savedEvents'
-             active={activeItem === 'savedEvents'}
-             onClick={this.handleItemClick}
-           />
-           <Menu.Item
-             name='pastEvents'
-             active={activeItem === 'pastEvents'}
-             onClick={this.handleItemClick}
-           />
 
-         </Menu>
-
-         <Segment>
            <Card.Group id="UserEventCard">
-           {this.displayUserEvents(this.props.userEvents)}
-         </Card.Group>
-         </Segment>
-      </div>
+           {this.displayCurrentUserEvents(this.props.userEvents)}
+           </Card.Group>
     )
 
   }
@@ -102,4 +82,4 @@ function mapDispatchToProps(dispatch) {
 
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(UserEvents);
+export default connect(mapStateToProps,mapDispatchToProps)(CurrentUserEvents);
