@@ -8,7 +8,7 @@ const defaultState= {
   boolean: false,
   nearbyEvents:[],
   yelpSearch: {
-    searchTerm: "Pie",
+    searchTerm: "",
     location: "10004"
   },
   yelpSubmit: {

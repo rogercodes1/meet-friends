@@ -47,10 +47,9 @@ class Register extends Component {
 
     event.preventDefault()
     const body = this.state
-    Fetches.post(url, body).then(response => response.json())
+    Fetches.post(url, body)
+    .then(response => response.json())
     .then(json => {
-    console.log("json", json);
-    debugger;
     if (json.status === "accepted"){
       localStorage.setItem('token', json.token);
       localStorage.setItem('id', json.id);
@@ -65,9 +64,6 @@ class Register extends Component {
   }
 
   render() {
-
-    // console.log("Confirm", verify.LegalAge(("2011,5,29"), ("2010,6,29")))
-
     return (
       <div id="register">
       <Form onSubmit={this.handleSubmit}>

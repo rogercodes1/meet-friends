@@ -10,14 +10,12 @@ export function selectPlaceAction(selectedBusiness) {
     payload: selectedBusiness
   }
 }
-
 export function createEventAction(event) {
   return {
     type: "CREATE_EVENT",
     payload: event
   }
 }
-
 export function saveUserEventsAction(userEvents) {
   return {
     type: "USER_EVENTS",
