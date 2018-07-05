@@ -29,7 +29,7 @@ darker meetup: #d00c29
 
 /*Explore Places CSS  */
 
-#ExplorePlacesCont{
+#ExplorePlacesCont, #ExploreNearbyList{
   margin:0 auto;
 }
 .PlaceCard{
@@ -62,6 +62,10 @@ darker meetup: #d00c29
   margin: 30px auto;
   height: 400px;
   width: 80%;
+}
+
+#ExploreNearbyList{
+  width: 90%;
 }
 
 /* Create Event */

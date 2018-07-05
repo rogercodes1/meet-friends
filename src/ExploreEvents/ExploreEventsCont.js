@@ -1,6 +1,9 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
+import EventsList from './EventsList';
 // import GoogleMapEvents from 'google-map-react';
+import {Card} from 'semantic-ui-react';
+
 import EventsMap from './EventsMap';
 class ExploreEventsCont extends React.Component {
 
@@ -12,7 +15,12 @@ class ExploreEventsCont extends React.Component {
     return(
       <div>
         <EventsMap/>
-        Nothing to show
+          <Card.Group id="ExploreNearbyList">
+
+            <EventsList/>
+
+          </Card.Group>
+
       </div>
     )
 

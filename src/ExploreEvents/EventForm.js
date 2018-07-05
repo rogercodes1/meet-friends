@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Form, Grid, Input, Button, Icon, TextArea} from 'semantic-ui-react';
 import Fetches from '../Fetches';
 import {connect} from 'react-redux';
-import {createEventAction, selectPlaceAction} from '../actions';
+import {createEventAction} from '../actions';
 const maps = "https://www.google.com/maps/place/"
 let url ="http://localhost:3001/api/v1/events/"
 
@@ -111,8 +111,8 @@ handleSubmit = (event) => {
 
           </Form.Group>
           <Form.Group >
-              <Button>Cancel</Button>
-              <Form.Field control={Button}>Create Event</Form.Field>
+              <Button negative>Cancel</Button>
+              <Form.Field color="facebook" control={Button}>Create Event</Form.Field>
           </Form.Group>
         </Form>
         </Grid.Column>
