@@ -38,7 +38,7 @@ displayCurrentUserEvents = (events) => {
           <Button basic color='blue'>
             Message
           </Button>
-          <Button  basic color='red'>
+          <Button  href={event.maps_link} target="_blank" basic color='red'>
             Google Maps
           </Button>
         </div>

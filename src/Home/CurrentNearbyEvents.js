@@ -37,7 +37,7 @@ displayNearbyEvents = (events) => {
           <Button basic color='blue'>
             Join
           </Button>
-          <Button  basic color='red'>
+          <Button  href={event.maps_link} target="_blank" basic color='red'>
             Google Maps
           </Button>
         </div>
