@@ -2,62 +2,34 @@ import React, {Component} from 'react'
 import PlaceCard from './PlaceCard';
 import Search from './YelpSearch';
 import EventForm from '../ExploreEvents/EventForm';
-import {setResultsAction, displayFormAction} from '../actions';
+import {setYelpResultsAction, displayFormAction} from '../actions';
 import {connect} from 'react-redux';
 import Loading from '../Helpers/Loading';
 import Fetches from './../Fetches.js';
 
-
-const backendURL = "http://localhost:3001/api/v1/places/yelp"
+const URL = "http://localhost:3001/places?"
 
 class ExplorePlacesCont extends Component {
   state = {
     searchTerm:"seafood",
     location: "lamont, ca",
+    radius: 2000,
+    limit: 20,
   }
 
 componentDidMount(){
   this.yelpFetch()
-
 }
-
 yelpFetch = () => {
-  // fetch(backendURL, {
-  //   method: "POST",
-  //   headers: {
-  //     "Accept": "application/json",
-  //     "Content-Type": "application/json"
-  //   },
-  //   body: JSON.stringify({
-  //     searchTerm: "ramen",
-  //     location: "10004"
-  //   })
-  // })
-  //   .then(res => res.json())
-  //   .then(json => {debugger})
-  //
-  // const params = this.props.yelpSubmit
-  // console.log("params", params);
-  // Fetches.post(backendURL,params)
-  fetch(backendURL)
+  const params = this.props.yelpSubmit
+
+  console.log("params", params);
+  Fetches.yelpGet(URL, params)
   .then(response=>response.json())
   .then(yelp=>{
-    console.log("yelp fetch",yelp.results.businesses);
     this.props.setResults(yelp.results.businesses)
   })
-  // fetch(backendURL, {
-  //   method: "POST",
-  //   headers: {
-  //     Accept: "application/json",
-  //     "Content-Type": "application/json"
-  //   },
-  //   body: JSON.stringify({
-  //     searchTerm: "ramen",
-  //     location: "10004"
-  //   })
-  // })
-  //   .then(res => res.json())
-  //   .then(json => {debugger})
+
 
 }
 
@@ -71,7 +43,6 @@ renderYelpResults = () => {
         }
 
   render () {
-    console.log("epc", this.props.yelpSearch);
     return(
       <div id="ExplorePlacesCont">
         <Search />
@@ -96,14 +67,14 @@ function mapStateToProps(state){
     results: state.results,
     displayForm: state.boolean,
     boolean: state.boolean,
-    yelpSubmit: state.yelpSubmit,
+    yelpSubmit: state.yelpParams,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     setResults: (yelpArray) => {
-      dispatch(setResultsAction(yelpArray))
+      dispatch(setYelpResultsAction(yelpArray))
     },
     displayForm: () => {
       dispatch(displayFormAction())

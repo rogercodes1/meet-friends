@@ -1,4 +1,4 @@
-export function setResultsAction(results) {
+export function setYelpResultsAction(results) {
   return {
     type: "YELP_RESULTS",
     payload: results
@@ -34,15 +34,9 @@ export function displayNearbyEventsAction(allEvents) {
     payload: allEvents
   }
 }
-export function yelpSubmitAction(searchTerm) {
+export function setYelpParamsAction(yelpParams) {
   return {
-    type: "YELP_SUBMIT",
-    payload: searchTerm
-  }
-}
-export function yelpSearchAction(searchTerm) {
-  return {
-    type: "YELP_SEARCH",
-    payload: searchTerm
+    type: "YELP_PARAMS",
+    payload: yelpParams
   }
 }

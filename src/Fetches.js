@@ -1,4 +1,3 @@
-const yelpApiKey=`${process.env.REACT_APP_API_KEY_YELP}`
 
 
 const Fetches = {
@@ -13,20 +12,12 @@ const Fetches = {
       },
       body: JSON.stringify(body)
     };
-    debugger
-    return fetch(URL, config);
-  },
-  yelpGet: function(URL) {
-    const config = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": yelpApiKey,
-      },
-      // body: JSON.stringify(body)
-    };
 
     return fetch(URL, config);
+  },
+  yelpGet: function(URL, params) {
+    const fullURL = `${URL}term=${params.searchTerm}&location=${params.location}&radius=${params.radius}&limit=${params.limit}`
+    return fetch(fullURL);
   },
   patch: function(URL, body) {
     const config = {

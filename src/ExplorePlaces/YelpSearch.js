@@ -1,26 +1,27 @@
 import React, { Component } from 'react'
 import { Form, Input, Icon, Button } from 'semantic-ui-react'
 import {connect} from 'react-redux';
-import {yelpSearchAction, yelpSubmitAction} from '../actions';
+import {setYelpParamsAction, setYelpResultsAction} from '../actions';
 import Fetches from './../Fetches.js';
-const url = "http://localhost:3001/api/v1/places"
+const url = "http://localhost:3001/places?"
 
 
 class YelpSearch  extends Component {
   state = {
     searchTerm:"seafood",
     location: "lamont, ca",
+    radius: 2000,
+    limit: 20,
   }
   handleSubmit = () => {
-    let body = this.state
+    let params = this.state
     console.log("this.state", this.state);
-    this.props.submitYelpSearch(this.state)
-    debugger;
-    Fetches.post(url, body)
+    this.props.setYelpParams(this.state)
+    Fetches.yelpGet(url, params)
     .then(response => response.json())
-    .then(json => {
-    console.log("json", json)
-    debugger
+    .then(yelp => {
+      console.log("what is yelp",yelp)
+      this.props.setNewResults(yelp.results.businesses)
   })
 }
   handleChange = (e) => {
@@ -29,8 +30,6 @@ class YelpSearch  extends Component {
       ()=>console.log(this.state))
 
   }
-
-
   render() {
     console.log("yelSubmit",this.props.yelpSubmit);
     return (
@@ -71,10 +70,12 @@ function mapStateToProps(state) {
   }
 }
 function mapDispatchToProps(dispatch){
-  console.log(dispatch);
   return{
-    submitYelpSearch:(searchState) => {
-      dispatch(yelpSubmitAction(searchState))
+    setNewResults:(yelpArray) => {
+      dispatch(setYelpResultsAction(yelpArray))
+    },
+    setYelpParams:(yelpArray) => {
+      dispatch(setYelpParamsAction(yelpArray))
     }
   }
 }
