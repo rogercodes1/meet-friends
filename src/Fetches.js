@@ -2,10 +2,10 @@ const yelpApiKey=`${process.env.REACT_APP_API_KEY_YELP}`
 
 
 const Fetches = {
-  get: function(URI) {
-    return fetch(URI);
+  get: function(URL) {
+    return fetch(URL);
   },
-  post: function(URI, body) {
+  post: function(URL, body) {
     const config = {
       method: "POST",
       headers: {
@@ -14,9 +14,9 @@ const Fetches = {
       body: JSON.stringify(body)
     };
     debugger
-    return fetch(URI, config);
+    return fetch(URL, config);
   },
-  yelpGet: function(URI) {
+  yelpGet: function(URL) {
     const config = {
       method: "GET",
       headers: {
@@ -26,9 +26,9 @@ const Fetches = {
       // body: JSON.stringify(body)
     };
 
-    return fetch(URI, config);
+    return fetch(URL, config);
   },
-  patch: function(URI, body) {
+  patch: function(URL, body) {
     const config = {
       method: "PATCH",
       headers: {
@@ -37,14 +37,14 @@ const Fetches = {
       body: JSON.stringify(body)
     };
 
-    return fetch(URI, config);
+    return fetch(URL, config);
   },
-  delete: function(URI) {
+  delete: function(URL) {
     const config = {
       method: "DELETE",
     };
 
-    return fetch(URI, config);
+    return fetch(URL, config);
   }
 }
 
