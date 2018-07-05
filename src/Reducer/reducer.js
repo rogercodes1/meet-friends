@@ -7,6 +7,14 @@ const defaultState= {
   userEvents: [],
   boolean: false,
   nearbyEvents:[],
+  yelpSearch: {
+    searchTerm: "Pie",
+    location: "10004"
+  },
+  yelpSubmit: {
+    searchTerm: "Ramen",
+    location: "10004"
+  },
 }
 
 export default function reducer(state=defaultState,action) {
@@ -36,6 +44,14 @@ export default function reducer(state=defaultState,action) {
       case "NEARBY_EVENTS":
         return {
           ...state, nearbyEvents: action.payload
+        }
+      case "YELP_SEARCH":
+        return {
+          ...state, yelpSearch: action.payload
+        }
+      case "YELP_SUBMIT":
+        return {
+          ...state, yelpSubmit: action.payload
         }
 
     default:

@@ -50,7 +50,7 @@ darker meetup: #d00c29
 }
 
 /* SearchBars */
-#SearchBarYelp, #EventForm{
+#YelpSearch, #EventForm{
   margin: 10px auto;
   border-radius: 20px;
   border: 10px solid #aa0e25;

@@ -36,3 +36,15 @@ export function displayNearbyEventsAction(allEvents) {
     payload: allEvents
   }
 }
+export function yelpSubmitAction(searchTerm) {
+  return {
+    type: "YELP_SUBMIT",
+    payload: searchTerm
+  }
+}
+export function yelpSearchAction(searchTerm) {
+  return {
+    type: "YELP_SEARCH",
+    payload: searchTerm
+  }
+}
