@@ -22,17 +22,11 @@ componentDidMount(){
 }
 yelpFetch = () => {
   const params = this.props.yelpSubmit
-
-  console.log("params", params);
   Fetches.yelpGet(URL, params)
   .then(response=>response.json())
-  .then(yelp=>{
-    this.props.setResults(yelp.results.businesses)
+  .then(yelp=>{this.props.setResults(yelp.results.businesses)
   })
-
-
 }
-
 renderYelpResults = () => {
   return this.props.results.map(place=>{
       return <PlaceCard
@@ -49,7 +43,6 @@ renderYelpResults = () => {
         {(this.props.boolean) ?
             <EventForm {...this.props}/> : null
         }
-
         {(this.props.results === [] || this.props.results.length === 0 ) ? <Loading/> :
           <div className="ui four column grid">
             <div className="row">

@@ -40,3 +40,10 @@ export function setYelpParamsAction(yelpParams) {
     payload: yelpParams
   }
 }
+
+export function profileAction(profile) {
+  return {
+    type: "USER_PROFILE",
+    payload: profile
+  }
+}

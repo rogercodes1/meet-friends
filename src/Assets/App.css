@@ -33,7 +33,7 @@ darker meetup: #d00c29
   margin:0 auto;
 }
 .PlaceCard{
-  max-height: 420px;
+  height: 450px;
   margin: 20px;
   padding:20px;
 }
@@ -65,7 +65,7 @@ darker meetup: #d00c29
 }
 
 #ExploreNearbyList{
-  width: 90%;
+  width: 80%;
 }
 
 /* Create Event */

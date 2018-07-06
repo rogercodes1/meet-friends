@@ -16,8 +16,6 @@ class Login extends Component{
     }
     handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target);
-    console.log("handleSubmit this.state",this.state);
 
     const body = this.state
     Fetches.post(url,body)
@@ -29,7 +27,7 @@ class Login extends Component{
         localStorage.setItem('token', json.token)
         localStorage.setItem('id', json.id)
       // console.log("localStorage", localStorage)
-      //   console.log("history", this.props.history)
+        console.log("history", this.props.history)
         this.props.history.push("/home")
       }
       else{
@@ -44,7 +42,7 @@ class Login extends Component{
   }
 
     render() {
-      console.log("this.props",this.props);
+      console.log("this.props.history",this.props.history);
         return (
             <div id="login">
                 <Form onSubmit={this.handleSubmit}>

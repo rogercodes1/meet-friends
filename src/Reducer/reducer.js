@@ -5,6 +5,7 @@ const defaultState= {
   selectEvent: [],
   saveEvent: [],
   userEvents: [],
+  profile: [],
   boolean: false,
   nearbyEvents:[],
   yelpParams: {
@@ -46,6 +47,10 @@ export default function reducer(state=defaultState,action) {
       case "YELP_PARAMS":
         return {
           ...state, yelpParams: action.payload
+        }
+      case "USER_PROFILE":
+        return {
+          ...state, profile: action.payload
         }
 
     default:

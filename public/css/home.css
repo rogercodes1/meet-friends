@@ -11,6 +11,11 @@
   margin-bottom: 30px; */
 
 }
+#HomeCardImg{
+  width: 150px;
+  min-height:180px;
+  height: 180px;
+}
 
 /* #NearbyEvents{
   border: 10px solid lightgrey;
