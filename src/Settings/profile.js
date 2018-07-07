@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Button, Image, Icon} from 'semantic-ui-react';
+import {Image, Card, Icon} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {profileAction} from '../actions';
 

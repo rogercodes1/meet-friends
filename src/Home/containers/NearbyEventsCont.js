@@ -1,6 +1,6 @@
 import React from 'react'
 import {Menu, Segment, Card} from 'semantic-ui-react';
-import CurrentNearbyEvents from '../CurrentNearbyEvents';
+import CurrentNearbyEvents from '../HomeCurrentNearbyEvents';
 
 class NearbyEventsCont extends React.Component {
   state = { activeItem: 'nearbyEvents' }

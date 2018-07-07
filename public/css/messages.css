@@ -19,7 +19,7 @@
 
 
 }
-#EventMessages{
+#MessageEventBox{
   border: 3px solid #aa0e25;
   display: inline-block;
   position:fixed;

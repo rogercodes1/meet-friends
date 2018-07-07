@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Card, Image} from 'semantic-ui-react';
+import {Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {displayNearbyEventsAction} from '../actions';
 import {displayNearbyEvents} from '../Helpers/EventCard';
