@@ -23,14 +23,13 @@ fetchCurrentUserEvents = () => {
 
 
   render () {
-    console.log("displayUserEvents",displayUserEvents);
-    return (
 
+    return (
            <Card.Group id="UserEventCard">
            {displayUserEvents(this.props.userEvents)}
            </Card.Group>
-    )
-  }
+          )
+    }
 }
 
 function mapStateToProps(state){
