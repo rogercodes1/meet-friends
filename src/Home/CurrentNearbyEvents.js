@@ -30,7 +30,6 @@ fetchNearbyEvents = () => {
 }
 
 function mapStateToProps(state){
-  console.log("what is state map props nearby",state.nearbyEvents);
   return{
     nearbyEvents: state.nearbyEvents
   }

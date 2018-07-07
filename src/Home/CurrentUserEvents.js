@@ -21,10 +21,10 @@ fetchCurrentUserEvents = () => {
 
   render () {
     return (
-           <Card.Group id="UserEventCard">
-            {/*display events is in Helpers/EventCard*/}
-           {displayUserEvents(this.props.userEvents)}
-           </Card.Group>
+       <Card.Group id="UserEventCard">
+        {/*display events is in Helpers/EventCard*/}
+       {displayUserEvents(this.props.userEvents)}
+       </Card.Group>
           )
     }
 }

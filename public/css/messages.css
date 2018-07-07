@@ -2,6 +2,11 @@
 
 
 }
+#CardMessage{
+  margin: -5px;
+  margin-bottom: -10px;
+  padding: 0px;
+}
 
 #MessageList{
   border: 3px solid #aa0e25;
