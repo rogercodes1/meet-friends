@@ -19,7 +19,7 @@ export function CardDetails(image, event_name, location, description){
 export function CardContentButtons(url, maps, time, date, address, text){
   return (
     <Card.Content extra>
-      <Card.Description>Time: {time} Date:{date}</Card.Description>
+      <Card.Description floated="left">Time: {time} Date:{date}</Card.Description>
         <Card.Meta>{address} </Card.Meta>
     <div className='ui three buttons'>
       <Button href={url} target="_blank" basic color='red'>

@@ -12,6 +12,7 @@ class PlaceCard extends Component {
     this.props.selectEvent(this.props)
     window.scrollTo(0, 0)
   }
+  
   render(){
     const props = this.props;
   let fullAddress = (typeof(props.location)==="undefined") ? "loading" : props.location.display_address.join(' ')
@@ -20,7 +21,7 @@ class PlaceCard extends Component {
         <Card id={props.id}>
           <Image name="yelp_image" className="PlaceCardImage" src={props.image_url} />
           <Card.Content>
-            <Card.Header name="title">{props.name} </Card.Header>
+            <Card.Header className="PlaceCardTitle" name="title">{props.name} </Card.Header>
 
           <Card.Description>
             <a href={maps+fullAddress} name="map_link" target="_blank">{fullAddress}</a>

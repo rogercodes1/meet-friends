@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import PlaceCard from './PlaceCard';
 import Search from './YelpSearch';
-import EventForm from '../ExploreEvents/EventForm';
+import EventForm from './EventForm';
 import {setYelpResultsAction, displayFormAction} from '../actions';
+import { Card } from 'semantic-ui-react'
+
 import {connect} from 'react-redux';
 import Loading from '../Helpers/Loading';
 import Fetches from './../Fetches.js';
@@ -46,7 +48,9 @@ renderYelpResults = () => {
         {(this.props.results === [] || this.props.results.length === 0 ) ? <Loading/> :
           <div className="ui four column grid">
             <div className="row">
+              <Card.Group centered>
               {this.renderYelpResults()}
+              </Card.Group>
             </div>
           </div>
         }

@@ -35,10 +35,13 @@ darker meetup: #d00c29
 .PlaceCard{
   height: 450px;
   margin: 20px;
-  padding:20px;
+  padding:20px 10px;
 }
 .PlaceCardImage{
   height: 250px;
+}
+.PlaceCardTitle{
+  height: 60px;
 }
 
 
