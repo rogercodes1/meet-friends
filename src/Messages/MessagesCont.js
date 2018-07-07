@@ -1,11 +1,13 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import MessageList from './MessageList';
+import EventMessages from './EventMessages';
 
 class MessagesCont extends React.Component {
   render () {
     return(
       <div>
-        MessagesCont
+        <MessageList />
+        <EventMessages />
       </div>
     )
 

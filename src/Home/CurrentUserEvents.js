@@ -35,12 +35,13 @@ displayCurrentUserEvents = (events) => {
         {event.description}
        </Card.Description>
         <Card.Content extra>
+          <Card.Description>Time: {event.time} Date:{event.date}</Card.Description>
           <div className='ui three buttons'>
             <Button href={event.yelp_url} target="_blank" basic color='red'>
               Yelp
             </Button>
             <Button basic color='blue'>
-              Join
+              Message Friends
             </Button>
             <Button  href={event.maps_link} target="_blank" basic color='red'>
               Google Maps

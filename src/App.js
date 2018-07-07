@@ -7,11 +7,11 @@ import EventsCont from './ExploreEvents/ExploreEventsCont';
 import ProfileCont from './Settings/Profile';
 import PlacesCont from './ExplorePlaces/ExplorePlacesCont';
 import MessagesCont from './Messages/MessagesCont';
-// import {connect} from 'react-redux';
-import {Route, Redirect, Switch} from 'react-router-dom';
 import AuthO from './AuthO'
+import {Route, Redirect, Switch} from 'react-router-dom';
 
 class App extends Component {
+
   render() {
     return (<div className="App">
       <header className="App-header">
@@ -47,4 +47,5 @@ class App extends Component {
   }
 }
 
-export default App;
+
+export default(App);

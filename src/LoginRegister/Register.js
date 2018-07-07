@@ -55,6 +55,9 @@ class Register extends Component {
       localStorage.setItem('id', json.id);
       console.log("history", this.props.history);
       this.props.history.push("/home")
+    } else if (json.status === "conflict") {
+      alert("User already exists. Try loggin in.")
+
     }
     else{
       alert("Please fill in all fields.")

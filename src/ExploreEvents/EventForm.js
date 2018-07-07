@@ -94,10 +94,10 @@ handleSubmit = (event) => {
             <Form.Field
               name="duration"
               label='Event Duration (0.5 = 30 mins)'
-              required onChange={this.handleChange} width={8} control={Input}  min={0.5} max={3} defaultValue="0.5" step={0.5} type="number"  />
+              required onChange={this.handleChange} width={8} control={Input}  min={0.5} max={3} placeholder="Enter Event Duration" step={0.5} type="number"  />
             <Form.Field
               name="friends"
-              required onChange={this.handleChange} width={8} control={Input}  min={3} max={10} type="number" defaultValue="3" label='How may total friends?' />
+              required onChange={this.handleChange} width={8} control={Input}  min={2} max={10} type="number" placeholder="Enter how many friends you want to join" label='Total Friends' />
 
           </Form.Group>
 

@@ -2,7 +2,7 @@ import React from 'react'
 import {Button, Card, Image} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {displayNearbyEventsAction} from '../actions';
-const url = `http://localhost:3001/api/v1/events/`
+const url = `http://localhost:3001/api/v1/events/nearby?id=${localStorage.id}`
 
 class CurrentUserEvents extends React.Component {
 
@@ -32,9 +32,9 @@ displayNearbyEvents = (events) => {
        <Card.Description>
         {event.description}
        </Card.Description>
-       <Card.Meta>Time: {event.time} Date:{event.date} </Card.Meta>
         </Card.Content>
         <Card.Content extra>
+          <Card.Description>Time: {event.time} Date:{event.date}</Card.Description>
         <div className='ui three buttons'>
           <Button href={event.yelp_url} target="_blank" basic color='red'>
             Yelp
@@ -42,7 +42,7 @@ displayNearbyEvents = (events) => {
           <Button basic color='blue'>
             Join
           </Button>
-          <Button  href={event.maps_link} target="_blank" basic color='red'>
+          <Button href={event.maps_link} target="_blank" basic color='red'>
             Google Maps
           </Button>
         </div>

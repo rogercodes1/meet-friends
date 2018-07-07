@@ -8,7 +8,6 @@ class HomeCont extends React.Component {
   render () {
     return (
       <div>
-        HomeCont
         <UserEventsCont />
         <NearbyEventsCont />
       </div>

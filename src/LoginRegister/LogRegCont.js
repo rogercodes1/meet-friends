@@ -34,7 +34,7 @@ handleItemClick = (e, { name }) => {
                 </div>
                 <Segment>
                     {(this.state.activeItem ==="register") ?
-                      <Register {...this.props} /> : <Login {...this.props} />}
+                      <Register {...this.props} handleItemClick={this.handleItemClick}/> : <Login {...this.props} handleItemClick={this.handleItemClick}/>}
 
 
                 </Segment>
