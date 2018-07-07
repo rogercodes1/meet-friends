@@ -5,7 +5,7 @@ import EventMessages from './EventMessages';
 class MessagesCont extends React.Component {
   render () {
     return(
-      <div>
+      <div id="MessagesCont">
         <MessageList />
         <EventMessages />
       </div>

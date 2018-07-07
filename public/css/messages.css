@@ -1,0 +1,27 @@
+#MessagesCont{
+
+
+}
+
+#MessageList{
+  border: 3px solid #aa0e25;
+  display: inline-block;
+  position: fixed;
+  left:0;
+  width: 19%;
+  margin-left: 1%;
+  height:800px;
+
+
+}
+#EventMessages{
+  border: 3px solid #aa0e25;
+  display: inline-block;
+  position:fixed;
+  right: 0;
+  margin-right: 1%;
+  width: 79%;
+  height:800px;
+
+
+}
