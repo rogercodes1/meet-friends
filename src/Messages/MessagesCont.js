@@ -1,8 +1,8 @@
-import React from 'react'
+import React,{Component} from 'react'
 import MessageList from './MessageList';
 import MessageEventBox from './MessageEventBox';
 
-class MessagesCont extends React.Component {
+class MessagesCont extends Component {
   render () {
     return(
       <div id="MessagesCont">

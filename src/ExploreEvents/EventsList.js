@@ -50,26 +50,22 @@ displayNearbyEvents = (events) => {
 }
 
   render () {
-    console.log("this. nearby", this.props.nearbyEvents);
     return (
+       <Card.Group id="NearbyEventsCard">
+         {this.displayNearbyEvents(this.props.nearbyEvents)}
 
-           <Card.Group id="NearbyEventsCard">
-             {this.displayNearbyEvents(this.props.nearbyEvents)}
-
-           </Card.Group>
+       </Card.Group>
     )
   }
 }
 
 function mapStateToProps(state){
-  console.log("what is state map props nearby",state.nearbyEvents);
   return{
     nearbyEvents: state.nearbyEvents
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  console.log("what is dispatch",dispatch);
   return {
     saveAllEvents: (allEvents) => {
       dispatch(displayNearbyEventsAction(allEvents))

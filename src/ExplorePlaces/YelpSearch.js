@@ -31,7 +31,6 @@ class YelpSearch  extends Component {
 
   }
   render() {
-    console.log("yelSubmit",this.props.yelpSubmit);
     return (
       <div id="YelpSearch">
         <Form onSubmit={this.handleSubmit}>

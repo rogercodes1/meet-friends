@@ -1,14 +1,18 @@
-import React from 'react'
+import React,{Component} from 'react'
 
-const MessageEventBox = (props) => {
-  return (
-    <div id="MessageEventBox">
-      Will display message/comments thread between those going to the event.
+class MessageEventBox extends Component{
 
 
-    </div>
+  render(){
+    return (
+      <div id="MessageEventBox">
+        Messages
 
-  )
+      </div>
+
+    )
+  }
+
 }
 
 export default MessageEventBox

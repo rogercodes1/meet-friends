@@ -36,7 +36,6 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch) {
-  console.log("what is dispatch",dispatch);
   return {
     saveAllEvents: (allEvents) => {
       dispatch(displayNearbyEventsAction(allEvents))
