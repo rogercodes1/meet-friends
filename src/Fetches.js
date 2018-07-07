@@ -38,5 +38,4 @@ const Fetches = {
     return fetch(URL, config);
   }
 }
-
-export default Fetches;
+export default Fetches
