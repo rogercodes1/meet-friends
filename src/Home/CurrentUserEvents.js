@@ -9,9 +9,7 @@ const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
 
 class CurrentUserEvents extends Component {
 
-componentDidMount(){
-  this.fetchCurrentUserEvents()
-}
+componentDidMount(){this.fetchCurrentUserEvents()}
 
 fetchCurrentUserEvents = () => {
     fetch(url)
@@ -21,11 +19,10 @@ fetchCurrentUserEvents = () => {
     })
 }
 
-
   render () {
-
     return (
            <Card.Group id="UserEventCard">
+            {/*display events is in Helpers/EventCard*/}
            {displayUserEvents(this.props.userEvents)}
            </Card.Group>
           )

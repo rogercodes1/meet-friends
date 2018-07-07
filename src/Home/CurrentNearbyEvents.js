@@ -22,6 +22,7 @@ fetchNearbyEvents = () => {
 
     return (
        <Card.Group id="NearbyEventsCard">
+         {/*display events is in Helpers/EventCard*/}
          {displayNearbyEvents(this.props.nearbyEvents)}
        </Card.Group>
     )
