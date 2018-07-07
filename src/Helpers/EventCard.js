@@ -81,10 +81,10 @@ export function displayNearbyEvents(events) {
 
 }
 
-export function displayMessageEvents(events){
+export function displayMessageEvents(events, click){
   return events.map(event=>{
     return(
-      <Card key={event.id} >
+      <Card key={event.id} id={event.id} onClick={click}>
         <Card.Content id="CardMessage">
         <Image floated="left" size="tiny" src={event.yelp_image}/>
           <Card.Header>{event.event_name}</Card.Header>

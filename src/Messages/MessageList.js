@@ -17,13 +17,19 @@ class MessageList extends Component{
       this.props.saveUserEvents(userData.events)
       })
   }
+  handleClick = (e) => {
+    console.log(e.target);
+    console.log(this.props.userEvents);
+    console.log("We clicked the event");
+  }
+
 
 render(){
   return (
     <div id="MessageList">
       <Card.Group id="CardMessage">
        {/*display userEvents is in Helpers/EventCard*/}
-      {displayMessageEvents(this.props.userEvents)}
+      {displayMessageEvents(this.props.userEvents, this.handleClick)}
       </Card.Group>
     </div>
   )
