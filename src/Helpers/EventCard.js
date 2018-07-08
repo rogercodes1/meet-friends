@@ -85,20 +85,35 @@ export function displayNearbyEvents(events) {
 export function displayExploreEvents(events){
   return events.map(event=>{
     return(
-      <Card key={event.id} fluid id={event.id} >
-        {CardDetails(event.yelp_image,
-          event.event_name,
-          event.location,
-          event.description)}
-        {CardContentButtons(
-          event.yelp_url,
-          event.maps_link,
-          event.time,
-          event.date,
-          event.address,
-          "Mesesage Friends",
+      <Card key={event.id} id="ExploreCard" >
+        <Card.Content >
+          <Image floated="left" size="small" src={event.yelp_image}/>
+          <Card.Header>{event.event_name}</Card.Header>
+          <Card.Meta>{event.location_name}</Card.Meta>
+            <Card.Meta>
+              Time: {event.time} <br/>
+              Date: {event.date} <br/>
+            </Card.Meta>
+         <Card.Meta>{event.address} </Card.Meta>
+           <Card.Description>
+              {event.description} <br/>
 
-        )}
+           </Card.Description>
+         <Card.Meta>{event.address} </Card.Meta>
+           <div className='ui three buttons'>
+             <Button href={event.yelp_url} target="_blank" basic color='red'>
+               Yelp
+             </Button>
+             <Button basic color='blue'>
+               text
+             </Button>
+             <Button  href={event.maps_link} target="_blank" basic color='red'>
+               Google Maps
+             </Button>
+         </div>
+        </Card.Content>
+
+
       </Card>
     )
   })

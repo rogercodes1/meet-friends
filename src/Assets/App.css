@@ -64,11 +64,20 @@ darker meetup: #d00c29
 #GoogleMaps{
   margin: 30px auto;
   height: 400px;
-  width: 80%;
+  width: 82%;
 }
 /* Explore Events  */
 #ExploreNearbyList{
   width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#ExploreCard{
+  /* margin-left:100%;
+  margin-right: 100%; */
+  width: 48%;
+  /* padding: auto 100%; */
+
 }
 
 /* Create Event */
