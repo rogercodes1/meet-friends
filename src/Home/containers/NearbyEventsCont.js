@@ -28,7 +28,7 @@ class NearbyEventsCont extends React.Component {
          </Menu>
 
          <Segment>
-           <Card.Group id="NearbyEventsCard">
+           <Card.Group>
            <CurrentNearbyEvents/>
            </Card.Group>
 

@@ -40,7 +40,7 @@ export function CardContentButtons(url, maps, time, date, address, text){
 export function displayUserEvents(events){
   return events.map(event=>{
     return(
-      <Card key={event.id} >
+      <Card key={event.id} id={event.id} >
         {CardDetails(event.yelp_image,
           event.event_name,
           event.location,
@@ -51,7 +51,8 @@ export function displayUserEvents(events){
           event.time,
           event.date,
           event.address,
-          "Mesesage Friends"
+          "Mesesage Friends",
+
         )}
       </Card>
     )
@@ -65,8 +66,8 @@ export function displayNearbyEvents(events) {
         {CardDetails(event.yelp_image,
           event.event_name,
           event.location,
-          event.description)}
-
+          event.description,
+        )}
         {CardContentButtons(
           event.yelp_url,
           event.maps_link,
@@ -81,6 +82,27 @@ export function displayNearbyEvents(events) {
 
 }
 
+export function displayExploreEvents(events){
+  return events.map(event=>{
+    return(
+      <Card key={event.id} fluid id={event.id} >
+        {CardDetails(event.yelp_image,
+          event.event_name,
+          event.location,
+          event.description)}
+        {CardContentButtons(
+          event.yelp_url,
+          event.maps_link,
+          event.time,
+          event.date,
+          event.address,
+          "Mesesage Friends",
+
+        )}
+      </Card>
+    )
+  })
+}
 export function displayMessageEvents(events, click){
   return events.map(event=>{
     return(

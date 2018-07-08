@@ -15,12 +15,7 @@ class ExploreEventsCont extends React.Component {
     return(
       <div>
         <EventsMap/>
-          <Card.Group id="ExploreNearbyList">
-
-            <EventsList/>
-
-          </Card.Group>
-
+        <EventsList/>
       </div>
     )
 
