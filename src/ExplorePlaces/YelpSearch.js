@@ -10,7 +10,7 @@ class YelpSearch  extends Component {
   state = {
     searchTerm:"seafood",
     location: "lamont, ca",
-    radius: 2000,
+    radius: 3000,
     limit: 20,
   }
   handleSubmit = () => {
