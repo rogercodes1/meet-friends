@@ -47,3 +47,10 @@ export function profileAction(profile) {
     payload: profile
   }
 }
+
+export function eventDetailsAction(eventDetails) {
+  return {
+    type: "EVENT_DETAILS",
+    payload: eventDetails
+  }
+}

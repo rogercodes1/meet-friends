@@ -5,7 +5,7 @@ import {Button, Card, Image} from 'semantic-ui-react';
 export function CardDetails(image, event_name, location, description){
   return (
     <Card.Content>
-        <Image id="HomeCardImg"floated="left" size="small" src={image}/>
+        <Image id="HomeCardImg" floated="left" size="small" src={image}/>
       <Card.Header>{event_name}</Card.Header>
       <Card.Meta>{location}</Card.Meta>
      <Card.Description>
@@ -74,7 +74,7 @@ export function displayNearbyEvents(events) {
           event.time,
           event.date,
           event.address,
-          "Join Event"
+          "Event Details"
         )}
       </Card>
     )
@@ -82,7 +82,9 @@ export function displayNearbyEvents(events) {
 
 }
 
+
 export function displayExploreEvents(events){
+
   return events.map(event=>{
     return(
       <Card key={event.id} id="ExploreCard" >
@@ -105,7 +107,7 @@ export function displayExploreEvents(events){
                Yelp
              </Button>
              <Button basic color='blue'>
-               text
+               Event Details
              </Button>
              <Button  href={event.maps_link} target="_blank" basic color='red'>
                Google Maps

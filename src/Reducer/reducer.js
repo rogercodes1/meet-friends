@@ -2,6 +2,7 @@
 const defaultState= {
   results : [],
   createEvent: [],
+  joinEventDetails:[],
   selectEvent: [],
   saveEvent: [],
   userEvents: [],
@@ -51,6 +52,10 @@ export default function reducer(state=defaultState,action) {
       case "USER_PROFILE":
         return {
           ...state, profile: action.payload
+        }
+      case "EVENT_DETAILS":
+        return {
+          ...state, joinEventDetails: action.payload
         }
 
     default:

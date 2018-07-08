@@ -7,12 +7,12 @@ let maps = "https://www.google.com/maps/place/"
 class PlaceCard extends Component {
 
   handleEventClick = (e) => {
-
+    debugger
     this.props.displayForm(true)
     this.props.selectEvent(this.props)
     window.scrollTo(0, 0)
   }
-  
+
   render(){
     const props = this.props;
   let fullAddress = (typeof(props.location)==="undefined") ? "loading" : props.location.display_address.join(' ')

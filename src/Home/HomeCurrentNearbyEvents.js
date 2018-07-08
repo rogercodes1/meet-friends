@@ -2,7 +2,8 @@ import React from 'react'
 import {Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {displayNearbyEventsAction} from '../actions';
-import {displayNearbyEvents} from '../Helpers/EventCard';
+import HomeEventCard from './HomeEventCard';
+
 
 const url = `http://localhost:3001/api/v1/events/nearby?id=${localStorage.id}`
 
@@ -18,12 +19,17 @@ fetchNearbyEvents = () => {
     })
 }
 
-  render () {
+ displayNearbyEvents = (events) => {
+   return events.map(event=>{
+     return <HomeEventCard
+         key={event.id}
+         {...event} />
+   })
+ }
 
+  render () {
     return (
-       <Card.Group>
-         {/*display events is in Helpers/EventCard*/}
-         {displayNearbyEvents(this.props.nearbyEvents)}
+        <Card.Group id="UserEventCard">         {this.displayNearbyEvents(this.props.nearbyEvents)}
        </Card.Group>
     )
   }
