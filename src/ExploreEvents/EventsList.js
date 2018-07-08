@@ -19,38 +19,6 @@ fetchNearbyEvents = () => {
     this.props.saveAllEvents(data)
     })
 }
-// displayNearbyEvents = (events) => {
-//   return events.map(event=>{
-//     return(
-    //   <Card key={event.id} fluid>
-    //     <Card.Content>
-    //       <Card.Header>{event.event_name}</Card.Header>
-    //       <Card.Meta>{event.location_name} {}</Card.Meta>
-    //         <Image floated="left" size="small" src={event.yelp_image}/>
-    //   <a href={event.maps_link}> <Card.Meta>{event.address} </Card.Meta></a>
-    //    <Card.Description>
-    //     {event.description}
-    //    </Card.Description>
-    //     </Card.Content>
-    //     <Card.Content extra>
-    //       <Card.Description floated="left">Time: {event.time} Date:{event.date}</Card.Description>
-    //         <Card.Meta>{event.address} </Card.Meta>
-    //     <div className='ui three buttons'>
-    //       <Button href={event.yelp_url} target="_blank" basic color='red'>
-    //         Yelp
-    //       </Button>
-    //       <Button basic color='blue'>
-    //         text
-    //       </Button>
-    //       <Button  href={event.maps_link} target="_blank" basic color='red'>
-    //         Google Maps
-    //       </Button>
-    //   </div>
-    // </Card.Content>
-    //   </Card>
-//     )
-//   })
-// }
 
   render () {
     return (
