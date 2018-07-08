@@ -1,12 +1,9 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
-import EventsList from './EventsList';
+import ExploreEventsList from './ExploreEventsList';
 // import GoogleMapEvents from 'google-map-react';
 
 import EventsMap from './EventsMap';
 class ExploreEventsCont extends React.Component {
-
-
 
 
   render () {
@@ -14,7 +11,7 @@ class ExploreEventsCont extends React.Component {
     return(
       <div>
         <EventsMap/>
-        <EventsList/>
+        <ExploreEventsList/>
       </div>
     )
 

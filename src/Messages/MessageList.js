@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import {Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {saveUserEventsAction} from '../actions';
-import {displayMessageEvents} from '../Helpers/EventCard';
+import {displayMessageEvents} from '../Helpers/HelpEventCard';
 
 const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
 

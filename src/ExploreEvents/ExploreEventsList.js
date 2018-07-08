@@ -2,11 +2,11 @@ import React from 'react'
 import { Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {displayNearbyEventsAction} from '../actions';
-import {displayExploreEvents} from '../Helpers/EventCard';
+import EventCard from './../EventCard';
 
 const url = `http://localhost:3001/api/v1/events/nearby?id=${localStorage.id}`
 
-class CurrentUserEvents extends React.Component {
+class ExploreEventsList extends React.Component {
 
 componentDidMount(){
   this.fetchNearbyEvents()
@@ -20,13 +20,21 @@ fetchNearbyEvents = () => {
     })
 }
 
+displayNearbyEvents = (events) => {
+  let list ="ExploreCard"
+  return events.map(event=>{
+    return <EventCard
+        key={event.id}
+        {...event} list={list}/>
+  })
+}
+
   render () {
     return (
       <div className="ui two column grid">
         <div className="row">
        <Card.Group  id="ExploreNearbyList">
-         {/*display events is in Helpers/EventCard*/}
-         {displayExploreEvents(this.props.nearbyEvents)}
+         {this.displayNearbyEvents(this.props.nearbyEvents)}
        </Card.Group>
      </div>
    </div>
@@ -49,4 +57,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(CurrentUserEvents);
+export default connect(mapStateToProps,mapDispatchToProps)(ExploreEventsList);

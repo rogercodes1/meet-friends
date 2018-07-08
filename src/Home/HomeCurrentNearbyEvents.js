@@ -2,7 +2,7 @@ import React from 'react'
 import {Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {displayNearbyEventsAction} from '../actions';
-import HomeEventCard from './HomeEventCard';
+import EventCard from './../EventCard';
 
 
 const url = `http://localhost:3001/api/v1/events/nearby?id=${localStorage.id}`
@@ -21,7 +21,7 @@ fetchNearbyEvents = () => {
 
  displayNearbyEvents = (events) => {
    return events.map(event=>{
-     return <HomeEventCard
+     return <EventCard
          key={event.id}
          {...event} />
    })

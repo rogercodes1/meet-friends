@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import {Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {saveUserEventsAction} from '../actions';
-import {displayUserEvents} from '../Helpers/EventCard';
+import {displayUserEvents} from '../Helpers/HelpEventCard';
 
 
 const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
@@ -22,7 +22,6 @@ fetchCurrentUserEvents = () => {
   render () {
     return (
        <Card.Group id="UserEventCard">
-        {/*display events is in Helpers/EventCard*/}
        {displayUserEvents(this.props.userEvents)}
        </Card.Group>
           )
