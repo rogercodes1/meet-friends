@@ -1,6 +1,5 @@
 #MessagesCont{
 
-
 }
 #CardMessage{
   /* margin: -5px; */
@@ -12,11 +11,11 @@
   border: 3px solid #aa0e25;
   display: inline-block;
   position: fixed;
+  overflow-y: scroll;
   left:0;
   width: 19%;
   margin-left: 1%;
   height:800px;
-
 
 }
 #MessageEventBox{

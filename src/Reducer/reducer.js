@@ -35,7 +35,7 @@ export default function reducer(state=defaultState,action) {
           }
       case "USER_EVENTS":
         return {
-          ...state, userEvents:action.payload
+          ...state, userEvents: action.payload
         }
       case "DISPLAY_FORM":
         return {

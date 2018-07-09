@@ -8,8 +8,10 @@ let url ="http://localhost:3001/api/v1/events/join_event"
 
 
 class EventCard extends Component{
+  state = { open: false }
 
-
+  show = dimmer => () => this.setState({ dimmer, open: true })
+  close = () => this.setState({ open: false })
 
 handleClick = (e) => {
     const data = {
@@ -20,14 +22,23 @@ handleClick = (e) => {
     .then(res=>res.json())
     .then(json=>{
       console.log(json);
-      debugger;
-      this.props.history.push("/home")
+      console.log("state",this.state);
+      console.log("this.close ", this.close);
+      debugger
+      if (json.status === "accepted"){
+        this.setState({open: false})
+        alert("Event has been added.")
+      }
+      else {
+        alert("Unable to join event at the moment. Try again later.")
+      }
     })
 
   }
 
 
   render() {
+    const { open, dimmer } = this.state
     const props = this.props
     const list = (this.props.list === "ExploreCard") ? ("ExploreCard") : "noCSS"
     return (
@@ -35,7 +46,7 @@ handleClick = (e) => {
           {CardDetails(
             props.yelp_image,
             props.event_name,
-            props.location,
+            props.location_name,
             props.description)}
           <Card.Content extra>
             <Card.Description floated="left">
@@ -46,7 +57,7 @@ handleClick = (e) => {
               Yelp
             </Button>
 
-            <Modal trigger={<Button basic color="blue">Event Details</Button>}>
+            <Modal trigger={<Button onClick={this.show('blurring')} basic color="blue">Event Details</Button>} dimmer={dimmer} open={open} onClose={this.close}>
                 <Modal.Header>{props.event_name}</Modal.Header>
                 <Modal.Content image>
                   <Image wrapped size='medium' src={props.yelp_image} />

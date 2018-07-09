@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import {Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {saveUserEventsAction} from '../actions';
-import {displayMessageEvents} from '../Helpers/HelpEventCard';
+import MessageEventCard from './MessageEventCard';
 
 const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
 
@@ -17,19 +17,20 @@ class MessageList extends Component{
       this.props.saveUserEvents(userData.events)
       })
   }
-  handleClick = (e) => {
-    console.log(e.target);
-    console.log(this.props.userEvents);
-    console.log("We clicked the event");
+  displayMessageEvents = (messageEvents) => {
+    return messageEvents.map(event=>{
+      return <MessageEventCard
+          key={event.id}
+          {...event} />
+    })
   }
-
 
 render(){
   return (
     <div id="MessageList">
       <Card.Group id="CardMessage">
        {/*display userEvents is in Helpers/EventCard*/}
-      {displayMessageEvents(this.props.userEvents, this.handleClick)}
+      {this.displayMessageEvents(this.props.userEvents)}
       </Card.Group>
     </div>
   )
