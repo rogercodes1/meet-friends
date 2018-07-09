@@ -1,8 +1,8 @@
 import React from 'react'
 import {Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
-import {displayNearbyEventsAction} from '../actions';
-import EventCard from './../EventCard';
+import {displayNearbyEventsAction} from '../../actions';
+import EventCard from './../../EventCard';
 
 
 const url = `http://localhost:3001/api/v1/events/nearby?id=${localStorage.id}`

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Menu, Segment, Card} from 'semantic-ui-react';
-import HomeCurrentNearbyEvents from '../HomeCurrentNearbyEvents';
+import CurrentNearbyEvents from './CurrentNearbyEvents';
 
 class NearbyEventsCont extends React.Component {
   state = { activeItem: 'nearbyEvents' }
@@ -29,7 +29,7 @@ class NearbyEventsCont extends React.Component {
 
          <Segment>
            <Card.Group>
-           <HomeCurrentNearbyEvents/>
+           <CurrentNearbyEvents/>
            </Card.Group>
 
          </Segment>

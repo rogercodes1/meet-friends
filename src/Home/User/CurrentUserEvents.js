@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
 import {Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
-import {saveUserEventsAction} from '../actions';
-import {displayUserEvents} from '../Helpers/HelpEventCard';
+import {saveUserEventsAction} from '../../actions';
+import {displayUserEvents} from '../../Helpers/HelpEventCard';
 
 
 

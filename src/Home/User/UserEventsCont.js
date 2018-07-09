@@ -1,6 +1,6 @@
 import React from 'react'
 import {Menu, Segment, Card} from 'semantic-ui-react';
-import CurrentUserEvents from '../HomeCurrentUserEvents';
+import CurrentUserEvents from './CurrentUserEvents';
 
 class UserEventsCont extends React.Component {
   state = { activeItem: 'currentEvents' }
