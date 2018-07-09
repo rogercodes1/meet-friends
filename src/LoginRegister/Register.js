@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 //import PropTypes from 'prop-types'
-// import verify from '../Helpers/date.js';
+import {adultAge} from '../Helpers/date';
 import {Form, Input, Button, Select} from 'semantic-ui-react';
 import Fetches from './../Fetches.js';
 let url = "http://localhost:3001/api/v1/users"
@@ -30,7 +30,7 @@ class Register extends Component {
       email: "",
       password: "",
       gender: "other",
-      birthday: "",
+      birthday: adultAge(),
     }
   }
 
@@ -67,6 +67,7 @@ class Register extends Component {
   }
 
   render() {
+    console.log("what is adult age", adultAge());
     return (
       <div id="register">
       <Form onSubmit={this.handleSubmit}>
@@ -84,7 +85,7 @@ class Register extends Component {
         </Form.Group>
 
         <Form.Group>
-          <Form.Field required id="formDate"  onChange={this.handleChange} width={8} control={Input} name="birthday" type="date" label='Birthday'></Form.Field>
+          <Form.Field required id="formDate"  onChange={this.handleChange} defaultValue={this.state.birthday} width={8} control={Input} name="birthday" type="date" label='Birthday'></Form.Field>
           <Form.Field required width={8} onChange={this.handleChange} control={Select} name="gender" label='Gender' options={options} placeholder='Gender'/>
 
         </Form.Group>

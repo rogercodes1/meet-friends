@@ -11,3 +11,12 @@ function addZero( num ) {
         return "0" + num; // Prepend a zero!
     return num.toString(); // return string for consistency
 }
+
+export function adultAge(){
+  const d = new Date()
+  let year = d.getFullYear()-18
+  let month = addZero(d.getMonth())
+  let day = addZero(d.getDate())
+  let cDate = `${year}-${month}-${day}`
+  return cDate
+}
