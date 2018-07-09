@@ -8,18 +8,11 @@ const options = [
   {
     id: "other",key: 'o', text: 'Other', value: 'other'
   }, {
-    id: "male",
-    key: 'm',
-    text: 'Male',
-    value: 'male'
+    id: "male",key: 'm',text: 'Male',value: 'male'
   }, {
-    id: "female",
-    key: 'f',
-    text: 'Female',
-    value: 'female'
+    id: "female",key: 'f',text: 'Female',value: 'female'
   }
 ]
-
 
 class Register extends Component {
   constructor(props) {
@@ -36,16 +29,14 @@ class Register extends Component {
 
   handleChange = (e, {name, value}) => {
        if (typeof(e.target.name) === "undefined"){
-         (this.setState({[name]: value}, () => { console.log(this.state) }))
-         } else {
-            this.setState({[e.target.name] : e.target.value}, () => {
-               console.log(this.state)}
-            )
+         this.setState({[name]: value})
          }
+       else {
+         this.setState({[e.target.name] : e.target.value})
       }
-  handleSubmit = (event) => {
-
-    event.preventDefault()
+  }
+  handleSubmit = (e) => {
+    e.preventDefault()
     const body = this.state
     Fetches.post(url, body)
     .then(response => response.json())
@@ -53,21 +44,18 @@ class Register extends Component {
     if (json.status === "accepted"){
       localStorage.setItem('token', json.token);
       localStorage.setItem('id', json.id);
-      console.log("history", this.props.history);
       this.props.history.push("/home")
     } else if (json.status === "conflict") {
       alert("User already exists. Try loggin in.")
-
     }
     else{
       alert("Please fill in all fields.")
     }
-
     })
   }
 
   render() {
-    console.log("what is adult age", adultAge());
+
     return (
       <div id="register">
       <Form onSubmit={this.handleSubmit}>

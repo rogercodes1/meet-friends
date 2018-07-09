@@ -5,13 +5,14 @@ import {saveUserEventsAction} from '../actions';
 import {displayUserEvents} from '../Helpers/HelpEventCard';
 
 
-const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
 
 class CurrentUserEvents extends Component {
 
 componentDidMount(){this.fetchCurrentUserEvents()}
 
 fetchCurrentUserEvents = () => {
+  const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
+
     fetch(url)
     .then(response=>response.json())
     .then(userData=>{

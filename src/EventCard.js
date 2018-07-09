@@ -21,6 +21,7 @@ handleClick = (e) => {
     .then(json=>{
       console.log(json);
       debugger;
+      this.props.history.push("/home")
     })
 
   }

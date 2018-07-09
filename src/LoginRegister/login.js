@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import {Form, Input, Button} from 'semantic-ui-react';
 import Fetches from './../Fetches.js';
+import {connect} from 'react-redux';
+import {saveUserEventsAction} from '../actions';
 
-//import PropTypes from 'prop-types'
 let url = "http://localhost:3001/sessions/"
 
 class Login extends Component{
@@ -16,22 +17,18 @@ class Login extends Component{
     }
     handleSubmit = (event) => {
     event.preventDefault();
-
     const body = this.state
     Fetches.post(url,body)
     .then(response=>response.json())
     .then(json => {
-      console.log("json", json)
-
       if (json.status === "accepted") {
         localStorage.setItem('token', json.token)
         localStorage.setItem('id', json.id)
-      // console.log("localStorage", localStorage)
-        console.log("history", this.props.history)
+        this.props.saveUserEvents(json.events)
+
         this.props.history.push("/home")
       }
       else{
-        console.log("alert", json.token);
         alert("incorrect login creds! Try again")
       }
     })
@@ -74,11 +71,12 @@ class Login extends Component{
 //     password: state.email
 //   }
 // }
-// function mapDispatchToProps(dispatch) {
-//   return {
-//
-//     login: dispatch
-//   }
-// }
+function mapDispatchToProps(dispatch) {
+  return {
+    saveUserEvents: (userEvents) => {
+      dispatch(saveUserEventsAction(userEvents))
+    }
+  }
+}
 
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);
