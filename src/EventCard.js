@@ -3,18 +3,28 @@ import {Card,Button, Header,Image, Icon, Modal} from 'semantic-ui-react'
 import {connect} from 'react-redux';
 import {selectPlaceAction, displayFormAction} from './actions';
 import {CardDetails} from './Helpers/HelpEventCard';
-// let url ="http://localhost:3001/api/v1/events"
+import Fetches from './Fetches';
+let url ="http://localhost:3001/api/v1/events/join_event"
 
 
 class EventCard extends Component{
 
-// showEventDetails = (e) => {
-//   const eventUrl=`${url}/${this.props.id}`
-//     debugger;
-//   }
-//   <Button basic onClick={this.showEventDetails.bind(this)} color='blue'>
-//
-//   </Button>
+
+
+handleClick = (e) => {
+    const data = {
+      event_id: this.props.id,
+      user_id: parseInt(localStorage.id, 10)
+    }
+    Fetches.post(url,data)
+    .then(res=>res.json())
+    .then(json=>{
+      console.log(json);
+      debugger;
+    })
+
+  }
+
 
   render() {
     const props = this.props
@@ -35,8 +45,6 @@ class EventCard extends Component{
               Yelp
             </Button>
 
-
-
             <Modal trigger={<Button basic color="blue">Event Details</Button>}>
                 <Modal.Header>{props.event_name}</Modal.Header>
                 <Modal.Content image>
@@ -48,17 +56,12 @@ class EventCard extends Component{
                   </Modal.Description>
                 </Modal.Content>
                 <Modal.Actions>
-                 <Button basic color='red' inverted>
-                   <Icon name='remove' /> No
-                 </Button>
-                 <Button color='green' inverted>
-                   <Icon name='checkmark' /> Yes
+
+                 <Button color='green' onClick={this.handleClick.bind(this)} inverted>
+                   <Icon name='checkmark' /> Join
                  </Button>
                </Modal.Actions>
               </Modal>
-
-
-
 
             <Button  href={props.maps_link} target="_blank" basic color='red'>
               Google Maps
