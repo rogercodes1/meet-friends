@@ -21,10 +21,6 @@ handleClick = (e) => {
     Fetches.post(url,data)
     .then(res=>res.json())
     .then(json=>{
-      console.log(json);
-      console.log("state",this.state);
-      console.log("this.close ", this.close);
-      debugger
       if (json.status === "accepted"){
         this.setState({open: false})
         alert("Event has been added.")
