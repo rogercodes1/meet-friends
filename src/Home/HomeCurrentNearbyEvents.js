@@ -15,7 +15,7 @@ fetchNearbyEvents = () => {
     fetch(url)
     .then(response=>response.json())
     .then(data=>{
-    this.props.saveAllEvents(data)
+    this.props.saveNearbyEvents(data)
     })
 }
 
@@ -43,7 +43,7 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch) {
   return {
-    saveAllEvents: (allEvents) => {
+    saveNearbyEvents: (allEvents) => {
       dispatch(displayNearbyEventsAction(allEvents))
     }
   }

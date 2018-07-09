@@ -10,8 +10,8 @@ const defaultState= {
   boolean: false,
   nearbyEvents:[],
   yelpParams: {
-    searchTerm: "museum",
-    location: "10004",
+    searchTerm: "parks",
+    location: "san francisco, ca",
     radius: 2000,
     limit: 20,
   },

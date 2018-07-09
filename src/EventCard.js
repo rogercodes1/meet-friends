@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import {Card,Button, Header,Image, Icon, Modal} from 'semantic-ui-react'
 import {connect} from 'react-redux';
-import {selectPlaceAction, displayFormAction} from './actions';
+import {selectPlaceAction, displayNearbyEventsAction, displayFormAction, saveUserEventsAction} from './actions';
 import {CardDetails} from './Helpers/HelpEventCard';
 import Fetches from './Fetches';
 let url ="http://localhost:3001/api/v1/events/join_event"
@@ -23,16 +23,15 @@ handleClick = (e) => {
     .then(json=>{
       if (json.status === "accepted"){
         this.setState({open: false})
+        this.props.saveNearbyEvents(json.nearby)
+        this.props.addEvent(json.data)
         alert("Event has been added.")
       }
       else {
         alert("Unable to join event at the moment. Try again later.")
       }
     })
-
   }
-
-
   render() {
     const { open, dimmer } = this.state
     const props = this.props
@@ -94,6 +93,12 @@ function mapDispatchToProps(dispatch) {
     },
     displayForm: (toggleDisplay) => {
       dispatch(displayFormAction(toggleDisplay))
+    },
+    addEvent: (event) => {
+      dispatch(saveUserEventsAction(event))
+    },
+    saveNearbyEvents: (allEvents) => {
+      dispatch(displayNearbyEventsAction(allEvents))
     }
   }
 }
