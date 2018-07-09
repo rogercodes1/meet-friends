@@ -4,7 +4,6 @@ import Search from './YelpSearch';
 import EventForm from './EventForm';
 import {setYelpResultsAction, displayFormAction} from '../actions';
 import { Card } from 'semantic-ui-react'
-
 import {connect} from 'react-redux';
 import Loading from '../Helpers/Loading';
 import Fetches from './../Fetches.js';
@@ -14,7 +13,7 @@ const URL = "http://localhost:3001/places?"
 class ExplorePlacesCont extends Component {
   state = {
     searchTerm:"seafood",
-    location: "lamont, ca",
+    location: "New York, NY",
     radius: 2000,
     limit: 20,
   }

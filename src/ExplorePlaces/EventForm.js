@@ -3,6 +3,7 @@ import {Form, Grid, Input, Button, Icon, TextArea} from 'semantic-ui-react';
 import Fetches from '../Fetches';
 import {connect} from 'react-redux';
 import {createEventAction} from '../actions';
+import {currentDate} from '../Helpers/date';
 const maps = "https://www.google.com/maps/place/"
 let url ="http://localhost:3001/api/v1/events/"
 
@@ -13,7 +14,7 @@ class EventForm extends Component{
     this.state ={
       event_name: "",
       description: "",
-      date: "2018-07-04",
+      date: currentDate(),
       duration: 0.5,
       time: "21:00",
       friends:3,
@@ -48,6 +49,7 @@ handleSubmit = (event) => {
 }
 
   render() {
+    console.log("currentDate",currentDate());
     let yelpBiz = this.props.selectEvent
     let address = (yelpBiz.length===0)? "Empire State Building, NY" : yelpBiz.location.display_address.join(" ")
     return (
@@ -83,7 +85,7 @@ handleSubmit = (event) => {
           <Form.Field
             name="date"
             required
-            control={Input} width={8} defaultValue="2018-07-04"onChange={this.handleChange} label="Event Date" type="date"/>
+            control={Input} width={8} defaultValue={this.state.date} onChange={this.handleChange} label="Event Date" type="date"/>
           <Form.Field
             name="time"
             required  onChange={this.handleChange} width={8} control={Input}  type="time" label='Start Time'/>
