@@ -19,7 +19,6 @@ fetchNearbyEvents = () => {
     this.props.saveAllEvents(data)
     })
 }
-
 displayNearbyEvents = (events) => {
   let list ="ExploreCard"
   return events.map(event=>{
