@@ -12,24 +12,25 @@ handleChange = (e) => {
   this.props.onChangeChatMessage(e.target.value)
 }
 handleSubmitMessage = (e) => {
-  debugger
   const data = {
-    event_id: this.props.id,
-    user_id: localStorage.id,
+    event_id: this.props.loadEvent.id,
+    user_id: parseInt(localStorage.id, 10),
     comment: this.props.loadUpdatedMessage
 
   }
+  debugger;
   Fetches.post(url, data)
   .then(res=>res.json())
   .then(json=>{
-    console.log(json);
+    console.log(json.comment);
     debugger
-    this.props.submitEventComment(json)
+    this.props.submitEventComment(json.comment)
   })
 
 }
 
   render(){
+    console.log("loadedEvent", this.props.loadEvent);
     return (
       <Form onSubmit={this.handleSubmitMessage.bind(this)} reply id="MessageForm">
        <Form.TextArea onChange={this.handleChange}name="message" id="FormTextArea"/>

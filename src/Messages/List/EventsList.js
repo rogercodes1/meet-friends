@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import {Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
-import {saveUserEventsAction} from '../../actions';
+import {saveUserEventsAction, selectedChatEventAction} from '../../actions';
 import EventListCard from './EventListCard';
 
 const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
@@ -15,6 +15,8 @@ class EventsList extends Component{
       .then(response=>response.json())
       .then(userData=>{
       this.props.saveUserEvents(userData.events)
+      this.props.selectedChatEvent(userData.events[0])
+
       })
   }
   displayMessageEvents = (messageEvents) => {
@@ -45,6 +47,9 @@ function mapDispatchToProps(dispatch) {
   return {
     saveUserEvents: (userEvents) => {
       dispatch(saveUserEventsAction(userEvents))
+    },
+    selectedChatEvent: (event) => {
+      dispatch(selectedChatEventAction(event))
     }
   }
 

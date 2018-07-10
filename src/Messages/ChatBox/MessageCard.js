@@ -1,12 +1,15 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux';
-import {eventCommentsAction} from '../actions';
+import {Comment} from 'semantic-ui-react'
+import {eventCommentsAction} from '../../actions';
 
-class MessageEventBox extends Component{
+
+class MessageCard extends Component{
 
 
   render(){
     const props = this.props
+    debugger
     return (
         <Comment id='MessageCard'>
         <Comment.Avatar src='./Assets/Avatars/dog2.png' />
@@ -41,4 +44,4 @@ function mapDispatchToProps(dispatch) {
 
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(MessageEventBox)
+export default connect(mapStateToProps,mapDispatchToProps)(MessageCard)

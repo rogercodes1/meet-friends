@@ -2,21 +2,28 @@ import React,{Component} from 'react'
 import {connect} from 'react-redux';
 import {eventCommentsAction} from '../../actions';
 import MessageForm from './MessageForm';
+import MessageCard from './MessageCard';
+
 import {Comment} from 'semantic-ui-react';
 
 
 class ChatMessagesCont extends Component{
 
 
-displayEventMessages = () => {
-
+displayEventMessages = (comments) => {
+  return comments.map(comment=>{
+    return <MessageCard
+        key={comment.id}
+        {...comment} />
+  })
 }
 
   render(){
+    console.log("what is load Comments", this.props.loadComments);
     return (
       <div id="MessageEventBox">
         <Comment.Group >
-        {this.props.loadComments}
+        {this.displayEventMessages(this.props.loadComments)}
         <MessageForm />
       </Comment.Group>
     </div>

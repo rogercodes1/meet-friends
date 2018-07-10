@@ -15,7 +15,6 @@ class EventListCard extends Component {
     fetch(URL)
     .then(res=>res.json())
     .then(json=>{
-      console.log("json",json)
       this.props.saveEventComments(json.comments)
       this.props.selectedChatEvent(json)
     })
@@ -37,11 +36,12 @@ class EventListCard extends Component {
   }
 }
 
-// function mapStateToProps(state){
-//   return{
-//     loadComments: state.eventComments
-//   }
-// }
+function mapStateToProps(state){
+  return{
+    loadComments: state.eventComments,
+    defaultEvent: state.selectedChatEvent
+  }
+}
 function mapDispatchToProps(dispatch) {
   return {
     saveEventComments: (comments) => {
@@ -54,4 +54,4 @@ function mapDispatchToProps(dispatch) {
 
 }
 
-export default connect(null,mapDispatchToProps)(EventListCard)
+export default connect(mapStateToProps,mapDispatchToProps)(EventListCard)
