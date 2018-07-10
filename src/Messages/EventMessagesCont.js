@@ -1,16 +1,23 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux';
 import {eventCommentsAction} from '../actions';
+import MessageForm from './MessageForm';
+import {Comment} from 'semantic-ui-react';
 
-class MessageEventBox extends Component{
 
+class EventMessagesCont extends Component{
+
+
+displayEventMessages = () => {
+
+}
 
   render(){
     return (
-      <div id="MessageEventBox">
+      <Comment.Group id="MessageEventBox">
         {this.props.loadComments}
-
-      </div>
+        <MessageForm />
+      </Comment.Group>
 
     )
   }
@@ -30,4 +37,4 @@ function mapDispatchToProps(dispatch) {
 
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(MessageEventBox)
+export default connect(mapStateToProps,mapDispatchToProps)(EventMessagesCont)
