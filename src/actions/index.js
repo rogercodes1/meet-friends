@@ -10,9 +10,9 @@ export function selectPlaceAction(selectedBusiness) {
     payload: selectedBusiness
   }
 }
-export function selectChatEventAction(chatEvent) {
+export function selectedChatEventAction(chatEvent) {
   return {
-    type: "SELECT_EVENT",
+    type: "CHAT_EVENT",
     payload: chatEvent
   }
 }
@@ -64,5 +64,11 @@ export function eventCommentsAction(eventComments) {
   return {
     type: "EVENT_COMMENTS",
     payload: eventComments
+  }
+}
+export function onChangeChatMessageAction(updatedMessage) {
+  return {
+    type: "ON_CHANGE_MESSAGE",
+    payload: updatedMessage
   }
 }

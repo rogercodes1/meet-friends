@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import {Card,Image} from 'semantic-ui-react'
 // import Fetches from './Fetches';
 import {connect} from 'react-redux';
-import {eventCommentsAction, selectChatEventAction} from '../../actions';
+import {eventCommentsAction, selectedChatEventAction} from '../../actions';
 let url ="http://localhost:3001/api/v1/events/comments"
 
 class EventListCard extends Component {
@@ -17,7 +17,7 @@ class EventListCard extends Component {
     .then(json=>{
       console.log("json",json)
       this.props.saveEventComments(json.comments)
-      this.props.selectChatEvent(json)
+      this.props.selectedChatEvent(json)
     })
   }
 
@@ -47,8 +47,8 @@ function mapDispatchToProps(dispatch) {
     saveEventComments: (comments) => {
       dispatch(eventCommentsAction(comments))
     },
-    selectChatEvent: (event) => {
-      dispatch(selectChatEventAction(event))
+    selectedChatEvent: (event) => {
+      dispatch(selectedChatEventAction(event))
     }
   }
 

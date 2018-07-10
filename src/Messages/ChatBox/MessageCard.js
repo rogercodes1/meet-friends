@@ -15,7 +15,7 @@ class MessageEventBox extends Component{
           <Comment.Metadata>
             <div>Today at 5:42PM</div>
           </Comment.Metadata>
-          <Comment.Text>How artistic!</Comment.Text>
+          <Comment.Text>{props.comment}</Comment.Text>
           <Comment.Actions>
             <Comment.Action>Reply</Comment.Action>
           </Comment.Actions>
@@ -29,7 +29,7 @@ class MessageEventBox extends Component{
 function mapStateToProps(state){
   return{
     loadComments: state.eventComments,
-    
+
   }
 }
 function mapDispatchToProps(dispatch) {

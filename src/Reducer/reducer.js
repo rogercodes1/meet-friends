@@ -4,11 +4,9 @@ const defaultState= {
   createEvent: [],
   joinEventDetails:[],
   selectEvent: [],
-  selectChatEvent: [],
   saveEvent: [],
   userEvents: [],
   profile: [],
-  eventComments:[],
   boolean: false,
   nearbyEvents:[],
   yelpParams: {
@@ -17,6 +15,9 @@ const defaultState= {
     radius: 2000,
     limit: 20,
   },
+  eventComments:[],
+  selectedChatEvent: [],
+  onChangeChatMessage: "",
 }
 
 export default function reducer(state=defaultState,action) {
@@ -65,7 +66,11 @@ export default function reducer(state=defaultState,action) {
         }
       case "EVENT_COMMENTS":
         return {
-          ...state, joinEventDetails: action.payload
+          ...state, eventComments: action.payload
+        }
+      case "ON_CHANGE_MESSAGE":
+        return {
+          ...state, onChangeChatMessage: action.payload
         }
       default:
         return state
