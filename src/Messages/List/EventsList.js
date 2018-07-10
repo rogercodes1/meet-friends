@@ -28,6 +28,7 @@ class EventsList extends Component{
   }
 
 render(){
+
   return (
     <div id="MessageList">
       <Card.Group id="CardMessage">

@@ -2,17 +2,16 @@ import React,{Component} from 'react'
 import {connect} from 'react-redux';
 import {Comment} from 'semantic-ui-react'
 import {eventCommentsAction} from '../../actions';
-
-
+import Avatars from './../../Assets/Avatars/';
+const dog2 = require('./../../Assets/Avatars/dog2.png')
 class MessageCard extends Component{
 
 
   render(){
     const props = this.props
-    debugger
     return (
         <Comment id='MessageCard'>
-        <Comment.Avatar src='./Assets/Avatars/dog2.png' />
+        <Comment.Avatar src={dog2} />
         <Comment.Content>
           <Comment.Author as='a'>Matt</Comment.Author>
           <Comment.Metadata>

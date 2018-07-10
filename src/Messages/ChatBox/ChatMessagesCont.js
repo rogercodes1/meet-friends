@@ -23,9 +23,10 @@ displayEventMessages = (comments) => {
     return (
       <div id="MessageEventBox">
         <Comment.Group >
-        {this.displayEventMessages(this.props.loadComments)}
-        <MessageForm />
+
+        {(this.props.loadComments === []) ? (<h1>Be the first to message!! </h1>) : this.displayEventMessages(this.props.loadComments)}
       </Comment.Group>
+        <MessageForm />
     </div>
 
     )
