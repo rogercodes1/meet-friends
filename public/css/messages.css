@@ -2,11 +2,9 @@
 
 }
 #MessageCard{
-  /* margin: -5px; */
-  /* margin-bottom: -10px; */
+  width: 100%;
   padding: 10px;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin: 20px;
   text-align: left;
   border: 1px solid #aa0e25;
   border-radius: 10px;
@@ -23,6 +21,7 @@
   height:800px;
 
 }
+
 #MessageEventBox{
   border: 3px solid #aa0e25;
   display: inline-block;
@@ -35,14 +34,19 @@
 }
 #MessageForm{
   position: fixed;
-  bottom: 0;
+  bottom: 5%;
   margin-left: 2%;
   margin-right: 2%;
   padding-right: 2%;
   width: 80%;
+
 }
 form#MessageForm > div:first-child{
+  margin: 10px;
   margin-right: 5%;
+}
+div#MessageEventBox > div:first-child{
+  width:100%;
 }
 #FormTextArea{
   max-height: 300px;
