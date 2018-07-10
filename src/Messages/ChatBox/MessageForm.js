@@ -18,13 +18,12 @@ handleSubmitMessage = (e) => {
     comment: this.props.loadUpdatedMessage
 
   }
-  debugger;
+  e.target.message.value = ""
   Fetches.post(url, data)
   .then(res=>res.json())
   .then(json=>{
-    console.log(json.comment);
-    debugger
-    this.props.submitEventComment(json.comment)
+    console.log(json.comments);
+    this.props.submitEventComment(json.comments)
   })
 
 }

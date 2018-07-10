@@ -1,10 +1,15 @@
 #MessagesCont{
 
 }
-#CardMessage{
+#MessageCard{
   /* margin: -5px; */
   /* margin-bottom: -10px; */
-  padding: 10px
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+  text-align: left;
+  border: 1px solid #aa0e25;
+  border-radius: 10px;
 }
 
 #MessageList{

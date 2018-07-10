@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import {connect} from 'react-redux';
 import {Comment} from 'semantic-ui-react'
 import {eventCommentsAction} from '../../actions';
-import Avatars from './../../Assets/Avatars/';
+// import Avatars from './../../Assets/Avatars/';
 const dog2 = require('./../../Assets/Avatars/dog2.png')
 class MessageCard extends Component{
 
@@ -13,7 +13,7 @@ class MessageCard extends Component{
         <Comment id='MessageCard'>
         <Comment.Avatar src={dog2} />
         <Comment.Content>
-          <Comment.Author as='a'>Matt</Comment.Author>
+          <Comment.Author>Matt</Comment.Author>
           <Comment.Metadata>
             <div>Today at 5:42PM</div>
           </Comment.Metadata>
