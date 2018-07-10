@@ -1,13 +1,13 @@
 import React,{Component} from 'react'
-import EventsList from './EventsList';
-import EventMessagesCont from './EventMessagesCont';
+import EventsList from './List/EventsList';
+import ChatMessagesCont from './ChatBox/ChatMessagesCont';
 
 class MessagesCont extends Component {
   render () {
     return(
       <div id="MessagesCont">
         <EventsList />
-        <EventMessagesCont />
+        <ChatMessagesCont />
       </div>
     )
 

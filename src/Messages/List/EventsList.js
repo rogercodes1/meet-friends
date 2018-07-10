@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
 import {Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
-import {saveUserEventsAction} from '../actions';
-import MessageEventCard from './MessageEventCard';
+import {saveUserEventsAction} from '../../actions';
+import EventListCard from './EventListCard';
 
 const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
 
@@ -19,7 +19,7 @@ class EventsList extends Component{
   }
   displayMessageEvents = (messageEvents) => {
     return messageEvents.map(event=>{
-      return <MessageEventCard
+      return <EventListCard
           key={event.id}
           {...event} />
     })

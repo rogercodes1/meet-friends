@@ -1,11 +1,11 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux';
-import {eventCommentsAction} from '../actions';
+import {eventCommentsAction} from '../../actions';
 import MessageForm from './MessageForm';
 import {Comment} from 'semantic-ui-react';
 
 
-class EventMessagesCont extends Component{
+class ChatMessagesCont extends Component{
 
 
 displayEventMessages = () => {
@@ -39,4 +39,4 @@ function mapDispatchToProps(dispatch) {
 
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(EventMessagesCont)
+export default connect(mapStateToProps,mapDispatchToProps)(ChatMessagesCont)

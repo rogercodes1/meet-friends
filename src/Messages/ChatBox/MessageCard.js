@@ -6,6 +6,7 @@ class MessageEventBox extends Component{
 
 
   render(){
+    const props = this.props
     return (
         <Comment id='MessageCard'>
         <Comment.Avatar src='./Assets/Avatars/dog2.png' />
@@ -27,7 +28,8 @@ class MessageEventBox extends Component{
 }
 function mapStateToProps(state){
   return{
-    loadComments: state.eventComments
+    loadComments: state.eventComments,
+    
   }
 }
 function mapDispatchToProps(dispatch) {

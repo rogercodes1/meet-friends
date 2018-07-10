@@ -10,6 +10,12 @@ export function selectPlaceAction(selectedBusiness) {
     payload: selectedBusiness
   }
 }
+export function selectChatEventAction(chatEvent) {
+  return {
+    type: "SELECT_EVENT",
+    payload: chatEvent
+  }
+}
 export function createEventAction(event) {
   return {
     type: "CREATE_EVENT",

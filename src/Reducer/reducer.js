@@ -4,6 +4,7 @@ const defaultState= {
   createEvent: [],
   joinEventDetails:[],
   selectEvent: [],
+  selectChatEvent: [],
   saveEvent: [],
   userEvents: [],
   profile: [],
@@ -29,6 +30,10 @@ export default function reducer(state=defaultState,action) {
       case "SELECT_EVENT":
         return {
           ...state, selectEvent: action.payload
+          }
+      case "CHAT_EVENT":
+        return {
+          ...state, selectChatEvent: action.payload
           }
       case "CREATE_EVENT":
         return {
