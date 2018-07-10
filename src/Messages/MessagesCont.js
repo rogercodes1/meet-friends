@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import EventListCard from './EventListCard';
-import AltEventCard from './AltEventCard';
+// import AltEventCard from './AltEventCard';
 
 import ChatMessagesCont from './ChatMessagesCont';
 import {Card, Grid, Menu, Segment} from 'semantic-ui-react';
@@ -19,44 +19,32 @@ class MessagesCont extends Component {
       fetch(url)
       .then(response=>response.json())
       .then(json=>{
-        // debugger
-      this.props.saveUserEvents(json.events)
       this.setState({activeItem: json.events[0].id.toString()})
-      // this.props.selectedChatEvent(json.events[0])
+      this.props.saveUserEvents(json.events)
+      this.props.displayComments(json.events[0].comments)
       })
   }
-  displayEventsList = (events, activeItem) => {
-    return events.map(event=>{
+displayEventsList = (events, activeItem) => {
+  return events.map(event=>{
+    return (
+      <EventListCard key={event.id} {...event}
+        active={activeItem===event.id.toString()}
+        handleClick={this.handleClick}/>)
+  })
+}
+displayEventComments = (comments) => {
 
-      return (
-        <AltEventCard
-          key={event.id}
-          {...event}
-          active={activeItem===event.id.toString()}
-          handleClick={this.handleClick}
-          />)
-    })
-  }
+}
 
 handleClick = (e, { name }) => {
   console.log(name);
-  this.setState({ activeItem: name },() => {console.log(this.state)
-  })
-  // console.log(e.target);
-  // console.log(this.props.userEvents);
-  // console.log("We clicked the event");
-  // const URL= url + `?id=${this.props.id}`
-  // fetch(URL)
-  // .then(res=>res.json())
-  // .then(json=>{
-  //   this.props.saveEventComments(json.comments)
-  //   this.props.selectedChatEvent(json)
-  // })
-}
+  this.setState({ activeItem: name })
+  debugger
+  this.props.displayComments(this.props.comments)
 
+}
   render () {
     const { activeItem } = this.state
-
     return(
       <div>
         <div id="MessagesCont">
@@ -77,7 +65,7 @@ handleClick = (e, { name }) => {
 
         <Grid.Column stretched width={12}>
           <Segment>
-            This is an stretched grid column. This segment will always match the tab height
+            {this.displayEventComments(this.props.loadComments)}
           </Segment>
         </Grid.Column>
       </Grid>
@@ -99,12 +87,10 @@ function mapDispatchToProps(dispatch) {
     saveUserEvents: (userEvents) => {
       dispatch(saveUserEventsAction(userEvents))
     },
-    saveEventComments: (comments) => {
+    displayComments: (comments) => {
       dispatch(eventCommentsAction(comments))
-    },
-    // selectedChatEvent: (event) => {
-    //   dispatch(selectedChatEventAction(event))
-    // }
+    }
+
   }
 
 }
