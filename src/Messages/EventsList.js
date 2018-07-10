@@ -6,7 +6,7 @@ import MessageEventCard from './MessageEventCard';
 
 const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
 
-class MessageList extends Component{
+class EventsList extends Component{
 
   componentDidMount(){this.fetchUserEvents()}
 
@@ -50,4 +50,4 @@ function mapDispatchToProps(dispatch) {
 
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(MessageList)
+export default connect(mapStateToProps,mapDispatchToProps)(EventsList)

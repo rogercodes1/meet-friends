@@ -14,10 +14,12 @@ displayEventMessages = () => {
 
   render(){
     return (
-      <Comment.Group id="MessageEventBox">
+      <div id="MessageEventBox">
+        <Comment.Group >
         {this.props.loadComments}
         <MessageForm />
       </Comment.Group>
+    </div>
 
     )
   }

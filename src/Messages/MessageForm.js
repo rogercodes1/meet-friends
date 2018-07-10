@@ -9,8 +9,8 @@ class MessageForm extends Component{
 
   render(){
     return (
-      <Form reply>
-       <Form.TextArea />
+      <Form reply id="MessageForm">
+       <Form.TextArea id="FormTextArea"/>
        <Button content='Add Comment' labelPosition='left' icon='edit' primary />
      </Form>
 

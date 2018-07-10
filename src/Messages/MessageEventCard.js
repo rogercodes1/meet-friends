@@ -8,9 +8,9 @@ let url ="http://localhost:3001/api/v1/events/comments"
 class MessageEventCard extends Component {
 
   handleClick = (e) => {
-    console.log(e.target);
-    console.log(this.props.userEvents);
-    console.log("We clicked the event");
+    // console.log(e.target);
+    // console.log(this.props.userEvents);
+    // console.log("We clicked the event");
     const URL= url + `?id=${this.props.id}`
     fetch(URL)
     .then(res=>res.json())

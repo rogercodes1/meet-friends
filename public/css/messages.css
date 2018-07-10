@@ -27,5 +27,20 @@
   width: 79%;
   height:800px;
 
+}
+#MessageForm{
+  position: fixed;
+  bottom: 0;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-right: 2%;
+  width: 80%;
+}
+form#MessageForm > div:first-child{
+  margin-right: 5%;
+}
+#FormTextArea{
+  max-height: 300px;
+  min-height: 100px;
 
 }
