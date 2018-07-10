@@ -44,8 +44,10 @@ handleClick = (e) => {
             props.location_name,
             props.description)}
           <Card.Content extra>
-            <Card.Description floated="left">
-              Time: {props.time} Duration:{props.duration} <br/> Date:{props.date}</Card.Description>
+            <Card.Description >
+              Duration: {props.duration} hour <br/>
+              When: {props.time} {props.date}
+            </Card.Description>
               <Card.Meta>{props.address} </Card.Meta>
           <div className='ui three buttons'>
             <Button href={props.yelp_url} target="_blank" basic color='red'>
@@ -57,9 +59,12 @@ handleClick = (e) => {
                 <Modal.Content image>
                   <Image wrapped size='medium' src={props.yelp_image} />
                   <Modal.Description>
-                    <Header>{props.location}</Header>
-                    <p>We've found the following gravatar image associated with your e-mail address.</p>
-                    <p>Is it okay to use this photo?</p>
+                    <Header>@ {props.location_name}</Header>
+                    <Header>{props.address}</Header>
+                    <p>{props.description}</p>
+                    <p>Time: {props.time} <br/>
+                    Duration:{props.duration} hour <br/>
+                  When:{props.date}</p>
                   </Modal.Description>
                 </Modal.Content>
                 <Modal.Actions>

@@ -1,4 +1,6 @@
 import React,{Component} from 'react'
+import {connect} from 'react-redux';
+import {eventCommentsAction} from '../actions';
 
 class MessageEventBox extends Component{
 
@@ -6,7 +8,7 @@ class MessageEventBox extends Component{
   render(){
     return (
       <div id="MessageEventBox">
-        Messages
+        {this.props.loadComments}
 
       </div>
 
@@ -14,5 +16,18 @@ class MessageEventBox extends Component{
   }
 
 }
+function mapStateToProps(state){
+  return{
+    loadComments: state.eventComments
+  }
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    saveEventComments: (comments) => {
+      dispatch(eventCommentsAction(comments))
+    }
+  }
 
-export default MessageEventBox
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(MessageEventBox)

@@ -16,7 +16,7 @@ export function createEventAction(event) {
     payload: event
   }
 }
-export function saveUserEventsAction(userEvents) {  
+export function saveUserEventsAction(userEvents) {
   return {
     type: "USER_EVENTS",
     payload: userEvents
@@ -52,5 +52,11 @@ export function eventDetailsAction(eventDetails) {
   return {
     type: "EVENT_DETAILS",
     payload: eventDetails
+  }
+}
+export function eventCommentsAction(eventComments) {
+  return {
+    type: "EVENT_COMMENTS",
+    payload: eventComments
   }
 }
