@@ -47,19 +47,6 @@ displayEventComments = (events, activeItem) => {
           })
   } else { return null}
 }
-  // console.log("id", events[num].id);
-  // console.log("activeItem",activeItem);
-  // if (events[num].id === (activeItem)){
-  //   debugger
-  //   return events[num].comments.map(comment=>{
-  //     return (<MessageCard
-  //         key={comment.id}
-  //         {...comment} />)
-  //       })
-  //     }
-  // else {
-  //   return null
-  // }
 
 handleClick = (e, { name }) => {
   console.log("new state", name);

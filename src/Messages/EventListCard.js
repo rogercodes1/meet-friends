@@ -8,18 +8,6 @@ let url ="http://localhost:3001/api/v1/events/comments"
 class EventListCard extends Component {
 
 
-// displayEventComments = (comments, active) => {
-//   if (active === true){
-//     return comments.map(comment=>{
-//       return (
-//         <MessageCard
-//           key={comment.id}
-//           {...comment} />)
-//     })
-//   }else {
-//     return null
-//   }
-// }
 
   render(){
     const props = this.props

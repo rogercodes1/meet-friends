@@ -10,22 +10,7 @@ class EventsList extends Component{
 
   componentDidMount(){this.fetchUserEvents()}
 
-  // fetchUserEvents = () => {
-  //     fetch(url)
-  //     .then(response=>response.json())
-  //     .then(userData=>{
-  //     this.props.saveUserEvents(userData.events)
-  //     this.props.selectedChatEvent(userData.events[0])
-  //
-  //     })
-  // }
-  // displayMessageEvents = (messageEvents) => {
-  //   return messageEvents.map(event=>{
-  //     return <EventListCard
-  //         key={event.id}
-  //         {...event} />
-  //   })
-  // }
+
 
 render(){
 
