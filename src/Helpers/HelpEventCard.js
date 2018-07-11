@@ -127,7 +127,7 @@ export function displayExploreEvents(events){
 //   return events.map(event=>{
 //     return(
 //       <Card key={event.id} id={event.id} onClick={click}>
-//         <Card.Content id="CardMessage">
+//         <Card.Content >
 //         <Image floated="left" size="tiny" src={event.yelp_image}/>
 //           <Card.Header>{event.event_name}</Card.Header>
 //        <Card.Meta>{event.location_name}</Card.Meta>

@@ -16,7 +16,7 @@ class EventListCard extends Component {
         name={props.id.toString()}
         onClick={this.props.handleClick.bind(this)}>
           <Card key={props.id} id={props.id} >
-            <Card.Content id="CardMessage">
+            <Card.Content >
               {props.id}
             <Image floated="left" size="tiny" src={props.yelp_image}/>
             <Card.Header>{props.event_name}</Card.Header>

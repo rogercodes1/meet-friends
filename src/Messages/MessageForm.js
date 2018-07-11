@@ -18,6 +18,7 @@ handleSubmitMessage = (e) => {
     comment: this.props.loadUpdatedMessage
 
   }
+  debugger
   e.target.message.value = ""
   Fetches.post(url, data)
   .then(res=>res.json())

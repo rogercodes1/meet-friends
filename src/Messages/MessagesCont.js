@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import EventListCard from './EventListCard';
 import MessageCard from './MessageCard';
+import MessageForm from './MessageForm';
+
 import {Grid, Menu, Segment, Comment} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {saveUserEventsAction, eventCommentsAction} from '../actions';
@@ -57,19 +59,20 @@ handleClick = (e, { name }) => {
     const { activeItem } = this.state
     const {userEvents} = this.props
     return(
-      <div>
+      <div id="MessagesCont">
       <Grid>
-        <Grid.Column width={4}>
-          <Menu fluid vertical tabular id="CardMessage">
+        <Grid.Column width={6} id="MessageEventsColumn">
+          <Menu fluid vertical tabular >
             {this.displayEventsList(userEvents, activeItem)}
           </Menu>
         </Grid.Column>
-        <Grid.Column stretched width={12}>
-          <Segment>
-            <Comment.Group id='MessageCardCont'>
+        <Grid.Column stretched width={10}>
+          <Segment id='MessageCardCont'>
+            <Comment.Group >
             {this.displayEventComments(userEvents, activeItem)}
           </Comment.Group>
         </Segment>
+        <MessageForm/>
         </Grid.Column>
 
       </Grid>
