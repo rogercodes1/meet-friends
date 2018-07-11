@@ -7,7 +7,9 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { createStore} from 'redux'
 import reducer from './reducer/reducer.js';
 import {Provider} from 'react-redux';
-const store = createStore(reducer)
+  // eslint-disable no-underscore-dangle
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+// eslint-enable
 
 // console.log("store.getState", store.getState())
 

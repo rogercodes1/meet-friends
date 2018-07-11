@@ -2,20 +2,36 @@ import React,{Component} from 'react'
 import {Card,Image, Menu} from 'semantic-ui-react'
 
 import {connect} from 'react-redux';
-import {eventCommentsAction, selectedChatEventAction} from '../actions';
+import {eventCommentsAction, activeItemAction,selectedChatEventAction} from '../actions';
 // let url ="http://localhost:3001/api/v1/events/comments"
 
 class EventListCard extends Component {
 
+
+// componentDidUpdate(prevProps){
+//   debugger;
+// }
+
+  handleClick = (e) => {
+
+   console.log("name", e);
+
+   this.props.activeItem(e.id.toString())
+   this.props.selectedChatEvent(e)
+   // this.props.storeComments(this.props.comments)
+ }
+
   render(){
     const props = this.props
     // this.props.storeComments(this.props.)
+    // const activeEvent = props.active ? props.id : null
+    console.log("ELC", props.activeItem);
     return(
 
-        <Menu.Item active={this.props.active}
+        <Menu.Item active={props.activeItem === props.id.toString()}
         name={props.id.toString()}
-        onClick={this.props.handleClick.bind(this)}>
-          <Card key={props.id} id={props.id} >
+        onClick={this.handleClick.bind(this, props)}>
+          <Card  id={props.id} >
             <Card.Content >
               {props.id}
             <Image floated="left" size="tiny" src={props.yelp_image}/>
@@ -33,7 +49,8 @@ class EventListCard extends Component {
 function mapStateToProps(state){
   return{
     loadComments: state.eventComments,
-    defaultEvent: state.selectedChatEvent
+    defaultEvent: state.selectedChatEvent,
+    activeItem: state.activeItem
   }
 }
 function mapDispatchToProps(dispatch) {
@@ -43,6 +60,9 @@ function mapDispatchToProps(dispatch) {
     },
     selectedChatEvent: (event) => {
       dispatch(selectedChatEventAction(event))
+    },
+    activeItem: (event) => {
+      dispatch(activeItemAction(event))
     }
   }
 }

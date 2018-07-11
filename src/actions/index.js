@@ -12,7 +12,7 @@ export function selectPlaceAction(selectedBusiness) {
 }
 export function selectedChatEventAction(chatEvent) {
   return {
-    type: "CHAT_EVENT",
+    type: "CURRENT_CHAT_EVENT",
     payload: chatEvent
   }
 }
@@ -70,5 +70,11 @@ export function onChangeChatMessageAction(updatedMessage) {
   return {
     type: "ON_CHANGE_MESSAGE",
     payload: updatedMessage
+  }
+}
+export function activeItemAction(activeEvent) {
+  return {
+    type: "ACTIVE_EVENT",
+    payload: activeEvent
   }
 }

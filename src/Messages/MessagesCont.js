@@ -2,10 +2,10 @@ import React,{Component} from 'react'
 import EventListCard from './EventListCard';
 import MessageCard from './MessageCard';
 import MessageForm from './MessageForm';
-
+// import Fetches from '../Fetches';
 import {Grid, Menu, Segment, Comment} from 'semantic-ui-react';
 import {connect} from 'react-redux';
-import {saveUserEventsAction, eventCommentsAction} from '../actions';
+import {saveUserEventsAction, onChangeChatMessageAction, activeItemAction,selectedChatEventAction, eventCommentsAction} from '../actions';
 const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
 
 
@@ -19,12 +19,15 @@ fetchData = () => {
   fetch(url)
   .then(response=>response.json())
   .then(json=>{
-  this.setState({activeItem: json.events[0].id})
+    let activeItem = json.events[0].id.toString()
+  this.props.updateActiveItem(activeItem)
   this.props.saveUserEvents(json.events)
+  this.props.currentEvent(json.events[0])
   this.props.storeComments(json.events[0].comments)
   })
 }
 displayEventsList = (events, activeItem) => {
+  console.log("active",activeItem);
   return events.map(event=>{
     return (
       <EventListCard key={event.id} {...event}
@@ -34,13 +37,12 @@ displayEventsList = (events, activeItem) => {
 }
 
 displayEventComments = (events, activeItem) => {
-  console.log("active item", activeItem, " num", this.state);
   if (events.length === 0){return null}
   const event = events.find(event=>{
     return (event.id.toString() === activeItem && event.comments.length > 0)
     })
-  console.log("event.comments",event);
   if (typeof event !== "undefined"){
+
     return event.comments.map(comment=>{
         return (<MessageCard
             key={comment.id}
@@ -49,15 +51,39 @@ displayEventComments = (events, activeItem) => {
   } else { return null}
 }
 
-handleClick = (e, { name }) => {
-  console.log("new state", name);
-  // console.log("what is props id".this.props.id);
-  this.setState({ activeItem: name })
-  // this.props.storeComments(this.props.comments)
+
+// handleSubmit = (e, {loadEvent}) => {
+//   console.log("++++++++++++++++++++");
+//   console.log("what is load event id",this.props.loadCurrentEvent);
+//   debugger
+//
+//   const data = {
+//     event_id: this.props.loadCurrentEvent.id,
+//     user_id: parseInt(localStorage.id, 10),
+//     comment: this.props.loadUpdatedMessage }
+//   // debugger
+//   e.target.message.value = ""
+//   Fetches.post(url, data)
+//   .then(res=>res.json())
+//   .then(json=>{
+//     console.log(json.comments);
+//     this.props.submitEventComment(json.comments)
+//   })
+// }
+handleInputChange = (e) => {
+  this.props.onChangeChatMessage(e.target.value)
 }
+
+// handleClick = (e, { name }) => {
+//   // this.props.currentEvent(this.props)
+//   console.log(name);
+//   this.setState({ activeItem: name })
+//   // this.props.storeComments(this.props.comments)
+// }
   render () {
-    const { activeItem } = this.state
-    const {userEvents} = this.props
+    // const { activeItem } = this.state
+    const {userEvents, activeItem} = this.props
+    console.log(activeItem);
     return(
       <div id="MessagesCont">
       <Grid>
@@ -72,7 +98,10 @@ handleClick = (e, { name }) => {
             {this.displayEventComments(userEvents, activeItem)}
           </Comment.Group>
         </Segment>
-        <MessageForm/>
+        <MessageForm
+          {...this.props}
+          handleInputChange={this.handleInputChange}
+          handleSubmit={this.handleSubmit}/>
         </Grid.Column>
 
       </Grid>
@@ -86,7 +115,11 @@ handleClick = (e, { name }) => {
 function mapStateToProps(state){
   return{
     loadComments: state.eventComments,
-    userEvents: state.userEvents
+    activeItem: state.activeItem,
+    userEvents: state.userEvents,
+    loadUpdatedMessage: state.onChangeChatMessage,
+    loadCurrentEvent: state.selectedChatEvent
+
   }
 }
 function mapDispatchToProps(dispatch) {
@@ -96,6 +129,15 @@ function mapDispatchToProps(dispatch) {
     },
     storeComments: (comments) => {
       dispatch(eventCommentsAction(comments))
+    },
+    currentEvent: (defaultEvent) => {
+      dispatch(selectedChatEventAction(defaultEvent))
+    },
+    onChangeChatMessage: (input) => {
+      dispatch(onChangeChatMessageAction(input))
+    },
+    updateActiveItem: (activeEvent) => {
+      dispatch(activeItemAction(activeEvent))
     }
 
   }

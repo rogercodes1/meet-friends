@@ -10,14 +10,15 @@ const defaultState= {
   boolean: false,
   nearbyEvents:[],
   yelpParams: {
-    searchTerm: "parks",
-    location: "san francisco, ca",
-    radius: 2000,
+    searchTerm: "bars",
+    location: "san diego, ca",
+    radius: 3000,
     limit: 20,
   },
   eventComments:[],
   selectedChatEvent: [],
   onChangeChatMessage: "",
+  activeItem: "1"
 }
 
 export default function reducer(state=defaultState,action) {
@@ -32,9 +33,9 @@ export default function reducer(state=defaultState,action) {
         return {
           ...state, selectEvent: action.payload
           }
-      case "CHAT_EVENT":
+      case "CURRENT_CHAT_EVENT":
         return {
-          ...state, selectChatEvent: action.payload
+          ...state, selectedChatEvent: action.payload
           }
       case "CREATE_EVENT":
         return {
@@ -72,6 +73,11 @@ export default function reducer(state=defaultState,action) {
         return {
           ...state, onChangeChatMessage: action.payload
         }
+      case "ACTIVE_EVENT":
+        return {
+          ...state, activeItem: action.payload
+        }
+
       default:
         return state
   }
