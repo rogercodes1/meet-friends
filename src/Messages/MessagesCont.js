@@ -145,12 +145,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(MessagesCont)
-
-// <div id="MessagesCont">
-// <div id="MessageList">
-//   <Card.Group >
-//    {/*display userEvents is in Helpers/EventCard*/}
-//
-//   </Card.Group>
-// </div>
-// </div>

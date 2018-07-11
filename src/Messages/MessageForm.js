@@ -14,12 +14,7 @@ class MessageForm extends Component{
 handleSubmit = (e) => {
   e.preventDefault()
   console.log('activeItem', this.props.activeItem);
-  // console.log("message", this.props.loadUpdatedMessage);
-  // console.log("e.id", e);
-  // console.log("props", this.props);
-  // console.log("active Item", this.props.activeItem);
-  // console.log("event", this.props.loadEvent);
-  // debugger
+  
   const data = {
     event_id: this.props.loadEvent.id,
     user_id: parseInt(localStorage.id, 10),
