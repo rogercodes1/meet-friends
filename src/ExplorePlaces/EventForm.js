@@ -78,7 +78,7 @@ handleSubmit = (event) => {
           <Form.Group>
             <Form.Field
               name="event_name"
-              required control={Input} onChange={this.handleChange} width={16} label="Event Name" type="text" placeholder="Give your Event a name"/>
+              required control={Input} onChange={this.handleChange} width={16} label="Event Name" type="text" placeholder="Mention what you want to do at this event. Ex: Grab Coffee, Watch Lakers Game, etc."/>
           </Form.Group>
 
           <Form.Group>

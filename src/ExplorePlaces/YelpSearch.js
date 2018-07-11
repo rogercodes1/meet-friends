@@ -40,10 +40,10 @@ class YelpSearch  extends Component {
                 onChange={this.handleChange}
                 name="searchTerm"
                 label="Search Yelp"
-                placeholder="Enter Category or Biz..."
+                placeholder="Search by Biz or Category to find a place for your event."
               />
             </Form.Field>
-            <Form.Field width={6}>
+            <Form.Field width={4}>
                 <Input
                   onChange={this.handleChange}
                   name="location"
@@ -52,7 +52,7 @@ class YelpSearch  extends Component {
                 />
               </Form.Field>
 
-              <Form.Field id="searchButton" control={Button}><Icon name="searchengin"/> Search</Form.Field>
+              <Form.Field width={3}id="searchButton" control={Button}><Icon name="searchengin"/> Search</Form.Field>
 
           </Form.Group>
 

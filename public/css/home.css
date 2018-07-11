@@ -1,9 +1,15 @@
+html{
+  background-color: #edeef0;
+
+}
+
 .HomeDisplayCont{
   border: 5px solid #aa0e25;
   border-radius: 10px;
   width: 80%;
   height:450px;
   margin: 40px auto;
+  margin-bottom: 70px;
   overflow-x: scroll;
 
 }

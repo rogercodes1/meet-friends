@@ -2,15 +2,19 @@
 meetup: #e51937
 darker red: #aa0e25
 darker meetup: #d00c29
+background: #edeef0;
   */
 
+  html{
+    background-color: #edeef0;
+  }
 .App {
   text-align: center;
+  background-color: #edeef0;
+  background-size: cover;
+  padding: inherit;
 }
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+
 .App-header {
   background-color: #aa0e25;
   height: 100px;
@@ -31,11 +35,13 @@ darker meetup: #d00c29
 
 #ExplorePlacesCont, #ExploreNearbyList{
   margin:0 auto;
+  margin-bottom: 20px;
 }
 .PlaceCard{
   height: 450px;
   margin: 20px;
   padding:20px 10px;
+  margin-bottom:60px;
 }
 .PlaceCardImage{
   height: 250px;
@@ -56,9 +62,9 @@ darker meetup: #d00c29
 #YelpSearch, #EventForm{
   margin: 10px auto;
   border-radius: 20px;
-  border: 10px solid #aa0e25;
+  border: 5px solid #aa0e25;
   padding: 20px;
-  width:80%;
+  width:90%;
 }
 /* Google Maps */
 #GoogleMaps{
