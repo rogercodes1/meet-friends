@@ -1,18 +1,11 @@
 import React from 'react'
 import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
-
-// import PropTypes from 'prop-types'
+const batman = require('./../Assets/BatmanLoading.gif')
 
 const Loading = (props) => {
   return (
     <div id="Loading">
-      <Segment>
-      <Dimmer active>
-        <Loader size='large'>Loading</Loader>
-      </Dimmer>
-
-      <Image src='/images/wireframe/paragraph.png' />
-    </Segment>
+        <Image centered src={batman} />
 
 
     </div>
@@ -20,3 +13,5 @@ const Loading = (props) => {
 }
 
 export default Loading
+
+// <Loader size='large'>Loading</Loader>

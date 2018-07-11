@@ -53,8 +53,8 @@ background: #edeef0;
 
 /* Loading CSS Component */
 #Loading{
-  background-color: #222;
-  margin: 100px;
+  /* background-color: #222; */
+  margin: 0 auto;
   padding: 100px;
 }
 
