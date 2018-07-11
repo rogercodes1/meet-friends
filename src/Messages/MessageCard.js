@@ -9,7 +9,11 @@ class MessageCard extends Component{
 
   render(){
     const props = this.props
+
     return (
+
+      <React.Fragment>
+        {props.comment}
         <Comment id='MessageCard'>
         <Comment.Avatar src={dog2} />
         <Comment.Content>
@@ -23,24 +27,26 @@ class MessageCard extends Component{
           </Comment.Actions>
         </Comment.Content>
       </Comment>
+    </React.Fragment>
 
     )
   }
 
 }
-function mapStateToProps(state){
-  return{
-    loadComments: state.eventComments,
+// function mapStateToProps(state){
+//   return{
+//     loadComments: state.eventComments,
+//
+//   }
+// }
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     saveEventComments: (comments) => {
+//       dispatch(eventCommentsAction(comments))
+//     }
+//   }
+//
+// }
 
-  }
-}
-function mapDispatchToProps(dispatch) {
-  return {
-    saveEventComments: (comments) => {
-      dispatch(eventCommentsAction(comments))
-    }
-  }
-
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(MessageCard)
+export default (MessageCard)
+// connect(null,mapDispatchToProps)
