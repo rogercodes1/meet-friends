@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import EventListCard from './EventListCard';
 import MessageCard from './MessageCard';
-import {Card, Grid, Menu, Segment, Comment} from 'semantic-ui-react';
+import {Grid, Menu, Segment, Comment} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {saveUserEventsAction, eventCommentsAction} from '../actions';
 const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
@@ -32,7 +32,6 @@ displayEventsList = (events, activeItem) => {
 }
 
 displayEventComments = (events, activeItem) => {
-  const num = parseInt(activeItem, 10)
   console.log("active item", activeItem, " num", this.state);
   if (events.length === 0){return null}
   const event = events.find(event=>{
@@ -53,18 +52,16 @@ handleClick = (e, { name }) => {
   // console.log("what is props id".this.props.id);
   this.setState({ activeItem: name })
   // this.props.storeComments(this.props.comments)
-
 }
   render () {
     const { activeItem } = this.state
-    const props = this.props
     const {userEvents} = this.props
     return(
       <div>
       <Grid>
         <Grid.Column width={4}>
           <Menu fluid vertical tabular id="CardMessage">
-            {this.displayEventsList(this.props.userEvents, activeItem)}
+            {this.displayEventsList(userEvents, activeItem)}
           </Menu>
         </Grid.Column>
         <Grid.Column stretched width={12}>

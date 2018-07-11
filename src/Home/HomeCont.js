@@ -1,6 +1,6 @@
 import React from 'react'
-import UserEventsCont from './UserEvents/UserEventsCont';
-import NearbyEventsCont from './NearbyEvents/NearbyEventsCont';
+import UserEventsCont from './User/UserEventsCont';
+import NearbyEventsCont from './Nearby/NearbyEventsCont';
 
 
 class HomeCont extends React.Component {

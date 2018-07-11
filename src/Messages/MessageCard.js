@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
-import {connect} from 'react-redux';
 import {Comment} from 'semantic-ui-react'
-import {eventCommentsAction} from '../actions';
+// import {connect} from 'react-redux';
+// import {eventCommentsAction} from '../actions';
 // import Avatars from './../../Assets/Avatars/';
 const dog2 = require('./../Assets/Avatars/dog2.png')
 class MessageCard extends Component{

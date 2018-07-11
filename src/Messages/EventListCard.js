@@ -1,13 +1,11 @@
 import React,{Component} from 'react'
-import {Card,Image, Menu, Grid, Segment, Comment} from 'semantic-ui-react'
+import {Card,Image, Menu} from 'semantic-ui-react'
 
 import {connect} from 'react-redux';
 import {eventCommentsAction, selectedChatEventAction} from '../actions';
-let url ="http://localhost:3001/api/v1/events/comments"
+// let url ="http://localhost:3001/api/v1/events/comments"
 
 class EventListCard extends Component {
-
-
 
   render(){
     const props = this.props
@@ -28,8 +26,6 @@ class EventListCard extends Component {
           </Card.Content>
           </Card>
       </Menu.Item>
-
-
     )
   }
 }
@@ -49,7 +45,6 @@ function mapDispatchToProps(dispatch) {
       dispatch(selectedChatEventAction(event))
     }
   }
-
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(EventListCard)

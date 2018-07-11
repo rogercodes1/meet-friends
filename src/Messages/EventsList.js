@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import {Card} from 'semantic-ui-react';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 import {saveUserEventsAction, selectedChatEventAction} from '../../actions';
 import EventListCard from './EventListCard';
 
@@ -41,4 +41,5 @@ function mapDispatchToProps(dispatch) {
 
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(EventsList)
+export default (EventsList)
+// connect(mapStateToProps,mapDispatchToProps)
