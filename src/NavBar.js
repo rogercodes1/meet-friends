@@ -105,7 +105,7 @@ handleProfile = (e) => this.props.history.push("/profile")
                 onClick={this.handleModalClick}>
                 <Icon name="home"/>Home &nbsp;
               </Menu.Item>
-               will display all you current and past events. If no events present you can join nearby events when you scroll down.
+               will display all you current and past events. If no events present you can join nearby events when you scroll down or head over to Explore Places to find a place to host an event.
             </p>
 
 
@@ -116,7 +116,7 @@ handleProfile = (e) => this.props.history.push("/profile")
                 active={activeItem === 'places'}
                 onClick={this.handleModalClick}>
                 <Icon name="yelp"/>Explore Places &nbsp;
-                </Menu.Item> lets you check out places by name or category. From there you can find details through Yelp, Google Maps, and create an event to Meet Friends.
+                </Menu.Item> lets you check out places by name or category. From there you can find location details through Yelp, Google Maps, and create an event to Meet Friends.
               </p>
 
             <p>
@@ -126,7 +126,7 @@ handleProfile = (e) => this.props.history.push("/profile")
                   name='events' active={activeItem === 'events'} onClick={this.handleModalClick}>
                   <Icon name="searchengin"/>Explore Events &nbsp;
               </Menu.Item>
-              shows you current events that are going on in your area. Feel free to look around and join an event. Check out the details to make sure you are all in.
+              shows you current events that are going on in your area. Feel free to explore and join an event. Check out the details to make sure you are all in.
             </p>
               <p>
                 <Menu.Item
@@ -136,7 +136,7 @@ handleProfile = (e) => this.props.history.push("/profile")
                   active={activeItem === 'messages'}
                   onClick={this.handleModalClick}>
                 <Icon name="comments outline"/>Messages &nbsp;
-              </Menu.Item> allows you to interact with your new friends before meeting up. This way you can group chat and figure out the details on where at the event you will meet.
+              </Menu.Item> allows you to interact with your new friends before meeting up. Once 3 friends join an event group messaging will become available. This way you can group chat and figure out the details on where you will be waiting once the event starts.
             </p>
             </Modal.Actions>
 
@@ -151,25 +151,3 @@ handleProfile = (e) => this.props.history.push("/profile")
 }
 
 export default withRouter(NavBar);
-// add after first modal tag
-  // <Image wrapped size='medium' src={props.yelp_image} />
-
-
-  // <Modal.Description icon="home">
-  //     Within your
-  //      page you will find your current and past events.
-  //   </Modal.Description>
-
-  // <Modal.Actions >
-  //   <Item.Group>
-        // <Item
-        //     as={NavLink}
-        //     to="/messages"
-        //     name='messages'
-        //     active={activeItem === 'messages'}
-        //     onClick={this.handleModalClick}>
-        //   <Icon name="comments outline"/>Messages
-        // </Item>
-  //     </Item.Group>
-  //
-  //     </Modal.Actions>

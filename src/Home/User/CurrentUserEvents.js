@@ -3,7 +3,7 @@ import {Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {saveUserEventsAction} from '../../actions';
 import {displayUserEvents} from '../../Helpers/HelpEventCard';
-
+import Onboarding from './../../Helpers/Onboarding';
 
 
 class CurrentUserEvents extends Component {
@@ -21,11 +21,15 @@ fetchCurrentUserEvents = () => {
 }
 
   render () {
+
     return (
-       <Card.Group id="UserEventCard">
-       {displayUserEvents(this.props.userEvents)}
+      <Card.Group id="UserEventCard">
+       {(this.props.userEvents.length > 0)
+         ? displayUserEvents(this.props.userEvents)
+         : <React.Fragment> <Onboarding /></React.Fragment>
+         }
        </Card.Group>
-          )
+       )
     }
 }
 

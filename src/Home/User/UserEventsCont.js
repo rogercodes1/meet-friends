@@ -27,9 +27,7 @@ class UserEventsCont extends React.Component {
          </Menu>
 
          <Segment>
-           <Card.Group id="UserEventCard">
             <CurrentUserEvents />
-         </Card.Group>
          </Segment>
       </div>
     )

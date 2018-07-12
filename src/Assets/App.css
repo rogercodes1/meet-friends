@@ -41,6 +41,12 @@ html{
 .App-intro {
   font-size: large;
 }
+#NewMeetFriends{
+  margin:15% auto;
+  padding: 20px;
+  background-color: #aa0e25;
+  color: white;
+}
 
 
 /*Explore Places CSS  */
