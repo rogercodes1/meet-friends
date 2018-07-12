@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Form, Grid, Input, Button, Icon, TextArea} from 'semantic-ui-react';
 import Fetches from '../Fetches';
 import {connect} from 'react-redux';
-import {createEventAction} from '../actions';
+import {createEventAction, displayFormAction} from '../actions';
 import {currentDate} from '../Helpers/date';
 const maps = "https://www.google.com/maps/place/"
 let url ="http://localhost:3001/api/v1/events/"
@@ -17,7 +17,7 @@ class EventForm extends Component{
       date: currentDate(),
       duration: 0.5,
       time: "21:00",
-      friends:3,
+      friends:2,
       host_id: localStorage.id,
     }
 }
@@ -25,10 +25,11 @@ class EventForm extends Component{
 handleChange = (e) => {
       this.setState({[e.target.name] : e.target.value})
 }
-handleSubmit = (event) => {
-  event.preventDefault()
+handleSubmit = (e) => {
+  e.preventDefault()
   const maps = "https://www.google.com/maps/place/"
   let yelpData = this.props.selectEvent
+  debugger
   let address = yelpData.location.display_address.join(" ")
   const eventData = {
     ...this.state,
@@ -36,11 +37,14 @@ handleSubmit = (event) => {
     address: address,
     yelp_url: yelpData.url,
     maps_link: maps + address,
-    yelp_image: yelpData.image_url
+    yelp_image: yelpData.image_url,
+    lat : yelpData.coordinates.latitude,
+    lon: yelpData.coordinates.longitude
 
   }
+  debugger
   this.props.createEvent(eventData)
-
+  this.props.displayForm(false)
   Fetches.post(url, eventData)
   .then(response => response.json())
   .then(json => {
@@ -137,6 +141,9 @@ function mapDispatchToProps(dispatch) {
   return {
     createEvent: (event) => {
       dispatch(createEventAction(event))
+    },
+    displayForm: (toggleDisplay) => {
+      dispatch(displayFormAction(toggleDisplay))
     }
   }
 
