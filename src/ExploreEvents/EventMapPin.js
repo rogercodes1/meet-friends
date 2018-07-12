@@ -2,7 +2,10 @@ import React,{Component} from 'react'
 import { Button,Header,Image, Icon, Modal} from 'semantic-ui-react'
 import Fetches from './../Fetches';
 import { render } from 'react-dom';
+import {connect} from 'react-redux';
 // import GeoLocation from './GeoLocation';
+import {selectPlaceAction, displayNearbyEventsAction, displayFormAction, saveUserEventsAction} from './../actions';
+
 
 let url ="http://localhost:3001/api/v1/events/join_event"
 
@@ -26,7 +29,7 @@ class EventMapPin extends Component{
           this.setState({open: false})
           this.props.saveNearbyEvents(json.nearby)
           this.props.addEvent(json.data)
-          alert("Event has been added.")
+          alert("Event has been added.\n Check your homepage to see your current events.")
         }
         else {
           alert("Unable to join event at the moment. Try again later.")
@@ -68,7 +71,32 @@ class EventMapPin extends Component{
     )
   }
 }
-export default EventMapPin
+
+function mapStateToProps(state){
+  return{
+    selectEvent: state.selectEvent,
+    displayForm: state.boolean,
+  }
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    selectEvent: (selectedBusiness) => {
+      dispatch(selectPlaceAction(selectedBusiness))
+    },
+    displayForm: (toggleDisplay) => {
+      dispatch(displayFormAction(toggleDisplay))
+    },
+    addEvent: (event) => {
+      dispatch(saveUserEventsAction(event))
+    },
+    saveNearbyEvents: (allEvents) => {
+      dispatch(displayNearbyEventsAction(allEvents))
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(EventMapPin)
+
 
 
 // style={{

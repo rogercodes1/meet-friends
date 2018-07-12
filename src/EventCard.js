@@ -25,7 +25,7 @@ handleClick = (e) => {
         this.setState({open: false})
         this.props.saveNearbyEvents(json.nearby)
         this.props.addEvent(json.data)
-        alert("Event has been added.")
+        alert("Event has been added.\n Check your homepage to see your current events.")
       }
       else {
         alert("Unable to join event at the moment. Try again later.")
