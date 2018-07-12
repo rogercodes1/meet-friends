@@ -14,13 +14,13 @@ class UserEventsCont extends React.Component {
           <Menu pointing>
            <Menu.Item name='currentEvents' active={activeItem === 'currentEvents'} onClick={this.handleItemClick} />
            <Menu.Item disabled
-             name='savedEvents'
-             active={activeItem === 'savedEvents'}
-             onClick={this.handleItemClick}
-           />
-         <Menu.Item disabled
              name='pastEvents'
              active={activeItem === 'pastEvents'}
+             onClick={this.handleItemClick}
+             />
+           <Menu.Item disabled
+             name='savedEvents'
+             active={activeItem === 'savedEvents'}
              onClick={this.handleItemClick}
            />
 
