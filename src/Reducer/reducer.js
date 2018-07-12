@@ -11,7 +11,7 @@ const defaultState= {
   nearbyEvents:[],
   yelpParams: {
     searchTerm: "bars",
-    location: "san diego, ca",
+    location: "10004",
     radius: 3000,
     limit: 20,
   },
