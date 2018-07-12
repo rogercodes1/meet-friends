@@ -15,11 +15,13 @@ class NearbyEventsCont extends React.Component {
           <Menu pointing>
            <Menu.Item name='nearbyEvents' active={activeItem === 'nearbyEvents'} onClick={this.handleItemClick} />
            <Menu.Item
+             disabled
              name='bars'
              active={activeItem === 'bars'}
              onClick={this.handleItemClick}
            />
            <Menu.Item
+             disabled
              name='Restaurants'
              active={activeItem === 'Restaurants'}
              onClick={this.handleItemClick}

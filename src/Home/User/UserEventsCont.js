@@ -13,12 +13,12 @@ class UserEventsCont extends React.Component {
       <div className="HomeDisplayCont">
           <Menu pointing>
            <Menu.Item name='currentEvents' active={activeItem === 'currentEvents'} onClick={this.handleItemClick} />
-           <Menu.Item
+           <Menu.Item disabled
              name='savedEvents'
              active={activeItem === 'savedEvents'}
              onClick={this.handleItemClick}
            />
-           <Menu.Item
+         <Menu.Item disabled
              name='pastEvents'
              active={activeItem === 'pastEvents'}
              onClick={this.handleItemClick}
