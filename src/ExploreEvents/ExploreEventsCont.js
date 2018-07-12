@@ -3,6 +3,8 @@ import ExploreEventsList from './ExploreEventsList';
 // import GoogleMapEvents from 'google-map-react';
 import EventsMap from './EventsMap';
 import {connect} from 'react-redux';
+import { render } from 'react-dom';
+import GeoLocation from './GeoLocation';
 import {displayNearbyEventsAction} from '../actions';
 
 
@@ -26,6 +28,8 @@ class ExploreEventsCont extends React.Component {
 
     return(
       <div>
+         <GeoLocation />
+
         <EventsMap/>
         <ExploreEventsList/>
       </div>

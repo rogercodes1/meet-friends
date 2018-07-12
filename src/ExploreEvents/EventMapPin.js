@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import { Button,Header,Image, Icon, Modal} from 'semantic-ui-react'
 import Fetches from './../Fetches';
+import { render } from 'react-dom';
+// import GeoLocation from './GeoLocation';
 
 let url ="http://localhost:3001/api/v1/events/join_event"
 
@@ -34,9 +36,11 @@ class EventMapPin extends Component{
   render(){
     const { open, dimmer } = this.state
     const props = this.props
+    // <GeoLocation />
 
     return(
       <div >
+
           <Modal
             trigger={<Icon
               size="large"
