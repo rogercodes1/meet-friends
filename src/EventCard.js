@@ -54,7 +54,8 @@ handleClick = (e) => {
               Yelp
             </Button>
 
-            <Modal trigger={<Button onClick={this.show('blurring')} basic color="blue">Event Details</Button>} dimmer={dimmer} open={open} onClose={this.close}>
+            <Modal
+              trigger={<Button onClick={this.show('blurring')} basic color="blue">Event Details</Button>} dimmer={dimmer} open={open} onClose={this.close}>
                 <Modal.Header>{props.event_name}</Modal.Header>
                 <Modal.Content image>
                   <Image wrapped size='medium' src={props.yelp_image} />

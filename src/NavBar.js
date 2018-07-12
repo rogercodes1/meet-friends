@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { withRouter } from 'react-router'
-import { Menu, Icon, Dropdown } from 'semantic-ui-react'
+import { Menu, Icon,Modal, Dropdown } from 'semantic-ui-react'
 import {NavLink} from 'react-router-dom';
 // import AuthO from './AuthO'
 
@@ -8,21 +8,24 @@ class NavBar extends Component{
      constructor(props){
         super(props);
         this.state={
-            activeItem: "home"
+            activeItem: "home",
+            open: false
         }
     }
-    handleClick = (e, { name }) => this.setState({ activeItem: name })
-    handleLogout = (e) => {
-      localStorage.clear()
-      this.props.history.push("/register")
-    }
-    handleProfile = (e) => this.props.history.push("/profile")
+show = dimmer => () => this.setState({ dimmer, open: true })
+close = () => this.setState({ open: false })
 
-    handleInfo = () => {
+handleClick = (e, { name }) => this.setState({ activeItem: name })
 
-    }
+handleLogout = (e) => {
+  localStorage.clear()
+  this.props.history.push("/register")
+}
+handleProfile = (e) => this.props.history.push("/profile")
+
+
     render() {
-    const { activeItem } = this.state
+    const { activeItem, open, dimmer } = this.state
 
     return (
       <Menu>
@@ -78,10 +81,18 @@ class NavBar extends Component{
 
             </Dropdown>
         </Menu.Menu>
-        <Menu.Item  onClick={this.handleInfo} icon="info"></Menu.Item>
+        <Modal
+          trigger={<Menu.Item  onClick={this.show('blurring')} icon="info"></Menu.Item>} dimmer={dimmer} open={open} onClose={this.close}>
+          <Modal.Header>Navigating Meet Friends</Modal.Header>
+          <Modal.Content image>
+
+            </Modal.Content>
+        </Modal>
       </Menu>
     )
   }
 }
 
 export default withRouter(NavBar);
+// add after first modal tag
+  // <Image wrapped size='medium' src={props.yelp_image} />
