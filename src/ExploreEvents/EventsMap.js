@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import {connect} from 'react-redux';
+import EventMapPin from './EventMapPin';
+
+
 const mapsKey=`${process.env.REACT_APP_API_KEY_GOOGLE_MAPS}`
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+// const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class EventMap extends Component {
   static defaultProps = {
@@ -11,7 +15,18 @@ class EventMap extends Component {
       lng: -74.01430
     },
     zoom: 13
-  };
+  }
+
+plotPins = (events) => {
+
+  return events.map(event=>{
+    return <EventMapPin
+        key={event.id}
+        lat={event.lat}
+        lng={event.lon}
+        {...event}/>
+  })
+}
 
   render() {
 
@@ -23,18 +38,20 @@ class EventMap extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
-            lat={40.70514}
-            lng={-74.01430}
-            text={'Manhattan'}
-          />
+       {this.plotPins(this.props.nearbyEvents)}
         </GoogleMapReact>
       </div>
     );
   }
 }
 
-export default EventMap;
+function mapStateToProps(state){
+  return{
+    nearbyEvents: state.nearbyEvents
+  }
+}
+
+export default connect(mapStateToProps)(EventMap);
 
 // const AnyReactComponent = ({ text }) => (
 //   <div style={{

@@ -1,24 +1,24 @@
 import React from 'react'
 import { Card} from 'semantic-ui-react';
 import {connect} from 'react-redux';
-import {displayNearbyEventsAction} from '../actions';
+// import {displayNearbyEventsAction} from '../actions';
 import EventCard from './../EventCard';
 
-const url = `http://localhost:3001/api/v1/events/nearby?id=${localStorage.id}`
+// const url = `http://localhost:3001/api/v1/events/nearby?id=${localStorage.id}`
 
 class ExploreEventsList extends React.Component {
 
-componentDidMount(){
-  this.fetchNearbyEvents()
-}
-
-fetchNearbyEvents = () => {
-    fetch(url)
-    .then(response=>response.json())
-    .then(data=>{
-    this.props.saveAllEvents(data)
-    })
-}
+// componentDidMount(){
+//   this.fetchNearbyEvents()
+// }
+//
+// fetchNearbyEvents = () => {
+//     fetch(url)
+//     .then(response=>response.json())
+//     .then(data=>{
+//     this.props.saveAllEvents(data)
+//     })
+// }
 displayNearbyEvents = (events) => {
   let list ="ExploreCard"
   return events.map(event=>{
@@ -48,12 +48,12 @@ function mapStateToProps(state){
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    saveAllEvents: (allEvents) => {
-      dispatch(displayNearbyEventsAction(allEvents))
-    }
-  }
-}
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     saveAllEvents: (allEvents) => {
+//       dispatch(displayNearbyEventsAction(allEvents))
+//     }
+//   }
+// }
 
-export default connect(mapStateToProps,mapDispatchToProps)(ExploreEventsList);
+export default connect(mapStateToProps)(ExploreEventsList);

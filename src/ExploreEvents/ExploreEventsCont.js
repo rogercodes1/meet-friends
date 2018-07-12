@@ -4,7 +4,7 @@ import ExploreEventsList from './ExploreEventsList';
 import EventsMap from './EventsMap';
 import {connect} from 'react-redux';
 import {displayNearbyEventsAction} from '../actions';
-const url = `http://localhost:3001/api/v1/events/nearby?id=${localStorage.id}`
+
 
 class ExploreEventsCont extends React.Component {
 
@@ -14,6 +14,7 @@ class ExploreEventsCont extends React.Component {
   }
 
   fetchNearbyEvents = () => {
+  const url = `http://localhost:3001/api/v1/events/nearby?id=${localStorage.id}`
       fetch(url)
       .then(response=>response.json())
       .then(data=>{

@@ -29,7 +29,6 @@ handleSubmit = (e) => {
   e.preventDefault()
   const maps = "https://www.google.com/maps/place/"
   let yelpData = this.props.selectEvent
-  debugger
   let address = yelpData.location.display_address.join(" ")
   const eventData = {
     ...this.state,
@@ -42,7 +41,6 @@ handleSubmit = (e) => {
     lon: yelpData.coordinates.longitude
 
   }
-  debugger
   this.props.createEvent(eventData)
   this.props.displayForm(false)
   Fetches.post(url, eventData)
