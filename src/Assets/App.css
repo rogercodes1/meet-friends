@@ -110,3 +110,9 @@ html{
 }
 
 /* Home Page */
+
+
+/* NavBar */
+#infoNav{
+  padding-right:30px;
+}

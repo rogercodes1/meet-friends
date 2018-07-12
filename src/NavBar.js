@@ -92,7 +92,7 @@ handleProfile = (e) => this.props.history.push("/profile")
             </Dropdown>
         </Menu.Menu>
         <Modal
-          trigger={<Menu.Item  onClick={this.show('blurring')} icon="info"></Menu.Item>} dimmer={dimmer} open={open} onClose={this.close}>
+          trigger={<Menu.Item  id="infoNav" onClick={this.show('blurring')} icon="info"></Menu.Item>} dimmer={dimmer} open={open} onClose={this.close}>
           <Modal.Header>Navigating Meet Friends</Modal.Header>
           <Modal.Content image>
 
