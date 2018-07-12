@@ -12,7 +12,7 @@ const URL = "http://localhost:3001/places?"
 
 class ExplorePlacesCont extends Component {
   state = {
-    searchTerm:"seafood",
+    searchTerm:"bars",
     location: "New York, NY",
     radius: 2000,
     limit: 20,
@@ -25,7 +25,8 @@ yelpFetch = () => {
   const params = this.props.yelpSubmit
   Fetches.yelpGet(URL, params)
   .then(response=>response.json())
-  .then(yelp=>{this.props.setResults(yelp.results.businesses)
+  .then(yelp=>{
+    this.props.setResults(yelp.results.businesses)
   })
 }
 renderYelpResults = () => {

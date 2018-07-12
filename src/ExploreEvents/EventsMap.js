@@ -14,7 +14,7 @@ class EventMap extends Component {
   };
 
   render() {
-    console.log(mapsKey);
+
     return (
       // Important! Always set the container height explicitly
       <div id="GoogleMaps" >
