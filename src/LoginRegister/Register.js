@@ -22,6 +22,7 @@ class Register extends Component {
       last_name: "",
       email: "",
       password: "",
+      verifyPassword: "",
       gender: "other",
       birthday: adultAge(),
     }
@@ -35,23 +36,34 @@ class Register extends Component {
          this.setState({[e.target.name] : e.target.value})
       }
   }
-  handleSubmit = (e) => {
+  handleSubmit = (e,{password, verifyPassword}) => {
     e.preventDefault()
-    const body = this.state
-    Fetches.post(url, body)
-    .then(response => response.json())
-    .then(json => {
-    if (json.status === "accepted"){
-      localStorage.setItem('token', json.token);
-      localStorage.setItem('id', json.id);
-      this.props.history.push("/home")
-    } else if (json.status === "conflict") {
-      alert("User already exists. Try loggin in.")
+    let check = e.target
+    console.log(check.password.value,check.verifyPassword.value);
+    if (check.password.value !== check.verifyPassword.value){
+      check.password.value = ""
+      check.verifyPassword.value = ""
+      return alert("Passwords do not match. Please re-enter password")
     }
-    else{
-      alert("Please fill in all fields.")
+    else {
+      
+      const body = this.state
+      Fetches.post(url, body)
+      .then(response => response.json())
+      .then(json => {
+        if (json.status === "accepted"){
+          localStorage.setItem('token', json.token);
+          localStorage.setItem('id', json.id);
+          this.props.history.push("/home")
+        } else if (json.status === "conflict") {
+          alert("User already exists. Try loggin in.")
+        }
+        else{
+          alert("Please fill in all fields.")
+        }
+      })
+
     }
-    })
   }
 
   render() {
@@ -69,7 +81,7 @@ class Register extends Component {
         <Form.Group>
           <Form.Field required control={Input} width={8} onChange={this.handleChange} label="Password" type="password" name="password" placeholder="Enter Password"/>
 
-          <Form.Field control={Input} disabled width={8} onChange={this.handleChange} label="Verify Password" type="password" name="verifyPassword" placeholder="Re-Enter Password"/>
+          <Form.Field control={Input} required width={8} onChange={this.handleChange} label="Verify Password" type="password" name="verifyPassword" placeholder="Re-Enter Password"/>
         </Form.Group>
 
         <Form.Group>
