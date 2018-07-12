@@ -3,7 +3,7 @@ import EventListCard from './EventListCard';
 import MessageCard from './MessageCard';
 import MessageForm from './MessageForm';
 // import Fetches from '../Fetches';
-import {Grid, Menu, Segment, Comment} from 'semantic-ui-react';
+import {Grid, Menu, Segment, Image, Header, Comment} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {saveUserEventsAction, onChangeChatMessageAction, activeItemAction,selectedChatEventAction, eventCommentsAction} from '../actions';
 const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
@@ -19,11 +19,16 @@ fetchData = () => {
   fetch(url)
   .then(response=>response.json())
   .then(json=>{
-    let activeItem = json.events[0].id.toString()
-  this.props.updateActiveItem(activeItem)
-  this.props.saveUserEvents(json.events)
-  this.props.currentEvent(json.events[0])
-  this.props.storeComments(json.events[0].comments)
+    if (json.events.length !== 0){
+      let activeItem = json.events[0].id.toString()
+    this.props.updateActiveItem(activeItem)
+    this.props.saveUserEvents(json.events)
+    this.props.currentEvent(json.events[0])
+    this.props.storeComments(json.events[0].comments)
+  } else {
+      this.props.saveUserEvents(json.events)
+  }
+
   })
 }
 displayEventsList = (events, activeItem) => {
@@ -86,25 +91,32 @@ handleInputChange = (e) => {
     console.log(activeItem);
     return(
       <div id="MessagesCont">
-      <Grid>
-        <Grid.Column width={6} id="MessageEventsColumn">
-          <Menu fluid vertical tabular >
-            {this.displayEventsList(userEvents, activeItem)}
-          </Menu>
-        </Grid.Column>
-        <Grid.Column stretched width={10}>
-          <Segment id='MessageCardCont'>
-            <Comment.Group >
-            {this.displayEventComments(userEvents, activeItem)}
-          </Comment.Group>
-        </Segment>
-        <MessageForm
-          {...this.props}
-          handleInputChange={this.handleInputChange}
-          handleSubmit={this.handleSubmit}/>
-        </Grid.Column>
+        {(this.props.userEvents.length > 0) ?
+         (<Grid>
+            <Grid.Column width={6} id="MessageEventsColumn">
+              <Menu fluid vertical tabular >
+                {this.displayEventsList(userEvents, activeItem)}
+              </Menu>
+            </Grid.Column>
+            <Grid.Column stretched width={10}>
+              <Segment id='MessageCardCont'>
+                <Comment.Group >
+                {this.displayEventComments(userEvents, activeItem)}
+              </Comment.Group>
+            </Segment>
+            <MessageForm
+              {...this.props}
+              handleInputChange={this.handleInputChange}
+              handleSubmit={this.handleSubmit}/>
+            </Grid.Column>
 
-      </Grid>
+          </Grid>)
+          : (
+          <React.Fragment>
+            <Header size="huge">Let's go Explore events. Messaging not available yet.</Header>
+            <Image id="corgi" src="https://media.giphy.com/media/VFDeGtRSHswfe/giphy.gif"/>
+          </React.Fragment>)
+          }
 
     </div>
     )

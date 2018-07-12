@@ -1,9 +1,16 @@
 body {
   /* margin: 0;
   padding: 0; */
+  background-color: #edeef0;
+
   font-family: sans-serif;
 }
 .subTitle{
   font-family: 'Rock Salt', cursive;
   margin-top: 0;
+
+}
+#corgi{
+  margin:auto;
+  margin-top: 80px;
 }
