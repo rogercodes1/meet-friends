@@ -1,17 +1,16 @@
+
 import React from 'react'
 import { Image} from 'semantic-ui-react'
 const batman = require('./../Assets/BatmanLoading.gif')
 
-const Loading = (props) => {
+const Onboarding = (props) => {
   return (
-    <div id="Loading">
+    <div id="Onboarding">
         <Image centered src={batman} />
-
-
     </div>
   )
 }
 
-export default Loading
+export default Onboarding
 
 // <Loader size='large'>Loading</Loader>

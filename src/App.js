@@ -16,6 +16,7 @@ class App extends Component {
     return (<div className="App">
       <header className="App-header">
         <h1 className="App-title">Meet Friends</h1>
+        {AuthO.loggedIn() ? null : <h3 className="subTitle">Developing new friendships in the age of Digital technology</h3>}
       </header>
       <Switch>
       {
@@ -24,9 +25,9 @@ class App extends Component {
               <NavBar/>
               <Route exact path="/home" render={(props) => <HomeCont {...props}/>}/>
 
+              <Route exact path="/explore-places" render={(props) => <PlacesCont {...props}/>}/>
               <Route exact path="/explore-events" render={(props) => <EventsCont {...props}/>}/>
 
-              <Route exact path="/explore-places" render={(props) => <PlacesCont {...props}/>}/>
 
               <Route exact path="/messages" render={(props) => <MessagesCont {...props}/>}/>
               <Route exact path="/profile" render={(props) => <ProfileCont {...props}/>}/>

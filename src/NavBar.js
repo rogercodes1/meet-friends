@@ -18,7 +18,9 @@ class NavBar extends Component{
     }
     handleProfile = (e) => this.props.history.push("/profile")
 
+    handleInfo = () => {
 
+    }
     render() {
     const { activeItem } = this.state
 
@@ -34,20 +36,20 @@ class NavBar extends Component{
             </Menu.Item>
 
             <Menu.Item
+              as={NavLink}
+              to="/explore-places"
+              name='places'
+              active={activeItem === 'places'}
+              onClick={this.handleClick}>
+              <Icon name="yelp"/>Explore Places
+              </Menu.Item>
+            <Menu.Item
                 as={NavLink}
                 to="/explore-events"
                 name='events' active={activeItem === 'events'} onClick={this.handleClick}>
             <Icon name="searchengin"/>Explore Events
             </Menu.Item>
 
-        <Menu.Item
-            as={NavLink}
-            to="/explore-places"
-        name='places'
-          active={activeItem === 'places'}
-          onClick={this.handleClick}>
-          <Icon name="yelp"/>Explore Places
-        </Menu.Item>
 
         <Menu.Item
             as={NavLink}
@@ -57,15 +59,16 @@ class NavBar extends Component{
             onClick={this.handleClick}>
           <Icon name="comments outline"/>Messages
         </Menu.Item>
-        <Menu.Menu position='right'>
+
+        <Menu.Menu position="right">
             <Dropdown  item icon="setting" simple>
                 <Dropdown.Menu>
                     <Dropdown.Item
                       onClick={this.handleLogout}>
                         <Icon
-                          name="log out"
+                          name="sign out"
                           color="red"
-                          value="logout"/>Logout
+                          value="logout"/> Logout
                     </Dropdown.Item>
                     <Dropdown.Item onClick={this.handleProfile}>
                         <Icon name="user" color="blue" value="user"/>Profile
@@ -75,6 +78,7 @@ class NavBar extends Component{
 
             </Dropdown>
         </Menu.Menu>
+        <Menu.Item  onClick={this.handleInfo} icon="info"></Menu.Item>
       </Menu>
     )
   }

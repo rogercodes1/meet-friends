@@ -5,9 +5,17 @@ darker meetup: #d00c29
 background: #edeef0;
   */
 
-  html{
+/*
+font-family: 'Pacifico', cursive;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Rock Salt', cursive;
+*/
+
+
+html{
     background-color: #edeef0;
   }
+
 .App {
   text-align: center;
   background-color: #edeef0;
@@ -17,13 +25,15 @@ background: #edeef0;
 
 .App-header {
   background-color: #aa0e25;
-  height: 100px;
+  height: 120px;
   padding: 20px;
   color: white;
 }
 
 .App-title {
-  font-size: 2em;
+
+  font-size: 3em;
+  margin-bottom:0;
 }
 
 .App-intro {
