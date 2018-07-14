@@ -32,7 +32,6 @@ fetchData = () => {
   })
 }
 displayEventsList = (events, activeItem) => {
-  console.log("active",activeItem);
   return events.map(event=>{
     return (
       <EventListCard key={event.id} {...event}
@@ -60,12 +59,7 @@ handleInputChange = (e) => {
   this.props.onChangeChatMessage(e.target.value)
 }
 
-// handleClick = (e, { name }) => {
-//   // this.props.currentEvent(this.props)
-//   console.log(name);
-//   this.setState({ activeItem: name })
-//   // this.props.storeComments(this.props.comments)
-// }
+
   render () {
     // const { activeItem } = this.state
     const {userEvents, activeItem} = this.props
