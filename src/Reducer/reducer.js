@@ -18,7 +18,8 @@ const defaultState= {
   eventComments:[],
   selectedChatEvent: [],
   onChangeChatMessage: "",
-  activeItem: "1"
+  activeItem: "1",
+  geolocation: [],
 }
 
 export default function reducer(state=defaultState,action) {
@@ -74,6 +75,10 @@ export default function reducer(state=defaultState,action) {
           ...state, onChangeChatMessage: action.payload
         }
       case "ACTIVE_EVENT":
+        return {
+          ...state, activeItem: action.payload
+        }
+      case "GEOLOCATION":
         return {
           ...state, activeItem: action.payload
         }

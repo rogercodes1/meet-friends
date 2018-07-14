@@ -78,3 +78,9 @@ export function activeItemAction(activeEvent) {
     payload: activeEvent
   }
 }
+export function geolocationAction(geolocation) {
+  return {
+    type: "ACTIVE_EVENT",
+    payload: geolocation
+  }
+}

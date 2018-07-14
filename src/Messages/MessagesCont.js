@@ -61,7 +61,7 @@ handleInputChange = (e) => {
 
 
   render () {
-    // const { activeItem } = this.state
+
     const {userEvents, activeItem} = this.props
     console.log(activeItem);
     return(
