@@ -1,8 +1,6 @@
 import React,{Component} from 'react'
 import {Comment} from 'semantic-ui-react'
-// import {connect} from 'react-redux';
-// import {eventCommentsAction} from '../actions';
-// import Avatars from './../../Assets/Avatars/';
+
 const dog2 = require('./../Assets/Avatars/dog2.png')
 class MessageCard extends Component{
 
@@ -33,20 +31,6 @@ class MessageCard extends Component{
   }
 
 }
-// function mapStateToProps(state){
-//   return{
-//     loadComments: state.eventComments,
-//
-//   }
-// }
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     saveEventComments: (comments) => {
-//       dispatch(eventCommentsAction(comments))
-//     }
-//   }
-//
-// }
+
 
 export default (MessageCard)
-// connect(null,mapDispatchToProps)
