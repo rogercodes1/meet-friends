@@ -17,7 +17,7 @@ class MessageCard extends Component{
         <Comment id='MessageCard'>
         <Comment.Avatar src={dog2} />
         <Comment.Content>
-          <Comment.Author>Matt</Comment.Author>
+          <Comment.Author>Your Initials Here. R.P.</Comment.Author>
           <Comment.Metadata>
             <div>Today at 5:42PM</div>
           </Comment.Metadata>

@@ -56,25 +56,6 @@ displayEventComments = (events, activeItem) => {
   } else { return null}
 }
 
-
-// handleSubmit = (e, {loadEvent}) => {
-//   console.log("++++++++++++++++++++");
-//   console.log("what is load event id",this.props.loadCurrentEvent);
-//   debugger
-//
-//   const data = {
-//     event_id: this.props.loadCurrentEvent.id,
-//     user_id: parseInt(localStorage.id, 10),
-//     comment: this.props.loadUpdatedMessage }
-//   // debugger
-//   e.target.message.value = ""
-//   Fetches.post(url, data)
-//   .then(res=>res.json())
-//   .then(json=>{
-//     console.log(json.comments);
-//     this.props.submitEventComment(json.comments)
-//   })
-// }
 handleInputChange = (e) => {
   this.props.onChangeChatMessage(e.target.value)
 }
