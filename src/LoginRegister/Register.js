@@ -25,6 +25,7 @@ class Register extends Component {
       verifyPassword: "",
       gender: "other",
       birthday: adultAge(),
+      avatar: "dog"
     }
   }
 
@@ -46,7 +47,7 @@ class Register extends Component {
       return alert("Passwords do not match. Please re-enter password")
     }
     else {
-      
+
       const body = this.state
       Fetches.post(url, body)
       .then(response => response.json())
@@ -62,10 +63,8 @@ class Register extends Component {
           alert("Please fill in all fields.")
         }
       })
-
     }
   }
-
   render() {
 
     return (
@@ -89,9 +88,6 @@ class Register extends Component {
           <Form.Field required width={8} onChange={this.handleChange} control={Select} name="gender" label='Gender' options={options} placeholder='Gender'/>
 
         </Form.Group>
-
-
-
         <Form.Field id="registerButton" control={Button}>Register</Form.Field>
 
       </Form>

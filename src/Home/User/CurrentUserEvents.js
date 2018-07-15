@@ -21,7 +21,7 @@ fetchCurrentUserEvents = () => {
 }
 
   render () {
-
+// TODO: improve Onboarding
     return (
       <Card.Group id="UserEventCard">
        {(this.props.userEvents.length > 0)
