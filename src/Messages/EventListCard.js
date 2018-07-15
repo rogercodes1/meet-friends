@@ -7,11 +7,6 @@ import {eventCommentsAction, activeItemAction,selectedChatEventAction} from '../
 
 class EventListCard extends Component {
 
-
-// componentDidUpdate(prevProps){
-//   debugger;
-// }
-
   handleClick = (e) => {
 
    console.log("name", e);

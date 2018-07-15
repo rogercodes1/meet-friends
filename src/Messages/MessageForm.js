@@ -7,14 +7,10 @@ let url ="http://localhost:3001/api/v1/comments"
 
 class MessageForm extends Component{
 
-// handleChange = (e) => {
-//   console.log(e.target.value);
-//   this.props.onChangeChatMessage(e.target.value)
-// }
 handleSubmit = (e) => {
   e.preventDefault()
   console.log('activeItem', this.props.activeItem);
-  
+
   const data = {
     event_id: this.props.loadEvent.id,
     user_id: parseInt(localStorage.id, 10),
@@ -60,7 +56,6 @@ function mapDispatchToProps(dispatch) {
       dispatch(onChangeChatMessageAction(comment))
     }
   }
-
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(MessageForm)
