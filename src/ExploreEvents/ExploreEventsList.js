@@ -8,17 +8,7 @@ import EventCard from './../EventCard';
 
 class ExploreEventsList extends React.Component {
 
-// componentDidMount(){
-//   this.fetchNearbyEvents()
-// }
-//
-// fetchNearbyEvents = () => {
-//     fetch(url)
-//     .then(response=>response.json())
-//     .then(data=>{
-//     this.props.saveAllEvents(data)
-//     })
-// }
+
 displayNearbyEvents = (events) => {
   let list ="ExploreCard"
   return events.map(event=>{
@@ -48,12 +38,5 @@ function mapStateToProps(state){
   }
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     saveAllEvents: (allEvents) => {
-//       dispatch(displayNearbyEventsAction(allEvents))
-//     }
-//   }
-// }
 
 export default connect(mapStateToProps)(ExploreEventsList);

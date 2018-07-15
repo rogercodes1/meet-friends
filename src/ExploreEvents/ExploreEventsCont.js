@@ -29,7 +29,6 @@ class ExploreEventsCont extends React.Component {
     return(
       <div>
          <GeoLocation />
-
         <EventsMap/>
         <ExploreEventsList/>
       </div>
