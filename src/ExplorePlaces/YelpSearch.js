@@ -7,6 +7,7 @@ const url = "http://localhost:3001/places?"
 
 
 class YelpSearch  extends Component {
+  // TODO: figure out if I need this state.
   state = {
     searchTerm:"seafood",
     location: "lamont, ca",
@@ -15,19 +16,17 @@ class YelpSearch  extends Component {
   }
   handleSubmit = () => {
     let params = this.state
-    console.log("this.state", this.state);
     this.props.setYelpParams(this.state)
     Fetches.yelpGet(url, params)
     .then(response => response.json())
     .then(yelp => {
-      console.log("what is yelp",yelp)
+
       this.props.setNewResults(yelp.results.businesses)
   })
 }
   handleChange = (e) => {
     this.setState({
-      [e.target.name]: e.target.value },
-      ()=>console.log(this.state))
+      [e.target.name]: e.target.value })
 
   }
   render() {
@@ -56,7 +55,7 @@ class YelpSearch  extends Component {
 
           </Form.Group>
 
-            </Form>
+        </Form>
 
       </div>
     )
