@@ -10,7 +10,7 @@ let url ="http://localhost:3001/api/v1/events/"
 class EventForm extends Component{
   constructor(props){
     super(props)
-
+// TODO: Need to place this.state to redux.
     this.state ={
       event_name: "",
       description: "",
@@ -51,7 +51,7 @@ handleSubmit = (e) => {
 }
 
   render() {
-    console.log("currentDate",currentDate());
+// TODO: Add avatar location.
     let yelpBiz = this.props.selectEvent
     let address = (yelpBiz.length===0)? "Empire State Building, NY" : yelpBiz.location.display_address.join(" ")
     return (

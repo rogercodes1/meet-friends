@@ -11,6 +11,7 @@ import Fetches from './../Fetches.js';
 const URL = "http://localhost:3001/places?"
 
 class ExplorePlacesCont extends Component {
+  // TODO: figure out if I need the state below or if it is being picked up from redux store.
   state = {
     searchTerm:"bars",
     location: "New York, NY",

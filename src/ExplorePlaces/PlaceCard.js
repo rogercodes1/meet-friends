@@ -13,6 +13,7 @@ class PlaceCard extends Component {
   }
 
   render(){
+    // TODO: add a location pin on address so it is noticiable that it can be clicked.
     const props = this.props;
   let fullAddress = (typeof(props.location)==="undefined") ? "loading" : props.location.display_address.join(' ')
     return (
@@ -49,7 +50,7 @@ class PlaceCard extends Component {
   )}
 
 }
-
+// TODO: check which boolean I need in redux store. I don't think I am using all of them.
 function mapStateToProps(state){
   return{
     selectEvent: state.selectEvent,
