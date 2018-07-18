@@ -8,9 +8,7 @@ class RegisterCont extends Component{
         super(props);
         this.state = {
           activeItem: 'register',
-
     }
-
 }
 handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name })
