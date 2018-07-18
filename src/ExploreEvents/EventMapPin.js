@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import { Button,Header,Image, Icon, Modal} from 'semantic-ui-react'
 import Fetches from './../Fetches';
-import { render } from 'react-dom';
+// import { render } from 'react-dom';
 import {connect} from 'react-redux';
 // import GeoLocation from './GeoLocation';
 import {selectPlaceAction, displayNearbyEventsAction, displayFormAction, saveUserEventsAction} from './../actions';

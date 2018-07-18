@@ -1,5 +1,5 @@
 import React from 'react'
-import {Menu, Segment, Card} from 'semantic-ui-react';
+import {Menu, Segment} from 'semantic-ui-react';
 import CurrentUserEvents from './CurrentUserEvents';
 
 class UserEventsCont extends React.Component {
