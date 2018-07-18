@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import Login from './Login';
-import Register from './Register';
+import Login from './Login.js';
+import Register from './Register.js';
 import {Menu, Segment} from 'semantic-ui-react';
 
 class RegisterCont extends Component{
