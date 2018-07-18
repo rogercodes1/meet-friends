@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "ajv": "^6.5.1",
-    "faker": "^4.1.0",
+    "babel-cli": "^6.26.0",
     "google-map-react": "^1.0.5",
     "react": "^16.4.1",
     "react-browser-router": "^2.1.2",
@@ -16,8 +16,7 @@
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
     "semantic-ui-css": "^2.3.2",
-    "semantic-ui-react": "^0.82.0",
-    "yelp-fusion": "^2.0.3"
+    "semantic-ui-react": "^0.82.0"
   },
   "scripts": {
     "start": "react-scripts start",
