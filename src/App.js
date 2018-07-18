@@ -33,13 +33,14 @@ class App extends Component {
               <Route exact path="/profile" render={(props) => <ProfileCont {...props}/>}/>
 
             </React.Fragment>
-          : <Route exact path="/register" render={(props) => <RegisterCont {...props}/>}/>
+          : <Route exact path="/" render={(props) => <RegisterCont {...props}/>}/>
       }
       {
         AuthO.loggedIn()
           ? null
-        : (<Redirect to="/register"/>)
+        : (<Redirect to="/"/>)
       }
+
       </Switch>
 
 
