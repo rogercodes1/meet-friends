@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Assets/App.css';
 import NavBar from './NavBar.js';
-import RegisterCont from './LoginRegister/LogRegCont';
+import RegisterCont from './LoginRegister/RegisterCont';
 import HomeCont from './Home/HomeCont';
 import EventsCont from './ExploreEvents/ExploreEventsCont';
 import ProfileCont from './Settings/Profile';

@@ -4,7 +4,7 @@ import Login from './Login';
 import Register from './Register';
 import {Menu, Segment} from 'semantic-ui-react';
 
-class LoginSignUpContainer extends Component{
+class RegisterCont extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -41,4 +41,4 @@ handleItemClick = (e, { name }) => {
     }
 }
 
-export default LoginSignUpContainer
+export default RegisterCont
