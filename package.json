@@ -16,7 +16,7 @@
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
     "semantic-ui-css": "^2.3.2",
-    "semantic-ui-react": "^0.81.3",
+    "semantic-ui-react": "^0.82.0",
     "yelp-fusion": "^2.0.3"
   },
   "scripts": {
