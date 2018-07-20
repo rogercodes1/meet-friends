@@ -3,7 +3,6 @@ import {Form, Input, Button} from 'semantic-ui-react';
 import Fetches from './../Fetches.js';
 import {connect} from 'react-redux';
 import {saveUserEventsAction} from '../actions';
-
 let url = "https://meetfriends-api.herokuapp.com/sessions/"
 
 class Login extends Component{
