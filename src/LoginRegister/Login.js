@@ -4,7 +4,7 @@ import Fetches from './../Fetches.js';
 import {connect} from 'react-redux';
 import {saveUserEventsAction} from '../actions';
 
-let url = "http://localhost:3001/sessions/"
+let url = "https://meetfriends-api.herokuapp.com/sessions/"
 
 class Login extends Component{
      constructor(){
