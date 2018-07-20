@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import {adultAge} from '../Helpers/date';
 import {Form, Input, Button, Select} from 'semantic-ui-react';
 import Fetches from './../Fetches.js';
-let url = "https://meetfriends-api.herokuapp.com/api/v1/users/"
+let url = "https://meetfriends-api.herokuapp.com/api/v1/users"
 const options = [
   {
     id: "other",key: 'o', text: 'Other', value: 'other'
@@ -49,6 +49,7 @@ class Register extends Component {
 
       const body = this.state
       Fetches.post(url, body)
+      .then(console.log)
       .then(response => response.json())
       .then(json => {
         if (json.status === "accepted"){

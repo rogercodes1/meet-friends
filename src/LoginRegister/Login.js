@@ -18,6 +18,7 @@ class Login extends Component{
     event.preventDefault();
     const body = this.state
     Fetches.post(url,body)
+    .then(console.log)
     .then(response=>response.json())
     .then(json => {
       if (json.status === "accepted") {
