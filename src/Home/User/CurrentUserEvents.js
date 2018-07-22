@@ -12,7 +12,6 @@ componentDidMount(){this.fetchCurrentUserEvents()}
 
 fetchCurrentUserEvents = () => {
   const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
-
     fetch(url)
     .then(response=>response.json())
     .then(userData=>{

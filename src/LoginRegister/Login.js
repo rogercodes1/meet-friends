@@ -25,7 +25,6 @@ class Login extends Component{
         localStorage.setItem('token', json.token)
         localStorage.setItem('id', json.id)
         this.props.saveUserEvents(json.events)
-
         this.props.history.push("/home")
       }
       else{
