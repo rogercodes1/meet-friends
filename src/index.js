@@ -8,7 +8,7 @@ import reducer from './Reducer/reducer.js';
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router} from 'react-router-dom';
 
-  // eslint-disable no-underscore-dangle
+// eslint-disable no-underscore-dangle
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 // eslint-enable
 
