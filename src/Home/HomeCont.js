@@ -20,12 +20,23 @@ class HomeCont extends Component {
     this.props.saveNearbyEvents(data)
     })
   }
+  fetchCurrentUserEvents = () => {
+    const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
+      fetch(url)
+      .then(response=>response.json())
+      .then(userData=>{
+      this.props.saveUserEvents(userData.events)
+      })
+  }
 
   render () {
     return (
       <div>
         <UserEventsCont />
-        <NearbyEventsCont />
+        {this.props.userEvents.length > 0 ?
+          <NearbyEventsCont />
+          : null }
+
       </div>
     )
 
@@ -34,7 +45,7 @@ class HomeCont extends Component {
 
 function mapStateToProps(state){
   return{
-    nearbyEvents: state.nearbyEvents
+    userEvents: state.userEvents
   }
 }
 

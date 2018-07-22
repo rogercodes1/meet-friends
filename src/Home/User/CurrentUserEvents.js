@@ -5,7 +5,6 @@ import {saveUserEventsAction} from '../../actions';
 import {displayUserEvents} from '../../Helpers/HelpEventCard';
 import Onboarding from './../../Helpers/Onboarding';
 
-
 class CurrentUserEvents extends Component {
 
 componentDidMount(){this.fetchCurrentUserEvents()}
