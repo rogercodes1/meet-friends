@@ -57,7 +57,7 @@ class Register extends Component {
       console.log("Config",config);
       debugger
       fetch(url, config)
-      .then(console.log)
+      // .then(console.log)
       .then(response => response.json())
       .then(json => {
         if (json.status === "accepted"){

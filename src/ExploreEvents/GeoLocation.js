@@ -7,7 +7,6 @@ import { geolocationAction} from './../actions';
 class GeoLocation extends Component {
 
   render(){
-    debugger
     return (
       <Geolocation
         onSuccess={console.log}
