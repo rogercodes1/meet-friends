@@ -9,15 +9,6 @@ const url = `http://localhost:3001/api/v1/events/nearby?id=${localStorage.id}`
 
 class CurrentUserEvents extends React.Component {
 
-componentDidMount(){this.fetchNearbyEvents()}
-
-fetchNearbyEvents = () => {
-    fetch(url)
-    .then(response=>response.json())
-    .then(data=>{
-    this.props.saveNearbyEvents(data)
-    })
-}
 
  displayNearbyEvents = (events) => {
    return events.map(event=>{
@@ -26,7 +17,6 @@ fetchNearbyEvents = () => {
          {...event} />
    })
  }
-
   render () {
     return (
         <Card.Group id="UserEventCard">         {this.displayNearbyEvents(this.props.nearbyEvents)}
@@ -40,7 +30,6 @@ function mapStateToProps(state){
     nearbyEvents: state.nearbyEvents
   }
 }
-
 function mapDispatchToProps(dispatch) {
   return {
     saveNearbyEvents: (allEvents) => {
@@ -50,3 +39,13 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(CurrentUserEvents);
+
+// componentDidMount(){this.fetchNearbyEvents()}
+
+// fetchNearbyEvents = () => {
+//     fetch(url)
+//     .then(response=>response.json())
+//     .then(data=>{
+//     this.props.saveNearbyEvents(data)
+//     })
+// }

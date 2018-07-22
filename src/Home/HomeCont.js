@@ -7,7 +7,6 @@ import {displayNearbyEventsAction, saveUserEventsAction} from '../actions';
 
 class HomeCont extends Component {
 
-
   componentDidMount(){
     this.fetchCurrentUserEvents()
     this.fetchNearbyEvents()}

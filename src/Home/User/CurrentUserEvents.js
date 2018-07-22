@@ -7,17 +7,6 @@ import Onboarding from './../../Helpers/Onboarding';
 
 class CurrentUserEvents extends Component {
 
-componentDidMount(){this.fetchCurrentUserEvents()}
-
-fetchCurrentUserEvents = () => {
-  const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
-    fetch(url)
-    .then(response=>response.json())
-    .then(userData=>{
-    this.props.saveUserEvents(userData.events)
-    })
-}
-
   render () {
 // TODO: improve Onboarding
     return (
@@ -46,3 +35,14 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(CurrentUserEvents);
+
+// componentDidMount(){this.fetchCurrentUserEvents()}
+
+// fetchCurrentUserEvents = () => {
+//   const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
+//     fetch(url)
+//     .then(response=>response.json())
+//     .then(userData=>{
+//     this.props.saveUserEvents(userData.events)
+//     })
+// }

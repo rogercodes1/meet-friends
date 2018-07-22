@@ -44,19 +44,18 @@ class Register extends Component {
       return alert("Passwords do not match. Please re-enter password")
     }
     else {
-
       const body = this.state
-      const config = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(body)
-      };
-      console.log("body",body);
-      console.log("Config",config);
-      debugger
-      fetch(url, config)
+      // const config = {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json"
+      //   },
+      //   body: JSON.stringify(body)
+      // };
+      // console.log("body",body);
+      // console.log("Config",config);
+      // debugger
+      Fetches.post(url, body)
       // .then(console.log)
       .then(response => response.json())
       .then(json => {
