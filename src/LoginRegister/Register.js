@@ -5,14 +5,10 @@ import {Form, Input, Button, Select} from 'semantic-ui-react';
 import Fetches from './../Fetches.js';
 let url = "https://meetfriends-api.herokuapp.com/api/v1/users"
 const options = [
-  {
-    id: "other",key: 'o', text: 'Other', value: 'other'
-  }, {
-    id: "male",key: 'm',text: 'Male',value: 'male'
-  }, {
-    id: "female",key: 'f',text: 'Female',value: 'female'
-  }
-]
+  {id: "other",key: 'o', text: 'Other', value: 'other'},
+  {id: "male",key: 'm',text: 'Male',value: 'male'},
+  {id: "female",key: 'f',text: 'Female',value: 'female'}
+  ]
 
 class Register extends Component {
   constructor(props) {
