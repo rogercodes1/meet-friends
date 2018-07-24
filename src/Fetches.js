@@ -1,5 +1,3 @@
-
-
 const Fetches = {
   get: function(URL) {
     return fetch(URL);

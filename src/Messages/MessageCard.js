@@ -11,7 +11,6 @@ class MessageCard extends Component{
     return (
 
       <React.Fragment>
-
         <Comment id='MessageCard'>
         <Comment.Avatar src={dog2} />
         <Comment.Content>

@@ -38,7 +38,6 @@ class HomeCont extends Component {
 
       </div>
     )
-
   }
 }
 
