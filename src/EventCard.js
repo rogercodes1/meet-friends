@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {selectPlaceAction, displayNearbyEventsAction, displayFormAction, saveUserEventsAction} from './actions';
 import {CardDetails} from './Helpers/HelpEventCard';
 import Fetches from './Fetches';
-let url ="http://localhost:3001/api/v1/events/join_event"
+let URL = `${process.env.REACT_APP_BACKEND_URL}api/v1/events/join_event`
 
 
 class EventCard extends Component{
@@ -18,7 +18,7 @@ handleClick = (e) => {
       event_id: this.props.id,
       user_id: parseInt(localStorage.id, 10)
     }
-    Fetches.post(url,data)
+    Fetches.post(URL,data)
     .then(res=>res.json())
     .then(json=>{
       if (json.status === "accepted"){

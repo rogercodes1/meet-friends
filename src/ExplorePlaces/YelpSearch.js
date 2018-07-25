@@ -3,7 +3,7 @@ import { Form, Input, Icon, Button } from 'semantic-ui-react'
 import {connect} from 'react-redux';
 import {setYelpParamsAction, setYelpResultsAction} from '../actions';
 import Fetches from './../Fetches.js';
-const url = "http://localhost:3001/places?"
+const url = `${process.env.REACT_APP_BACKEND_URL}places?`
 
 
 class YelpSearch  extends Component {

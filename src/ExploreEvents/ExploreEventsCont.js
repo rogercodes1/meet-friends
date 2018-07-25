@@ -16,7 +16,7 @@ class ExploreEventsCont extends React.Component {
   }
 
   fetchNearbyEvents = () => {
-  const url = `http://localhost:3001/api/v1/events/nearby?id=${localStorage.id}`
+  const url = `${process.env.REACT_APP_BACKEND_URL}api/v1/events/nearby?id=${localStorage.id}`
       fetch(url)
       .then(response=>response.json())
       .then(data=>{

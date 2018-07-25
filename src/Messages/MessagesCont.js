@@ -6,7 +6,7 @@ import MessageForm from './MessageForm';
 import {Grid, Menu, Segment, Image, Header, Comment} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {saveUserEventsAction, onChangeChatMessageAction, activeItemAction,selectedChatEventAction, eventCommentsAction} from '../actions';
-const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
+const url = `${process.env.REACT_APP_BACKEND_URL}api/v1/users/${localStorage.id}/`
 
 
 class MessagesCont extends Component {

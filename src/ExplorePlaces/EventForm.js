@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {createEventAction, displayFormAction} from '../actions';
 import {currentDate} from '../Helpers/date';
 const maps = "https://www.google.com/maps/place/"
-let url ="http://localhost:3001/api/v1/events/"
+let url =`${process.env.REACT_APP_BACKEND_URL}api/v1/events/`
 
 class EventForm extends Component{
   constructor(props){

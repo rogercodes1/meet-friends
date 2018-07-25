@@ -5,7 +5,7 @@ import {displayNearbyEventsAction} from '../../actions';
 import EventCard from './../../EventCard';
 
 
-const url = `http://localhost:3001/api/v1/events/nearby?id=${localStorage.id}`
+const url = `${process.env.REACT_APP_BACKEND_URL}api/v1/events/nearby?id=${localStorage.id}`
 
 class CurrentUserEvents extends React.Component {
 

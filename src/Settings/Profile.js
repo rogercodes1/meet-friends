@@ -3,8 +3,7 @@ import {Image, Card, Icon} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {profileAction} from '../actions';
 
-
-const url = `http://localhost:3001/api/v1/users/${localStorage.id}/`
+const url = `${process.env.REACT_APP_BACKEND_URL}api/v1/users/${localStorage.id}/`
 
 class Profile extends React.Component {
 

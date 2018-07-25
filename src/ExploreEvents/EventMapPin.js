@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import {selectPlaceAction, displayNearbyEventsAction, displayFormAction, saveUserEventsAction} from './../actions';
 
 
-let url ="http://localhost:3001/api/v1/events/join_event"
+let url =`${process.env.REACT_APP_BACKEND_URL}api/v1/events/join_event`
 
 class EventMapPin extends Component{
   state = { open: false }

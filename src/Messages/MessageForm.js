@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {eventCommentsAction, onChangeChatMessageAction} from '../actions';
 import {Form, Button} from 'semantic-ui-react';
 import Fetches from '../Fetches';
-let url ="http://localhost:3001/api/v1/comments"
+let url =`${process.env.REACT_APP_BACKEND_URL}api/v1/comments`
 
 class MessageForm extends Component{
 

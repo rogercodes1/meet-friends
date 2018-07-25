@@ -4,9 +4,8 @@ import {adultAge} from '../Helpers/date';
 import {Form, Input, Button, Select} from 'semantic-ui-react';
 import Fetches from './../Fetches.js';
 // let url = "https://meetfriends-api.herokuapp.com/api/v1/users"
-// let url = "http://localhost:3001/api/v1//users/"
-let URL = `${process.env.BACKEND_URL}api/v1/users`
-
+let URL = `${process.env.REACT_APP_BACKEND_URL}api/v1/users`
+console.log(process.env.REACT_APP_BACKEND_URL);
 const options = [
   {id: "other",key: 'o', text: 'Other', value: 'other'},
   {id: "male",key: 'm',text: 'Male',value: 'male'},
