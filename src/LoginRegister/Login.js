@@ -3,8 +3,8 @@ import {Form, Input, Button} from 'semantic-ui-react';
 import Fetches from './../Fetches.js';
 import {connect} from 'react-redux';
 import {saveUserEventsAction} from '../actions';
-let urlMeet = "https://meetfriends-api.herokuapp.com/sessions/"
-let url = "http://localhost:3001/sessions/"
+let url = "https://meetfriends-api.herokuapp.com/sessions/"
+// let url = "http://localhost:3001/sessions/"
 
 class Login extends Component{
      constructor(){
