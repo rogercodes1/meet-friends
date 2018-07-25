@@ -88,8 +88,8 @@ handleInputChange = (e) => {
           </Grid>)
           : (
           <React.Fragment>
-            <Header size="huge">Let's go Explore events. Messaging not available yet.</Header>
-            <p>Messsaging will become available once you join an event or create an event and have friends join.</p>
+            <Header size="huge">It looks like you're new to Meet Friends.</Header>
+            <p>Messsaging will become available once you join or create an event.</p>
             <Image id="corgi" src="https://media.giphy.com/media/VFDeGtRSHswfe/giphy.gif"/>
           </React.Fragment>)
           }
