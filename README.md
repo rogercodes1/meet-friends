@@ -3,7 +3,7 @@
 Life Budget is a *single-page, full-stack* web application built using **ReactJS** and **Ruby on Rails API**.
 Social networking app that allows users to create or join events based on common interests. Enables the ability to chat once a total of 3 friends join the event.
 
-<pre>
+
 
 ## Getting Started
 
@@ -17,6 +17,7 @@ You will also need the [meet-friends-backend](https://github.com/rogercodes1/bac
 npm install
 ```
 ## Folder tree
+<pre>
  ┬  
  ├ App
      ┬  
