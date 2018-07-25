@@ -45,16 +45,7 @@ class Register extends Component {
     }
     else {
       const body = this.state
-      // const config = {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json"
-      //   },
-      //   body: JSON.stringify(body)
-      // };
-      // console.log("body",body);
-      // console.log("Config",config);
-      // debugger
+    
       Fetches.post(url, body)
       // .then(console.log)
       .then(response => response.json())

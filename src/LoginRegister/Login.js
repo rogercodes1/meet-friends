@@ -19,7 +19,6 @@ class Login extends Component{
     event.preventDefault();
     const body = this.state
     Fetches.post(url,body)
-    // .then(console.log)
     .then(response=>response.json())
     .then(json => {
       if (json.status === "accepted") {
@@ -35,7 +34,7 @@ class Login extends Component{
   }
   handleChange = (e) => {
       console.log("before",e.target.name, "other", e.target.value)
-      this.setState({[e.target.name] : e.target.value}, () => console.log(this.state))
+      this.setState({[e.target.name] : e.target.value})
   }
 
     render() {
