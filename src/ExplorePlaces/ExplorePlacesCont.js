@@ -7,7 +7,7 @@ import { Card } from 'semantic-ui-react'
 import {connect} from 'react-redux';
 import Loading from '../Helpers/Loading';
 import Fetches from './../Fetches.js';
-const URL = `${process.env.REACT_APP_LOCAL_URL}/places?`
+const URL = `${process.env.REACT_APP_BACKEND_URL}places?`
 
 // const URL = "http://localhost:3001/places?"
 
