@@ -7,8 +7,9 @@ import { Card } from 'semantic-ui-react'
 import {connect} from 'react-redux';
 import Loading from '../Helpers/Loading';
 import Fetches from './../Fetches.js';
+const URL = `${process.env.REACT_APP_LOCAL_URL}/places?`
 
-const URL = "http://localhost:3001/places?"
+// const URL = "http://localhost:3001/places?"
 
 class ExplorePlacesCont extends Component {
   // TODO: figure out if I need the state below or if it is being picked up from redux store.
