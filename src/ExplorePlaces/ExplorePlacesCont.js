@@ -9,8 +9,6 @@ import Loading from '../Helpers/Loading';
 import Fetches from './../Fetches.js';
 const URL = `${process.env.REACT_APP_BACKEND_URL}places?`
 
-// const URL = "http://localhost:3001/places?"
-
 class ExplorePlacesCont extends Component {
   // TODO: figure out if I need the state below or if it is being picked up from redux store.
   state = {

@@ -2,7 +2,6 @@ import React,{Component} from 'react'
 import EventListCard from './EventListCard';
 import MessageCard from './MessageCard';
 import MessageForm from './MessageForm';
-// import Fetches from '../Fetches';
 import {Grid, Menu, Segment, Image, Header, Comment} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {saveUserEventsAction, onChangeChatMessageAction, activeItemAction,selectedChatEventAction, eventCommentsAction} from '../actions';

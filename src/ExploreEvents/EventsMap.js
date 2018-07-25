@@ -6,8 +6,6 @@ import EventMapPin from './EventMapPin';
 
 const mapsKey=`${process.env.REACT_APP_API_KEY_GOOGLE_MAPS}`
 
-// const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
 class EventMap extends Component {
   static defaultProps = {
     center: {
