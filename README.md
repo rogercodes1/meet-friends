@@ -64,3 +64,13 @@ npm install
 * npm install && npm start
 * npm install react-router-dom
 * npm install react-redux or redux-react
+
+## Authors
+
+* **Roger Perez** - *Initial work* - [Personal Website](https://rogerperez.us)
+
+## Acknowledgments
+
+* Thanks to [Humzah Choudry](https://www.linkedin.com/in/humzah-choudry-70b0127b/) && [Laura Kim](https://www.linkedin.com/in/laura-kim-9a597748/), Teaching Coach Fellows @FlatironSchool. 
+* Thanks to my cohort #Octothorps where I received a second set of eyes when troubles came up. 
+* [Flatiron School](https://flatironschool.com/)
