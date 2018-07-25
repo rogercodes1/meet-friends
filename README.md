@@ -57,6 +57,8 @@ npm install
 * [React-Semantic-ui](https://react.semantic-ui.com/) - CSS styling
 * [Yelp API](https://rometools.github.io/rome/) - API used to setup meet up locations. 
 * [Google Maps API](https://developers.google.com/maps/documentation/javascript/tutorial) - Provides map to add pins to search by area. 
+* [JWT Auth](https://jwt.io/) - Token authentication/authorization
+* Custom CSS styling 
 
 ## Dependencies | Installation Requirements
 * npm install && npm start
