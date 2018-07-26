@@ -40,7 +40,6 @@ class Login extends Component{
   }
 
     render() {
-      console.log("this.props.history",this.props.history);
         return (
             <div id="login">
                 <Form onSubmit={this.handleSubmit}>
