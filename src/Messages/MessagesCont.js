@@ -21,7 +21,6 @@ fetchData = () => {
   .then(json=>{
     if (json.events.length !== 0){
       let activeItem = json.events[0].id.toString()
-      debugger
       this.props.updateActiveItem(activeItem)
       this.props.saveUserEvents(json.events)
       this.props.currentEvent(json.events[0])
