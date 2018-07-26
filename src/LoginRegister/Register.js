@@ -45,7 +45,6 @@ class Register extends Component {
       const body = this.state
 
       Fetches.post(URL, body)
-      // .then(console.log)
       .then(response => response.json())
       .then(json => {
         if (json.status === "accepted"){

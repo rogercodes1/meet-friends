@@ -9,6 +9,7 @@ class MessageCard extends Component{
     const props = this.props
     const {comment} = this.props
     const timeStamp = this.props.created_at.split("T")
+    debugger
     return (
 
       <React.Fragment>

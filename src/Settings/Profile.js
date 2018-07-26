@@ -2,7 +2,7 @@ import React from 'react'
 import {Image, Card, Icon} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {profileAction} from '../actions';
-
+let dog2 = require('./../Assets/Avatars/dog2.png')
 const url = `${process.env.REACT_APP_BACKEND_URL}api/v1/users/${localStorage.id}/`
 
 class Profile extends React.Component {
@@ -23,10 +23,9 @@ class Profile extends React.Component {
     const profile = this.props.displayProfile
     return(
       <div>
-        <Image src='/images/avatar/large/matthew.png' />
         <Card>
-
           <Card.Content>
+            <Image size="tiny" src={dog2} />
             <Card.Header>{profile.first_name} {profile.last_name}</Card.Header>
             <Card.Meta>
               <span className='date'>DOB:  {profile.birthday}</span>
@@ -35,8 +34,8 @@ class Profile extends React.Component {
           </Card.Content>
           <Card.Content extra>
             <a>
-              <Icon name='user' />
-              22 Friends
+              <Icon name='calendar alternate' />
+              22 Events created
             </a>
           </Card.Content>
         </Card>

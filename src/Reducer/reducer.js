@@ -2,7 +2,7 @@
 const defaultState= {
   results : [],
   createEvent: [],
-  joinEventDetails:[],
+  // joinEventDetails:[],
   selectEvent: [],
   saveEvent: [],
   userEvents: [],
@@ -38,10 +38,10 @@ export default function reducer(state=defaultState,action) {
         return {
           ...state, selectedChatEvent: action.payload
           }
-      case "CREATE_EVENT":
-        return {
-          ...state, saveEvent: action.payload
-          }
+      // case "CREATE_EVENT":
+      //   return {
+      //     ...state, saveEvent: action.payload
+      //     }
       case "USER_EVENTS":
         return {
           ...state, userEvents: action.payload
@@ -62,10 +62,10 @@ export default function reducer(state=defaultState,action) {
         return {
           ...state, profile: action.payload
         }
-      case "EVENT_DETAILS":
-        return {
-          ...state, joinEventDetails: action.payload
-        }
+      // case "EVENT_DETAILS":
+      //   return {
+      //     ...state, joinEventDetails: action.payload
+      //   }
       case "EVENT_COMMENTS":
         return {
           ...state, eventComments: action.payload
