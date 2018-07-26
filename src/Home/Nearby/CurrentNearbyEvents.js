@@ -4,11 +4,7 @@ import {connect} from 'react-redux';
 import {displayNearbyEventsAction} from '../../actions';
 import EventCard from './../../EventCard';
 
-
-const url = `${process.env.REACT_APP_BACKEND_URL}api/v1/events/nearby?id=${localStorage.id}`
-
 class CurrentUserEvents extends React.Component {
-
 
  displayNearbyEvents = (events) => {
    return events.map(event=>{
