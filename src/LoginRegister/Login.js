@@ -17,9 +17,10 @@ class Login extends Component{
 
         }
     }
-    handleSubmit = (event) => {
-    event.preventDefault();
+    handleSubmit = (e) => {
+    e.preventDefault();
     const body = this.state
+    
     Fetches.post(URL,body)
     .then(response=>response.json())
     .then(json => {

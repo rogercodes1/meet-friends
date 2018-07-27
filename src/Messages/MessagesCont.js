@@ -15,7 +15,6 @@ componentDidMount(){this.fetchData()}
 
 fetchData = () => {
   const url = `${process.env.REACT_APP_BACKEND_URL}api/v1/users/${localStorage.id}/`
-
   fetch(url)
   .then(response=>response.json())
   .then(json=>{
