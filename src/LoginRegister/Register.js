@@ -21,7 +21,7 @@ class Register extends Component {
       verifyPassword: "",
       gender: "other",
       birthday: adultAge(),
-      avatar: "dog"
+      avatar: "bird
     }
   }
 
