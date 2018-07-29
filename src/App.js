@@ -53,7 +53,8 @@ class App extends Component {
 // Remove grey bar from login
 // Look into Oauth and get user data from Gmail, Facebook, Github, Yelp for online access.
 // Register add animal selection.catch
-// Add edit to profile
-// 
+// Add edit to profile data
+// add remove profile
+
 
 export default(App);
