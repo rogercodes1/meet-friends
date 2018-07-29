@@ -3,8 +3,7 @@ import {Form, Input, Button} from 'semantic-ui-react';
 import Fetches from './../Fetches.js';
 import {connect} from 'react-redux';
 import {saveUserEventsAction} from '../actions';
-// let url = "https://meetfriends-api.herokuapp.com/sessions/"
-// let url = "http://localhost:3001/sessions/"
+
 let URL = `${process.env.REACT_APP_BACKEND_URL}sessions`
 
 
@@ -20,7 +19,7 @@ class Login extends Component{
     handleSubmit = (e) => {
     e.preventDefault();
     const body = this.state
-    
+
     Fetches.post(URL,body)
     .then(response=>response.json())
     .then(json => {
