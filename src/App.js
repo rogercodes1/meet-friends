@@ -49,5 +49,11 @@ class App extends Component {
   }
 }
 
+// TODOTODO:
+// Remove grey bar from login
+// Look into Oauth and get user data from Gmail, Facebook, Github, Yelp for online access.
+// Register add animal selection.catch
+// Add edit to profile
+// 
 
 export default(App);

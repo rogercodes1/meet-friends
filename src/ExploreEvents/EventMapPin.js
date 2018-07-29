@@ -17,7 +17,7 @@ class EventMapPin extends Component{
 
 
   handleClick = (e) => {
-    // TODO: need to refactor being used in EventCard.js as well.
+    // TODO: need to refactor and use fetch data from nearby events and by category.
       const data = {
         event_id: this.props.id,
         user_id: parseInt(localStorage.id, 10)
