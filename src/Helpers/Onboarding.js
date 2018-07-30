@@ -28,7 +28,7 @@ class Onboarding extends Component{
           <Modal.Actions>
             <p><Menu.Item
               as={NavLink}
-              to="/home"
+              to="/"
               name=' home '
               active={activeItem === 'home'}
               onClick={this.handleModalClick}>

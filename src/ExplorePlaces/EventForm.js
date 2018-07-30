@@ -46,7 +46,7 @@ handleSubmit = (e) => {
   Fetches.post(url, eventData)
   .then(response => response.json())
   .then(json => {
-  this.props.history.push("/home")
+  this.props.history.push("/")
   })
 }
 

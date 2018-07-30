@@ -23,7 +23,6 @@ class App extends Component {
         AuthO.loggedIn()
           ? <React.Fragment>
               <NavBar/>
-              <Route exact path="/home" render={(props) => <HomeCont {...props}/>}/>
               <Route exact path="/" render={(props) => <HomeCont {...props}/>}/>
               <Route exact path="/explore-places" render={(props) => <PlacesCont {...props}/>}/>
               <Route exact path="/explore-events" render={(props) => <EventsCont {...props}/>}/>

@@ -41,7 +41,7 @@ handleProfile = (e) => this.props.history.push("/profile")
       <Menu>
             <Menu.Item
               as={NavLink}
-              to="/home"
+              to="/"
               name='home'
               active={activeItem === 'home'}
               onClick={this.handleClick}>
@@ -99,7 +99,7 @@ handleProfile = (e) => this.props.history.push("/profile")
             <Modal.Actions>
               <p><Menu.Item
                 as={NavLink}
-                to="/home"
+                to="/"
                 name=' home '
                 active={activeItem === 'home'}
                 onClick={this.handleModalClick}>

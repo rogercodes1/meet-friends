@@ -50,7 +50,7 @@ class Register extends Component {
         if (json.status === "accepted"){
           localStorage.setItem('token', json.token);
           localStorage.setItem('id', json.id);
-          this.props.history.push("/home")
+          this.props.history.push("/")
         } else if (json.status === "conflict") {
           alert("User already exists. Try loggin in.")
         }
