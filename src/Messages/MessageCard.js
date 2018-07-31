@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import {Comment} from 'semantic-ui-react'
 
 const dog2 = require('./../Assets/Avatars/dog2.png')
+console.log(dog2);
 class MessageCard extends Component{
 
 

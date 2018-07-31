@@ -1,29 +1,38 @@
 export default function randomAvatar() {
-  let avatars = [
-    "alligator",
-    "android-logo",
-    "bee",
-    "bird",
-    "cat",
-    "chick",
-    "dog",
-    "dog2",
-    "electric-robot",
-    "elephant",
-    "fish",
-    "horse",
-    "monkey",
-    "owl",
-    "panda"]
+let avatars = [
+  "alligator",
+  "android-logo",
+  "bee",
+  "bird",
+  "cat",
+  "chick",
+  "dog",
+  "dog2",
+  "electric-robot",
+  "elephant",
+  "fish",
+  "horse",
+  "monkey",
+  "owl",
+  "panda"
+]
+
     const avatarDropdown = []
-    avatars.forEach(avatar=>{
+    avatars.forEach(pic=>{
+      const avaImg = require('./../Assets/Avatars/' + pic +'.png')
+      // debugger
       let newAvatar = {
-        id:`${avatar}`,
-        key:`${avatar}`,
-        text:`${avatar}`,
-        value:`${avatar}`
+        id:`${pic}`,
+        key:`${pic}`,
+        text:`${pic}`,
+        value:`${pic}`,
+        image: {
+          avatar: true,
+          src: avaImg
+        },
       }
-        console.log(newAvatar)
+
+        console.log("what is new avatar", newAvatar.image.src)
        avatarDropdown.push(newAvatar)
     })
 
