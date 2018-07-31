@@ -70,9 +70,10 @@ class Register extends Component {
           <Form.Field required control={Input} onChange={this.handleChange} width={8} label="First Name" type="text" name="first_name" placeholder="First Name"/>
           <Form.Field required control={Input} onChange={this.handleChange} width={8} label="Last Name" type="text" name="last_name" placeholder="Last Name"/>
         </Form.Group>
+
         <Form.Group>
-          <Form.Field required width={9} control={Input} onChange={this.handleChange} label="Email" type="email" name="email" placeholder="Enter Email"/>
-          <Form.Field required width={3} onChange={this.handleChange} control={Select} name="gender" label='Gender' options={options} placeholder='Gender'/>
+          <Form.Field required width={8} control={Input} onChange={this.handleChange} label="Email" type="email" name="email" placeholder="Enter Email"/>
+          <Form.Field required width={8} onChange={this.handleChange} control={Select} name="gender" label='Avatar' options={avatars()} placeholder='Choose an Avatar'/>
         </Form.Group>
 
         <Form.Group>
