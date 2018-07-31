@@ -18,9 +18,8 @@ class ExplorePlacesCont extends Component {
     limit: 20,
   }
 
-componentDidMount(){
-  this.yelpFetch()
-}
+componentDidMount(){this.yelpFetch()}
+
 yelpFetch = () => {
   const params = this.props.yelpSubmit
   Fetches.yelpGet(URL, params)
