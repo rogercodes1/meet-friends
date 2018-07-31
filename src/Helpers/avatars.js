@@ -1,4 +1,4 @@
-export randomAvatar= ()=> {
+export default function randomAvatar() {
   let avatars = [
     "alligator",
     "android-logo",
@@ -27,9 +27,7 @@ export randomAvatar= ()=> {
        avatarDropdown.push(newAvatar)
     })
 
-  // avatarSelection = [  {id: "other",key: 'o', text: 'Other', value: 'other'},
-
-    ]
+  // avatarSelection = [  {id: "other",key: 'o', text: 'Other', value: 'other'},]
     console.log("what are the avatars",avatarDropdown)
     return avatarDropdown
 }
