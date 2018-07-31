@@ -24,7 +24,7 @@ let avatars = [
       let newAvatar = {
         id:`${pic}`,
         key:`${pic}`,
-        text:`${pic}`,
+        // text:`${pic}`,
         value:`${pic}`,
         image: {
           avatar: true,
