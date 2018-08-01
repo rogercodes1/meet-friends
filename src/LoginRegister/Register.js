@@ -73,8 +73,18 @@ class Register extends Component {
         </Form.Group>
 
         <Form.Group>
-          <Form.Field required width={8} control={Input} onChange={this.handleChange} label="Email" type="email" name="email" placeholder="Enter Email"/>
-          <Form.Field required width={8} onChange={this.handleChange} control={Select} name="gender" label='Avatar' options={avatars()} placeholder='Choose an Avatar'/>
+          <Form.Field required
+            width={11}
+            control={Input} onChange={this.handleChange} label="Email" type="email" name="email" placeholder="Enter Email"/>
+          <Form.Select id="avatarReg"
+            required
+            fluid
+            onChange={this.handleChange}
+            control={Select}
+            name="gender"
+            label='Choose an Avatar'
+            options={avatars()}
+            placeholder=' '/>
         </Form.Group>
 
         <Form.Group>
