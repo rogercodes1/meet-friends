@@ -38,6 +38,8 @@ class Register extends Component {
   handleSubmit = (e,{password, verifyPassword}) => {
     e.preventDefault()
     let check = e.target
+    console.log("state", this.state);
+    debugger;
     if (check.password.value !== check.verifyPassword.value){
       check.password.value = ""
       check.verifyPassword.value = ""
@@ -74,10 +76,11 @@ class Register extends Component {
 
         <Form.Group>
           <Form.Field required
-            width={11}
+            width={10}
             control={Input} onChange={this.handleChange} label="Email" type="email" name="email" placeholder="Enter Email"/>
           <Form.Select id="avatarReg"
             required
+            width={6}
             fluid
             onChange={this.handleChange}
             control={Select}

@@ -1,16 +1,18 @@
 export default function randomAvatar() {
 let avatars = [
   "alligator",
-  "android-logo",
   "bee",
   "bird",
   "cat",
   "chick",
-  "dog",
+  "penguin",
+  "dog-happy",
   "dog2",
   "monkey",
   "owl",
-  "panda"
+  "panda",
+  "squirrel",
+  "whale"
 ]
 
     const avatarDropdown = []
@@ -20,7 +22,7 @@ let avatars = [
       let newAvatar = {
         id:`${pic}`,
         key:`${pic}`,
-        // text:`${pic}`,
+        text:`${pic}`,
         value:`${pic}`,
         image: {
           avatar: true,
