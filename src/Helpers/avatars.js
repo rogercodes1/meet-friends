@@ -31,8 +31,6 @@ let avatars = [
           src: avaImg
         },
       }
-
-        console.log("what is new avatar", newAvatar.image.src)
        avatarDropdown.push(newAvatar)
     })
 
