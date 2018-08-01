@@ -8,10 +8,6 @@ let avatars = [
   "chick",
   "dog",
   "dog2",
-  "electric-robot",
-  "elephant",
-  "fish",
-  "horse",
   "monkey",
   "owl",
   "panda"
