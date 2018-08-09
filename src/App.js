@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Assets/App.css';
 import NavBar from './NavBar.js';
+import Footer from './Footer.js';
 import RegisterCont from './LoginRegister/RegisterCont';
 import HomeCont from './Home/HomeCont';
 import EventsCont from './ExploreEvents/ExploreEventsCont';
@@ -41,6 +42,7 @@ class App extends Component {
       }
 
       </Switch>
+      <Footer />
 
 
 
