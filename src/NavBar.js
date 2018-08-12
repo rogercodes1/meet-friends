@@ -66,6 +66,14 @@ handleProfile = (e) => this.props.history.push("/profile")
 
         <Menu.Item
             as={NavLink}
+            to="/comments"
+            name='comments'
+            active={activeItem === 'comments'}
+            onClick={this.handleClick}>
+          <Icon name="comments outline"/>Event Comments
+        </Menu.Item>
+        <Menu.Item
+            as={NavLink}
             to="/messages"
             name='messages'
             active={activeItem === 'messages'}
