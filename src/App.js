@@ -9,7 +9,7 @@ import EventsCont from './ExploreEvents/ExploreEventsCont';
 import ProfileCont from './Settings/Profile';
 import PlacesCont from './ExplorePlaces/ExplorePlacesCont';
 import CommentsCont from './Comments/CommentsCont';
-import CommentsCont from './Messages/MessagesCont';
+import MessagesCont from './Messages/MessagesCont';
 
 import AuthO from './AuthO'
 import {Route, Redirect, Switch} from 'react-router-dom';

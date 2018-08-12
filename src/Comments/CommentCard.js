@@ -3,7 +3,7 @@ import {Comment} from 'semantic-ui-react'
 
 const dog2 = require('./../Assets/Avatars/dog2.png')
 console.log(dog2);
-class MessageCard extends Component{
+class CommentCard extends Component{
 
 
   render(){
@@ -12,7 +12,7 @@ class MessageCard extends Component{
     return (
 
       <React.Fragment>
-        <Comment id='MessageCard'>
+        <Comment id='CommentCard'>
         <Comment.Avatar src={dog2} />
         <Comment.Content>
           <Comment.Author>Your Initials Here. R.P.</Comment.Author>
@@ -33,4 +33,4 @@ class MessageCard extends Component{
     )
   }
 }
-export default (MessageCard)
+export default (CommentCard)

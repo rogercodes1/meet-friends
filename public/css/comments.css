@@ -1,4 +1,4 @@
-#MessagesCont{
+#CommentsCont{
   /* position: fixed; */
   /* overflow-y: hidden;
   height:800px; */
@@ -6,7 +6,7 @@
   margin: 0 auto;
 
 }
-#MessageCard{
+#CommentCard{
   /* width: 100%; */
   padding: 10px;
   margin: 20px;
@@ -15,17 +15,17 @@
   border-radius: 10px;
 }
 
-/* #MessageEventsColumn{
+/* #CommentEventsColumn{
   /* border: 3px solid #aa0e25;
   display: inline-block; */
 
 
-#MessageEventBox{
+#CommentEventBox{
   right: 0;
   margin-right: 1%;
 
 }
-#MessageForm{
+#CommentForm{
   /* position: fixed; */
   bottom: 0;
   margin-left: auto;
@@ -34,11 +34,11 @@
   width: 80%;
 
 }
-form#MessageForm > div:first-child{
+form#CommentForm > div:first-child{
   margin: 10px;
   margin-right: 5%;
 }
-/* div#MessageEventBox > div:first-child{
+/* div#CommentEventBox > div:first-child{
   width:100%;
 } */
 
