@@ -72,6 +72,12 @@ export function onChangeChatMessageAction(updatedMessage) {
     payload: updatedMessage
   }
 }
+export function onChangeChatCommentAction(updatedComment) {
+  return {
+    type: "ON_CHANGE_COMMENT",
+    payload: updatedComment
+  }
+}
 export function activeItemAction(activeEvent) {
   return {
     type: "ACTIVE_EVENT",

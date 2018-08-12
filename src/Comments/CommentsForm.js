@@ -1,11 +1,11 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux';
-import {eventCommentsAction, onChangeChatMessageAction} from '../actions';
+import {eventCommentsAction, onChangeChatCommentAction} from '../actions';
 import {Form, Button} from 'semantic-ui-react';
 import Fetches from '../Fetches';
 let url =`${process.env.REACT_APP_BACKEND_URL}api/v1/comments`
 
-class MessageForm extends Component{
+class CommentForm extends Component{
 
 handleSubmit = (e) => {
   e.preventDefault()
@@ -14,11 +14,11 @@ handleSubmit = (e) => {
   const data = {
     event_id: this.props.loadEvent.id,
     user_id: parseInt(localStorage.id, 10),
-    comment: this.props.loadUpdatedMessage
+    comment: this.props.loadUpdatedComment
   }
   console.log('data', data);
 
-  e.target.message.value = ""
+  e.target.comment.value = ""
   Fetches.post(url, data)
   .then(res=>res.json())
   .then(json=>{
@@ -32,8 +32,8 @@ handleSubmit = (e) => {
   render(){
 
     return (
-      <Form onSubmit={this.handleSubmit} reply id="MessageForm">
-       <Form.TextArea onChange={this.props.handleInputChange} name="message" id="FormTextArea"/>
+      <Form onSubmit={this.handleSubmit} reply id="CommentForm">
+       <Form.TextArea onChange={this.props.handleInputChange} name="Comment" id="FormTextArea"/>
        <Button content='New Comment' labelPosition='left' icon='edit' primary />
      </Form>
 
@@ -44,7 +44,7 @@ handleSubmit = (e) => {
 function mapStateToProps(state){
   return{
     loadEvent: state.selectedChatEvent,
-    loadUpdatedMessage: state.onChangeChatMessage
+    loadUpdatedComment: state.onChangeChatComment
   }
 }
 function mapDispatchToProps(dispatch) {
@@ -52,10 +52,10 @@ function mapDispatchToProps(dispatch) {
     updateComments: (comments) => {
       dispatch(eventCommentsAction(comments))
     },
-    onChangeChatMessage: (comment) => {
-      dispatch(onChangeChatMessageAction(comment))
+    onChangeChatComment: (comment) => {
+      dispatch(onChangeChatCommentAction(comment))
     }
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(MessageForm)
+export default connect(mapStateToProps,mapDispatchToProps)(CommentForm)

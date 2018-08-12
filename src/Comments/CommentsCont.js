@@ -1,13 +1,13 @@
 import React,{Component} from 'react'
 import EventListCard from './EventListCard';
-import MessageCard from './MessageCard';
-import MessageForm from './MessageForm';
+import CommentCard from './CommentCard';
+import CommentForm from './CommentForm';
 import {Grid, Menu, Segment, Image, Header, Comment} from 'semantic-ui-react';
 import {connect} from 'react-redux';
-import {saveUserEventsAction, onChangeChatMessageAction, activeItemAction,selectedChatEventAction, eventCommentsAction} from '../actions';
+import {saveUserEventsAction, onChangeChatCommentAction, activeItemAction,selectedChatEventAction, eventCommentsAction} from '../actions';
 
 
-class MessagesCont extends Component {
+class CommentsCont extends Component {
   state = { activeItem: 1 }
 
 
@@ -47,7 +47,7 @@ displayEventComments = (events, activeItem) => {
   if (typeof event !== "undefined"){
 
     return event.comments.map(comment=>{
-        return (<MessageCard
+        return (<CommentCard
             key={comment.id}
             {...comment} />)
           })
@@ -55,7 +55,7 @@ displayEventComments = (events, activeItem) => {
 }
 
 handleInputChange = (e) => {
-  this.props.onChangeChatMessage(e.target.value)
+  this.props.onChangeChatComment(e.target.value)
 }
 
 
@@ -64,21 +64,21 @@ handleInputChange = (e) => {
     const {userEvents, activeItem} = this.props
     console.log(activeItem);
     return(
-      <div id="MessagesCont">
+      <div id="CommentsCont">
         {(this.props.userEvents.length > 0) ?
          (<Grid>
-            <Grid.Column width={6} id="MessageEventsColumn">
+            <Grid.Column width={6} id="CommentEventsColumn">
               <Menu fluid vertical tabular >
                 {this.displayEventsList(userEvents, activeItem)}
               </Menu>
             </Grid.Column>
             <Grid.Column stretched width={10}>
-              <Segment id='MessageCardCont'>
+              <Segment id='CommentCardCont'>
                 <Comment.Group >
                 {this.displayEventComments(userEvents, activeItem)}
               </Comment.Group>
             </Segment>
-            <MessageForm
+            <CommentForm
               {...this.props}
               handleInputChange={this.handleInputChange}
               handleSubmit={this.handleSubmit}/>
@@ -104,7 +104,7 @@ function mapStateToProps(state){
     loadComments: state.eventComments,
     activeItem: state.activeItem,
     userEvents: state.userEvents,
-    loadUpdatedMessage: state.onChangeChatMessage,
+    loadUpdatedComment: state.onChangeChatComment,
     loadCurrentEvent: state.selectedChatEvent
 
   }
@@ -120,8 +120,8 @@ function mapDispatchToProps(dispatch) {
     currentEvent: (defaultEvent) => {
       dispatch(selectedChatEventAction(defaultEvent))
     },
-    onChangeChatMessage: (input) => {
-      dispatch(onChangeChatMessageAction(input))
+    onChangeChatComment: (input) => {
+      dispatch(onChangeChatCommentAction(input))
     },
     updateActiveItem: (activeEvent) => {
       dispatch(activeItemAction(activeEvent))
@@ -131,4 +131,4 @@ function mapDispatchToProps(dispatch) {
 
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(MessagesCont)
+export default connect(mapStateToProps,mapDispatchToProps)(CommentsCont)
