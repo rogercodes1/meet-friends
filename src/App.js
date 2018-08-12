@@ -9,6 +9,8 @@ import EventsCont from './ExploreEvents/ExploreEventsCont';
 import ProfileCont from './Settings/Profile';
 import PlacesCont from './ExplorePlaces/ExplorePlacesCont';
 import CommentsCont from './Comments/CommentsCont';
+import CommentsCont from './Messages/MessagesCont';
+
 import AuthO from './AuthO'
 import {Route, Redirect, Switch} from 'react-router-dom';
 
@@ -28,9 +30,8 @@ class App extends Component {
               <Route exact path="/" render={(props) => <HomeCont {...props}/>}/>
               <Route exact path="/explore-places" render={(props) => <PlacesCont {...props}/>}/>
               <Route exact path="/explore-events" render={(props) => <EventsCont {...props}/>}/>
-
-
               <Route exact path="/messages" render={(props) => <CommentsCont {...props}/>}/>
+              <Route exact path="/messages" render={(props) => <MessagesCont {...props}/>}/>
               <Route exact path="/profile" render={(props) => <ProfileCont {...props}/>}/>
 
             </React.Fragment>
