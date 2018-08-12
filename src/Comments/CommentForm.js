@@ -22,9 +22,9 @@ handleSubmit = (e) => {
   Fetches.post(url, data)
   .then(res=>res.json())
   .then(json=>{
-    console.log(json.comments);
+    console.log(json.messages);
     debugger
-    this.props.updateComments(json.comments)
+    this.props.updateComments(json.messages)
   })
 
 }
