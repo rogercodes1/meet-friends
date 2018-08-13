@@ -6,6 +6,7 @@ import 'semantic-ui-css/semantic.min.css';
 import { createStore} from 'redux'
 import reducer from './Reducer/reducer.js';
 import {Provider} from 'react-redux';
+import registerServiceWorker from './registerServiceWorker'
 import {BrowserRouter as Router} from 'react-router-dom';
 
 // eslint-disable no-underscore-dangle
@@ -15,4 +16,4 @@ const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window
 ReactDOM.render(<Provider store={store}>
   <Router><App /></Router>
   </Provider>, document.getElementById('root'));
-// registerServiceWorker();
+registerServiceWorker();

@@ -1,3 +1,4 @@
+import socketIOClient from 'socket.io-client'
 import React, {Component} from 'react';
 import './Assets/App.css';
 import NavBar from './NavBar.js';
@@ -30,7 +31,7 @@ class App extends Component {
               <Route exact path="/" render={(props) => <HomeCont {...props}/>}/>
               <Route exact path="/explore-places" render={(props) => <PlacesCont {...props}/>}/>
               <Route exact path="/explore-events" render={(props) => <EventsCont {...props}/>}/>
-              <Route exact path="/messages" render={(props) => <CommentsCont {...props}/>}/>
+              <Route exact path="/comments" render={(props) => <CommentsCont {...props}/>}/>
               <Route exact path="/messages" render={(props) => <MessagesCont {...props}/>}/>
               <Route exact path="/profile" render={(props) => <ProfileCont {...props}/>}/>
 
