@@ -124,3 +124,28 @@ font-family: 'Rock Salt', cursive;
   padding: 20px;
 
 }
+/* Socket Form */
+.chat-form {
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+}
+
+.jumbotron {
+  padding: 20px 0;
+  background-color: #FFEB8B;
+}
+
+/**  chat-display **/
+
+.chat-display {
+  min-height: 150px;
+  max-height: 40vh;
+  overflow: scroll;
+  font-size: 1.2em;
+}
+
+.chat-display p {
+  font-size: .9em;
+  padding: 0 10px;
+}

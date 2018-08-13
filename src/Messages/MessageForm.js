@@ -1,61 +1,42 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux';
+require('bootstrap');
 import {eventCommentsAction, onChangeChatMessageAction} from '../actions';
-import {Form, Button} from 'semantic-ui-react';
-import Fetches from '../Fetches';
+// import {Form, Button} from 'semantic-ui-react';
+// import Fetches from '../Fetches';
 let url =`${process.env.REACT_APP_BACKEND_URL}api/v1/comments`
 
 class MessageForm extends Component{
 
-handleSubmit = (e) => {
-  e.preventDefault()
-  console.log('activeItem', this.props.activeItem);
-
-  const data = {
-    event_id: this.props.loadEvent.id,
-    user_id: parseInt(localStorage.id, 10),
-    comment: this.props.loadUpdatedMessage
-  }
-  console.log('data', data);
-
-  e.target.message.value = ""
-  Fetches.post(url, data)
-  .then(res=>res.json())
-  .then(json=>{
-    console.log(json.comments);
-    debugger
-    this.props.updateComments(json.comments)
-  })
-
-}
 
   render(){
 
     return (
-      <Form onSubmit={this.handleSubmit} reply id="MessageForm">
-       <Form.TextArea onChange={this.props.handleInputChange} name="message" id="FormTextArea"/>
-       <Button content='New Comment' labelPosition='left' icon='edit' primary />
-     </Form>
+      <form name="chatForm" class="form-horizontal chat-form">
+            <div class="form-group">
+              <label for="chat-username" class="col-sm-2 control-label">Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="chat-username" required placeholder="Enter your name"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="chat-message" class="col-sm-2 control-label">Message</label>
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <input type="text" placeholder="Enter a message, then press enter" class="form-control" id="chat-message" rows="2" autocomplete="off"
+                   required />
+                  <span class="input-group-btn">
+                    <button id="chat-submit" class="btn btn-info" type="submit">Chat</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </form>
 
     )
   }
 
 }
-function mapStateToProps(state){
-  return{
-    loadEvent: state.selectedChatEvent,
-    loadUpdatedMessage: state.onChangeChatMessage
-  }
-}
-function mapDispatchToProps(dispatch) {
-  return {
-    updateComments: (comments) => {
-      dispatch(eventCommentsAction(comments))
-    },
-    onChangeChatMessage: (comment) => {
-      dispatch(onChangeChatMessageAction(comment))
-    }
-  }
-}
 
-export default connect(mapStateToProps,mapDispatchToProps)(MessageForm)
+
+export default (MessageForm)
