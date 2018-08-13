@@ -10,13 +10,12 @@ font-family: 'Pacifico', cursive;
 font-family: 'Permanent Marker', cursive;
 font-family: 'Rock Salt', cursive;
 */
-#body{
+#root, html, body {
   background-color: #edeef0;
+  height: 100%;
 }
 
-html{
-    background-color: #edeef0;
-  }
+
 
 .App {
   text-align: center;
@@ -115,4 +114,13 @@ html{
 /* NavBar */
 #infoNav{
   padding-right:30px;
+}
+/* Footer */
+#footer{
+  margin-top: 100px;
+  background-color: #aa0e25;
+  height: 100px;
+  color: white;
+  padding: 20px;
+
 }
