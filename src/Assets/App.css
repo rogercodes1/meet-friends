@@ -10,7 +10,9 @@ font-family: 'Pacifico', cursive;
 font-family: 'Permanent Marker', cursive;
 font-family: 'Rock Salt', cursive;
 */
-#root, html, body {
+@import url(http://fonts.googleapis.com/css?family=Roboto:100, 300);
+
+html, body {
   background-color: #edeef0;
   height: 100%;
 }
@@ -125,8 +127,13 @@ font-family: 'Rock Salt', cursive;
 
 }
 /* Socket Form */
+.form-control {
+  font-weight: 100;
+  font-size: 1.3rem;
+}
 .chat-form {
-  margin-top: 20px;
+  margin: 50px auto;
+  width: 60%;
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
 }
