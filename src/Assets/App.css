@@ -120,9 +120,9 @@ html, body {
 /* Footer */
 #footer{
   margin-top: 100px;
-  background-color: #aa0e25;
-  height: 100px;
-  color: white;
+  background-color: white;
+  height: 150px;
+  color: #aa0e25;
   padding: 20px;
 
 }
@@ -155,4 +155,7 @@ html, body {
 .chat-display p {
   font-size: .9em;
   padding: 0 10px;
+}
+.social-icon{
+  margin: auto 5px;
 }
