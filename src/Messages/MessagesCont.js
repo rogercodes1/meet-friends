@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import MessageForm from './MessageForm';
-// import {Grid, Menu, Segment, Image, Header, Comment} from 'semantic-ui-react';
+
 import {connect} from 'react-redux';
 
 
