@@ -101,7 +101,6 @@ html, body {
   /* margin-left:100%;
   margin-right: 100%; */
   width: 48%;
-  /* padding: auto 100%; */
 
 }
 
@@ -138,10 +137,6 @@ html, body {
   font-size: 1.5rem;
 }
 
-.jumbotron {
-  padding: 20px 0;
-  background-color: #FFEB8B;
-}
 
 /**  chat-display **/
 
