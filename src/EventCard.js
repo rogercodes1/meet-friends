@@ -28,7 +28,7 @@ handleClick = (e) => {
         alert("Event has been added.\n Check your homepage to see your current events.")
       }
       else {
-        alert("Unable to join event at the moment. Try again later.")
+        alert("Even unavailable. Try again later.")
       }
     })
   }
