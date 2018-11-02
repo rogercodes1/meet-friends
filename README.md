@@ -68,7 +68,7 @@ npm install
 
 ## Authors
 
-* **Roger Perez** - *Initial work* - [Personal Website](https://rogerperez.us)
+* **Roger Perez** - *Creator* - [Personal Website](https://rogerperez.us)
 
 ## Acknowledgments
 
