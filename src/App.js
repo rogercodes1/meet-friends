@@ -1,9 +1,10 @@
-import socketIOClient from 'socket.io-client'
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import {Route, Redirect, Switch} from 'react-router-dom';
+
 import './Assets/App.css';
 import NavBar from './NavBar.js';
 import { subscribeToTimer } from './api';
-import Footer from './Footer.js';
+
 import RegisterCont from './LoginRegister/RegisterCont';
 import HomeCont from './Home/HomeCont';
 import EventsCont from './ExploreEvents/ExploreEventsCont';
@@ -11,9 +12,9 @@ import ProfileCont from './Settings/Profile';
 import PlacesCont from './ExplorePlaces/ExplorePlacesCont';
 import CommentsCont from './Comments/CommentsCont';
 import MessagesCont from './Messages/MessagesCont';
-
+import Footer from './Footer.js';
 import AuthO from './AuthO'
-import {Route, Redirect, Switch} from 'react-router-dom';
+
 
 class App extends Component {
 
