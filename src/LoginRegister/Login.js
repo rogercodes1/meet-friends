@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import {Form, Input, Button} from 'semantic-ui-react';
+import { Form, Input, Button } from 'semantic-ui-react';
 import Fetches from './../Fetches.js';
 import {connect} from 'react-redux';
-import {saveUserEventsAction} from '../actions';
+import { saveUserEventsAction } from '../actions';
 
 let URL = `${process.env.REACT_APP_BACKEND_URL}sessions`
 
