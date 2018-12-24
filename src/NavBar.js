@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { withRouter } from 'react-router'
 import { Menu, Icon,Modal, Dropdown } from 'semantic-ui-react'
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import AuthO from './AuthO'
 
 class NavBar extends Component{
