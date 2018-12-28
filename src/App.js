@@ -30,7 +30,7 @@ class App extends Component {
           ? <React.Fragment>
               <NavBar/>
               <Route exact path="/" render={(props) => <HomeCont {...props}/>}/>
-              
+
               <Route exact path="/explore-places" render={(props) => <PlacesCont {...props}/>}/>
               <Route exact path="/explore-events" render={(props) => <EventsCont {...props}/>}/>
               <Route exact path="/comments" render={(props) => <CommentsCont {...props}/>}/>

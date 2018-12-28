@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import './Assets/index.css';
 import App from './App';
 import 'semantic-ui-css/semantic.min.css';
-import { createStore} from 'redux'
+
+import { createStore } from 'redux'
 import reducer from './Reducer/reducer.js';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
+
 import registerServiceWorker from './registerServiceWorker'
 import {BrowserRouter as Router} from 'react-router-dom';
 
