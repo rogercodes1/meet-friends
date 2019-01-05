@@ -2,8 +2,8 @@ export function currentDate(){
   const d = new Date()
   let month = addZero(d.getMonth()+1)
   let day = addZero(d.getDate())
-  let cDate = (`${d.getFullYear()}-${month}-${day}`)
-  return cDate
+  let currDate = (`${d.getFullYear()}-${month}-${day}`)
+  return currDate
 }
 
 function addZero( num ) {
@@ -17,6 +17,6 @@ export function adultAge(){
   let year = d.getFullYear()-18
   let month = addZero(d.getMonth())
   let day = addZero(d.getDate())
-  let cDate = `${year}-${month}-${day}`
-  return cDate
+  let currDate = `${year}-${month}-${day}`
+  return currDate
 }
