@@ -45,12 +45,8 @@ class App extends Component {
           ? null
         : (<Redirect to="/"/>)
       }
-
       </Switch>
       <Footer />
-
-
-
     </div>);
   }
 }
