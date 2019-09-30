@@ -76,7 +76,6 @@ function mapDispatchToProps(dispatch) {
       dispatch(displayFormAction())
     }
   }
-
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(ExplorePlacesCont);
