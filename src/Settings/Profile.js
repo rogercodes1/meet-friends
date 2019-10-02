@@ -19,7 +19,6 @@ class Profile extends React.Component {
     })
 }
   render () {
-    console.log("this.profile", this.props.displayProfile);
     const profile = this.props.displayProfile
     return(
       <div>
